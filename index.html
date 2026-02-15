@@ -1,0 +1,1470 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sementes de Riqueza — Estrutura do Livro</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;0,700;1,300;1,600&family=DM+Sans:wght@300;400;500;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #0E0B08;
+  --paper: #F7F2E8;
+  --warm: #EDE5D0;
+  --gold: #C8960C;
+  --gold2: #E8B84B;
+  --rust: #B5451B;
+  --green: #2D5016;
+  --green2: #4A7C2F;
+  --sky: #1B4F72;
+  --lilac: #6B3FA0;
+  --sand: #D4A96A;
+  --charcoal: #2C2416;
+  --mid: #6B5A3E;
+  --light: #A89070;
+  --serif: 'Cormorant Garamond', Georgia, serif;
+  --sans: 'DM Sans', sans-serif;
+  --display: 'Bebas Neue', sans-serif;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--sans); background: var(--paper); color: var(--ink); overflow-x: hidden; }
+
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--warm); }
+::-webkit-scrollbar-thumb { background: var(--gold); }
+
+/* ── STICKY NAV ── */
+nav {
+  position: fixed; top:0; left:0; right:0; z-index:200;
+  background: rgba(14,11,8,0.97); backdrop-filter: blur(10px);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 32px; height: 52px;
+  border-bottom: 1px solid rgba(200,150,12,0.2);
+}
+.nav-title { font-family: var(--display); font-size: 18px; letter-spacing: 0.15em; color: var(--gold2); }
+.nav-links { display: flex; gap: 4px; }
+.nav-links a {
+  font-family: var(--sans); font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase;
+  color: rgba(200,150,12,0.5); padding: 5px 10px; text-decoration: none;
+  border-radius: 2px; transition: all 0.2s;
+}
+.nav-links a:hover { color: var(--gold2); background: rgba(200,150,12,0.1); }
+
+/* ── COVER ── */
+.cover {
+  min-height: 100vh;
+  background: var(--ink);
+  display: grid; grid-template-columns: 1fr 1fr;
+  position: relative; overflow: hidden;
+  padding-top: 52px;
+}
+
+.cover-pattern {
+  position: absolute; inset:0;
+  background-image:
+    radial-gradient(circle at 20% 50%, rgba(200,150,12,0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(181,69,27,0.06) 0%, transparent 40%),
+    repeating-conic-gradient(rgba(200,150,12,0.02) 0deg, transparent 1deg, transparent 29deg, rgba(200,150,12,0.02) 30deg);
+  pointer-events: none;
+}
+
+.cover-left {
+  display: flex; flex-direction: column; justify-content: center;
+  padding: 80px 60px; position: relative; z-index:2;
+}
+
+.book-tag {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-family: var(--sans); font-size: 9px; letter-spacing: 0.35em;
+  text-transform: uppercase; color: var(--gold);
+  border: 1px solid rgba(200,150,12,0.3); padding: 7px 16px;
+  border-radius: 1px; margin-bottom: 40px; width: fit-content;
+  animation: fadeUp 0.8s ease both;
+}
+
+.cover-left h1 {
+  font-family: var(--display); font-size: clamp(72px, 8vw, 120px);
+  line-height: 0.88; color: var(--paper); letter-spacing: 0.04em;
+  animation: fadeUp 0.8s ease 0.1s both;
+}
+.cover-left h1 .accent { color: var(--gold2); display: block; }
+
+.cover-subtitle {
+  font-family: var(--serif); font-style: italic; font-size: 20px;
+  color: rgba(232,184,75,0.7); margin: 28px 0 40px; line-height: 1.5;
+  animation: fadeUp 0.8s ease 0.2s both;
+}
+
+.cover-innovation {
+  display: flex; flex-direction: column; gap: 14px;
+  animation: fadeUp 0.8s ease 0.3s both;
+}
+.inno-item {
+  display: flex; align-items: center; gap: 12px;
+  font-family: var(--sans); font-size: 12px; color: rgba(247,242,232,0.5);
+}
+.inno-dot {
+  width: 6px; height: 6px; border-radius: 50%; flex-shrink:0;
+}
+
+.cover-right {
+  display: flex; align-items: center; justify-content: center;
+  position: relative; z-index:2; padding: 80px 40px;
+}
+
+.book-visual {
+  width: 280px; position: relative;
+}
+
+.book-spine {
+  width: 100%; background: linear-gradient(135deg, #1a0f05, #2C1810, #1a0f05);
+  border: 1px solid rgba(200,150,12,0.3);
+  border-radius: 4px; padding: 48px 32px;
+  box-shadow: 20px 20px 60px rgba(0,0,0,0.6), inset 0 0 40px rgba(200,150,12,0.03);
+  animation: float 4s ease-in-out infinite;
+  text-align: center;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(-1deg); }
+  50% { transform: translateY(-12px) rotate(1deg); }
+}
+
+.book-spine-title {
+  font-family: var(--display); font-size: 36px; letter-spacing: 0.1em;
+  color: var(--gold2); line-height: 1; margin-bottom: 12px;
+}
+.book-spine-sub {
+  font-family: var(--serif); font-style: italic; font-size: 13px;
+  color: rgba(200,150,12,0.6); margin-bottom: 32px;
+}
+.book-spine-ornament {
+  display: flex; flex-direction: column; gap: 6px; align-items: center;
+}
+.orn-line {
+  background: var(--gold);
+  height: 1px;
+}
+
+.cover-stats {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 2px; margin-top: 32px;
+}
+.cs-item {
+  background: rgba(200,150,12,0.08); padding: 16px;
+  text-align: center;
+}
+.cs-val {
+  font-family: var(--display); font-size: 28px; color: var(--gold2);
+  letter-spacing: 0.05em; line-height: 1;
+}
+.cs-lbl {
+  font-family: var(--sans); font-size: 9px; letter-spacing: 0.15em;
+  text-transform: uppercase; color: rgba(200,150,12,0.4); margin-top: 4px;
+}
+
+@keyframes fadeUp {
+  from { opacity:0; transform: translateY(24px); }
+  to { opacity:1; transform: translateY(0); }
+}
+
+/* ── INNOVATION STRIP ── */
+.inno-strip {
+  background: var(--gold);
+  padding: 20px 40px;
+  display: flex; align-items: center; gap: 60px;
+  overflow: hidden; position: relative;
+}
+.inno-strip-item {
+  display: flex; align-items: center; gap: 12px; flex-shrink: 0;
+  font-family: var(--sans); font-weight: 700; font-size: 13px;
+  color: var(--ink); text-transform: uppercase; letter-spacing: 0.1em;
+}
+.inno-strip-item span { font-size: 20px; }
+.strip-divider { color: rgba(14,11,8,0.3); font-size: 24px; flex-shrink:0; }
+
+/* ── CONCEPT SECTION ── */
+.concept-section {
+  background: var(--charcoal);
+  padding: 100px 80px;
+  position: relative; overflow: hidden;
+}
+.concept-section::before {
+  content: 'CONCEITO';
+  position: absolute; right: -20px; top: 50%;
+  transform: translateY(-50%) rotate(90deg);
+  font-family: var(--display); font-size: 120px;
+  color: rgba(200,150,12,0.04); pointer-events: none; white-space: nowrap;
+}
+.concept-inner { max-width: 900px; margin: 0 auto; }
+.section-eyebrow {
+  font-family: var(--sans); font-size: 9px; letter-spacing: 0.35em;
+  text-transform: uppercase; color: var(--gold); margin-bottom: 20px;
+  display: flex; align-items: center; gap: 12px;
+}
+.section-eyebrow::before { content:''; display:block; width:28px; height:1px; background: var(--gold); }
+
+.concept-h { font-family: var(--display); font-size: clamp(40px,5vw,72px); color: var(--paper); letter-spacing: 0.04em; line-height: 1; margin-bottom: 32px; }
+.concept-h em { color: var(--gold2); font-style:normal; }
+
+.concept-body {
+  font-family: var(--serif); font-size: 20px; line-height: 1.9;
+  color: rgba(247,242,232,0.7); margin-bottom: 32px;
+}
+
+.pillars-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-top: 60px;
+}
+.pillar {
+  background: rgba(200,150,12,0.06); border: 1px solid rgba(200,150,12,0.12);
+  padding: 32px 28px; transition: all 0.3s;
+}
+.pillar:hover { background: rgba(200,150,12,0.1); border-color: rgba(200,150,12,0.3); }
+.pillar-num { font-family: var(--display); font-size: 64px; color: rgba(200,150,12,0.15); line-height:1; margin-bottom: 12px; }
+.pillar-title { font-family: var(--serif); font-weight:700; font-size: 22px; color: var(--gold2); margin-bottom: 10px; }
+.pillar-text { font-family: var(--sans); font-size: 13px; line-height: 1.8; color: rgba(247,242,232,0.5); }
+
+/* ── PERSONAGENS ── */
+.chars-section { padding: 100px 80px; background: var(--paper); }
+.chars-inner { max-width: 1100px; margin: 0 auto; }
+.chars-intro { font-family: var(--serif); font-style: italic; font-size: 19px; line-height: 1.9; color: var(--mid); max-width: 700px; margin-bottom: 60px; }
+
+.chars-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 24px; }
+
+.char-card {
+  border: 1px solid rgba(107,90,62,0.2); border-radius: 6px;
+  overflow: hidden; transition: all 0.3s; background: white;
+}
+.char-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(14,11,8,0.1); border-color: var(--gold); }
+
+.char-header { padding: 28px 28px 20px; position: relative; }
+.char-emoji { font-size: 40px; margin-bottom: 12px; display: block; }
+.char-name { font-family: var(--serif); font-weight: 700; font-size: 22px; margin-bottom: 4px; }
+.char-role { font-family: var(--sans); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--light); margin-bottom: 12px; }
+.char-tag {
+  display: inline-block; font-family: var(--sans); font-size: 9px;
+  letter-spacing: 0.15em; text-transform: uppercase;
+  padding: 4px 10px; border-radius: 2px;
+}
+.char-body { padding: 0 28px 24px; font-family: var(--sans); font-size: 13px; line-height: 1.8; color: var(--mid); }
+.char-thread { padding: 16px 28px; border-top: 1px solid rgba(107,90,62,0.1); font-family: var(--sans); font-size: 11px; color: var(--light); }
+.char-thread strong { color: var(--gold); }
+
+/* ── STRUCTURE MAP ── */
+.map-section { background: var(--ink); padding: 100px 80px; }
+.map-inner { max-width: 1100px; margin: 0 auto; }
+
+.universes { display: flex; flex-direction: column; gap: 4px; margin-top: 60px; }
+
+.universe {
+  border: 1px solid rgba(200,150,12,0.15);
+  border-radius: 6px; overflow: hidden;
+  transition: border-color 0.3s;
+}
+.universe:hover { border-color: rgba(200,150,12,0.4); }
+
+.universe-header {
+  display: flex; align-items: center; gap: 24px;
+  padding: 28px 32px; cursor: pointer;
+  transition: background 0.2s;
+}
+.universe-header:hover { background: rgba(200,150,12,0.04); }
+
+.uni-num { font-family: var(--display); font-size: 48px; color: rgba(200,150,12,0.2); line-height:1; min-width: 60px; }
+.uni-icon { font-size: 28px; }
+.uni-info { flex:1; }
+.uni-label { font-family: var(--sans); font-size: 9px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 4px; }
+.uni-title { font-family: var(--display); font-size: 28px; color: var(--paper); letter-spacing: 0.05em; line-height: 1; }
+.uni-sub { font-family: var(--serif); font-style: italic; font-size: 14px; color: rgba(247,242,232,0.4); margin-top: 4px; }
+.uni-chapters { font-family: var(--sans); font-size: 10px; letter-spacing: 0.15em; color: rgba(200,150,12,0.5); }
+.uni-toggle { font-size: 22px; color: rgba(200,150,12,0.4); transition: transform 0.3s; }
+.universe.open .uni-toggle { transform: rotate(45deg); color: var(--gold); }
+
+.universe-body { display: none; border-top: 1px solid rgba(200,150,12,0.1); }
+.universe.open .universe-body { display: block; }
+
+.chapters-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px,1fr)); gap: 2px; }
+
+.chapter-item {
+  padding: 28px 32px;
+  background: rgba(200,150,12,0.03);
+  border-right: 1px solid rgba(200,150,12,0.06);
+  border-bottom: 1px solid rgba(200,150,12,0.06);
+  transition: background 0.2s;
+}
+.chapter-item:hover { background: rgba(200,150,12,0.07); }
+
+.ch-num { font-family: var(--display); font-size: 13px; letter-spacing: 0.2em; color: rgba(200,150,12,0.4); margin-bottom: 8px; }
+.ch-title { font-family: var(--serif); font-weight: 700; font-size: 18px; color: var(--paper); margin-bottom: 8px; line-height: 1.2; }
+.ch-persona { font-family: var(--sans); font-size: 10px; color: var(--gold); margin-bottom: 8px; }
+.ch-topics { display: flex; flex-direction: column; gap: 4px; margin-bottom: 12px; }
+.ch-topic { font-family: var(--sans); font-size: 12px; color: rgba(247,242,232,0.45); line-height: 1.5; display: flex; gap: 8px; }
+.ch-topic::before { content: '→'; color: rgba(200,150,12,0.3); flex-shrink:0; }
+.ch-tools { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 12px; }
+.ch-tool {
+  font-family: var(--sans); font-size: 8px; letter-spacing: 0.12em;
+  text-transform: uppercase; padding: 3px 8px; border-radius: 2px;
+  border: 1px solid;
+}
+.tool-story { color: #E8B84B; border-color: rgba(232,184,75,0.3); background: rgba(232,184,75,0.06); }
+.tool-data { color: #5DADE2; border-color: rgba(93,173,226,0.3); background: rgba(93,173,226,0.06); }
+.tool-ex { color: #82E0AA; border-color: rgba(130,224,170,0.3); background: rgba(130,224,170,0.06); }
+.tool-mis { color: #D7BDE2; border-color: rgba(215,189,226,0.3); background: rgba(215,189,226,0.06); }
+.tool-prov { color: #F1948A; border-color: rgba(241,148,138,0.3); background: rgba(241,148,138,0.06); }
+
+/* ── FORMAT SECTION ── */
+.format-section { padding: 100px 80px; background: var(--warm); }
+.format-inner { max-width: 1000px; margin: 0 auto; }
+
+.format-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px,1fr)); gap: 20px; margin-top: 50px; }
+
+.format-card {
+  background: white; border-radius: 8px;
+  padding: 28px 24px; border: 1px solid rgba(107,90,62,0.12);
+  transition: all 0.3s;
+}
+.format-card:hover { border-color: var(--gold); box-shadow: 0 8px 24px rgba(14,11,8,0.08); transform: translateY(-2px); }
+.format-icon { font-size: 32px; margin-bottom: 14px; }
+.format-title { font-family: var(--serif); font-weight: 700; font-size: 18px; margin-bottom: 8px; }
+.format-desc { font-family: var(--sans); font-size: 13px; line-height: 1.7; color: var(--mid); }
+
+/* ── DNA (CHAPTER FORMAT) ── */
+.dna-section { background: var(--charcoal); padding: 100px 80px; }
+.dna-inner { max-width: 900px; margin: 0 auto; }
+
+.dna-flow { display: flex; flex-direction: column; gap: 0; margin-top: 50px; position: relative; }
+.dna-flow::before {
+  content: '';
+  position: absolute; left: 27px; top: 0; bottom: 0; width: 2px;
+  background: linear-gradient(to bottom, var(--gold), transparent);
+}
+
+.dna-step { display: flex; gap: 28px; padding-bottom: 40px; }
+.dna-circle {
+  width: 56px; height: 56px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px; flex-shrink: 0; border: 2px solid;
+  position: relative; z-index: 2;
+}
+.dna-content { flex:1; padding-top: 8px; }
+.dna-title { font-family: var(--serif); font-weight: 700; font-size: 22px; color: var(--paper); margin-bottom: 6px; }
+.dna-desc { font-family: var(--sans); font-size: 13px; line-height: 1.8; color: rgba(247,242,232,0.5); }
+.dna-example { font-family: var(--serif); font-style: italic; font-size: 14px; color: var(--gold); margin-top: 8px; }
+
+/* ── AGE ROADMAP ── */
+.ages-section { padding: 100px 80px; background: var(--paper); }
+.ages-inner { max-width: 1000px; margin: 0 auto; }
+
+.timeline { position: relative; margin-top: 60px; }
+.timeline::before {
+  content: '';
+  position: absolute; left: 50%; top: 0; bottom: 0; width: 2px;
+  background: linear-gradient(to bottom, var(--gold), var(--rust), var(--green), var(--sky));
+  transform: translateX(-50%);
+}
+
+.tl-item { display: flex; gap: 40px; margin-bottom: 48px; align-items: flex-start; }
+.tl-item.right { flex-direction: row-reverse; }
+
+.tl-content {
+  flex:1; background: white; border-radius: 8px;
+  padding: 24px 28px; border: 1px solid rgba(107,90,62,0.15);
+  transition: all 0.3s;
+}
+.tl-content:hover { border-color: var(--gold); transform: scale(1.01); }
+
+.tl-dot {
+  width: 44px; height: 44px; border-radius: 50%; flex-shrink:0;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px; border: 3px solid white;
+  box-shadow: 0 0 0 3px var(--gold);
+  margin-top: 10px;
+}
+
+.tl-empty { flex:1; }
+
+.tl-age { font-family: var(--display); font-size: 40px; color: var(--gold); line-height:1; letter-spacing: 0.05em; }
+.tl-title { font-family: var(--serif); font-weight: 700; font-size: 20px; margin: 4px 0 10px; }
+.tl-topics { font-family: var(--sans); font-size: 13px; line-height: 1.8; color: var(--mid); }
+.tl-persona { font-family: var(--sans); font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-top: 10px; }
+
+/* ── INNOVATIONS ── */
+.inno-section { background: var(--rust); padding: 100px 80px; position: relative; overflow: hidden; }
+.inno-section::before {
+  content: 'INOVAÇÃO';
+  position: absolute; right: -30px; top: 50%; transform: translateY(-50%) rotate(90deg);
+  font-family: var(--display); font-size: 200px;
+  color: rgba(255,255,255,0.04); pointer-events: none; white-space: nowrap;
+}
+.inno-inner { max-width: 1000px; margin: 0 auto; position: relative; z-index:2; }
+
+.inno-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px,1fr)); gap: 24px; margin-top: 50px; }
+
+.inno-card {
+  background: rgba(247,242,232,0.08); border: 1px solid rgba(247,242,232,0.15);
+  border-radius: 8px; padding: 32px 28px; transition: all 0.3s;
+}
+.inno-card:hover { background: rgba(247,242,232,0.12); border-color: rgba(247,242,232,0.3); transform: translateY(-3px); }
+.inno-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: var(--sans); font-size: 8px; letter-spacing: 0.2em;
+  text-transform: uppercase; color: rgba(247,242,232,0.5);
+  background: rgba(247,242,232,0.1); padding: 4px 10px; border-radius: 2px;
+  margin-bottom: 16px;
+}
+.inno-name { font-family: var(--serif); font-weight: 700; font-size: 22px; color: var(--paper); margin-bottom: 10px; }
+.inno-text { font-family: var(--sans); font-size: 13px; line-height: 1.8; color: rgba(247,242,232,0.6); }
+.inno-wow {
+  margin-top: 14px; padding: 10px 14px;
+  background: rgba(200,150,12,0.2); border-radius: 4px;
+  font-family: var(--sans); font-size: 12px; color: var(--gold2);
+  font-style: italic;
+}
+
+/* ── PROVERBS SECTION ── */
+.prov-section { background: var(--green); padding: 80px 80px; }
+.prov-inner { max-width: 1000px; margin: 0 auto; }
+.prov-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px,1fr)); gap: 20px; margin-top: 40px; }
+.prov-card {
+  background: rgba(247,242,232,0.06); border-radius: 6px; padding: 28px 24px;
+  border-left: 3px solid rgba(232,184,75,0.5);
+}
+.prov-text { font-family: var(--serif); font-style: italic; font-size: 17px; line-height: 1.7; color: var(--paper); margin-bottom: 12px; }
+.prov-origin { font-family: var(--sans); font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(232,184,75,0.5); }
+.prov-lesson { font-family: var(--sans); font-size: 12px; color: rgba(247,242,232,0.5); margin-top: 8px; line-height: 1.6; }
+
+/* ── FINAL VISION ── */
+.vision-section { background: var(--ink); padding: 120px 80px; text-align: center; position: relative; overflow: hidden; }
+.vision-glow { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 600px; height: 600px; background: radial-gradient(circle, rgba(200,150,12,0.1) 0%, transparent 70%); pointer-events: none; }
+.vision-inner { position: relative; z-index:2; max-width: 800px; margin: 0 auto; }
+.vision-h { font-family: var(--display); font-size: clamp(48px, 7vw, 96px); color: var(--paper); letter-spacing: 0.06em; line-height: 0.9; margin-bottom: 24px; }
+.vision-h em { color: var(--gold2); font-style:normal; display: block; }
+.vision-body { font-family: var(--serif); font-style: italic; font-size: 20px; line-height: 1.9; color: rgba(247,242,232,0.6); margin-bottom: 48px; }
+
+.metrics-row { display: flex; justify-content: center; gap: 48px; flex-wrap: wrap; }
+.metric { text-align: center; }
+.metric-val { font-family: var(--display); font-size: 52px; color: var(--gold2); line-height:1; letter-spacing: 0.04em; }
+.metric-lbl { font-family: var(--sans); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(200,150,12,0.4); margin-top: 4px; }
+
+.footer-bar { background: rgba(0,0,0,0.5); padding: 24px 80px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+.footer-bar span { font-family: var(--sans); font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(200,150,12,0.3); }
+
+/* scroll reveal */
+.reveal { opacity:0; transform: translateY(28px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.reveal.on { opacity:1; transform: translateY(0); }
+
+@media(max-width:900px) {
+  nav { padding: 0 20px; }
+  .nav-links { display: none; }
+  .cover { grid-template-columns: 1fr; min-height: auto; }
+  .cover-right { display: none; }
+  .cover-left { padding: 60px 28px 40px; }
+  .concept-section, .chars-section, .map-section, .format-section, .dna-section, .ages-section, .inno-section, .prov-section, .vision-section { padding: 60px 24px; }
+  .timeline::before { left: 20px; }
+  .tl-item, .tl-item.right { flex-direction: column; }
+  .tl-dot { display: none; }
+  .tl-empty { display: none; }
+  .pillars-grid { grid-template-columns: 1fr; }
+  .footer-bar { padding: 20px 24px; flex-direction: column; }
+  .inno-strip { gap: 30px; padding: 16px 24px; overflow-x: auto; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-title">SEMENTES DE RIQUEZA</div>
+  <div class="nav-links">
+    <a href="#conceito">Conceito</a>
+    <a href="#personagens">Personagens</a>
+    <a href="#estrutura">Estrutura</a>
+    <a href="#formato">Formato</a>
+    <a href="#inovacoes">Inovações</a>
+  </div>
+</nav>
+
+<!-- ══════════════════════════════════ -->
+<!-- COVER -->
+<!-- ══════════════════════════════════ -->
+<section class="cover">
+  <div class="cover-pattern"></div>
+  <div class="cover-left">
+    <div class="book-tag">● Proposta Editorial Completa — 2025</div>
+    <h1>SEMENTES<br><span class="accent">DE RIQUEZA</span></h1>
+    <div class="cover-subtitle">
+      "O Guia de Inteligência Financeira<br>para Todas as Gerações de Moçambique"
+    </div>
+    <div class="cover-innovation">
+      <div class="inno-item"><div class="inno-dot" style="background:var(--gold2)"></div>7 Personagens que atravessam todo o livro</div>
+      <div class="inno-item"><div class="inno-dot" style="background:var(--rust)"></div>3 Universos × 21 Capítulos × 7 Fases de Vida</div>
+      <div class="inno-item"><div class="inno-dot" style="background:var(--green2)"></div>ADN único por capítulo: História → Dado → Ferramenta → Missão</div>
+      <div class="inno-item"><div class="inno-dot" style="background:var(--sky)"></div>Provérbios africanos como âncoras filosóficas</div>
+      <div class="inno-item"><div class="inno-dot" style="background:var(--lilac)"></div>QR Codes para conteúdo digital gratuito</div>
+    </div>
+  </div>
+  <div class="cover-right">
+    <div>
+      <div class="book-visual">
+        <div class="book-spine">
+          <div class="book-spine-title">SEMENTES<br>DE<br>RIQUEZA</div>
+          <div class="book-spine-sub">Inteligência Financeira<br>para Moçambique</div>
+          <div class="book-spine-ornament">
+            <div class="orn-line" style="width:60px"></div>
+            <div style="font-size:24px">✦</div>
+            <div class="orn-line" style="width:40px"></div>
+          </div>
+        </div>
+      </div>
+      <div class="cover-stats">
+        <div class="cs-item"><div class="cs-val">21</div><div class="cs-lbl">Capítulos</div></div>
+        <div class="cs-item"><div class="cs-val">7</div><div class="cs-lbl">Personagens</div></div>
+        <div class="cs-item"><div class="cs-val">3</div><div class="cs-lbl">Universos</div></div>
+        <div class="cs-item"><div class="cs-val">∞</div><div class="cs-lbl">Impacto</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STRIP -->
+<div class="inno-strip">
+  <div class="inno-strip-item"><span>🌱</span> Do nascimento à velhice</div>
+  <div class="strip-divider">✦</div>
+  <div class="inno-strip-item"><span>🏘️</span> Todas as classes sociais</div>
+  <div class="strip-divider">✦</div>
+  <div class="inno-strip-item"><span>🇲🇿</span> 100% contexto moçambicano</div>
+  <div class="strip-divider">✦</div>
+  <div class="inno-strip-item"><span>💡</span> Inovação editorial africana</div>
+  <div class="strip-divider">✦</div>
+  <div class="inno-strip-item"><span>🌍</span> Sabedoria ancestral + finanças modernas</div>
+</div>
+
+<!-- ══════════════════════════════════ -->
+<!-- CONCEITO -->
+<!-- ══════════════════════════════════ -->
+<section class="concept-section" id="conceito">
+  <div class="concept-inner">
+    <div class="section-eyebrow">O Grande Conceito</div>
+    <h2 class="concept-h">NÃO É UM LIVRO.<br>É UMA <em>JORNADA.</em></h2>
+    <p class="concept-body">
+      A maioria dos livros de finanças fala <em>para</em> o leitor. Este livro fala <em>com</em> ele — através de personagens reais que vivem as mesmas dificuldades, sonhos e conquistas do leitor. Cada capítulo é uma cena de vida. Cada ferramenta é um passo possível. Cada missão é um desafio real a completar antes de virar a página.
+    </p>
+    <p class="concept-body">
+      O título <strong style="color:var(--gold2)">"Sementes de Riqueza"</strong> não é metáfora vazia. É a filosofia central: dinheiro, como a terra, exige preparação, paciência, cultivo diário e fé no que está a crescer debaixo da superfície — mesmo quando ainda não se vê.
+    </p>
+
+    <div class="pillars-grid reveal">
+      <div class="pillar">
+        <div class="pillar-num">01</div>
+        <div class="pillar-title">Mentalidade</div>
+        <div class="pillar-text">Antes de qualquer técnica, o livro trabalha a relação emocional e cultural com o dinheiro. Crenças, traumas, medos e a herança financeira familiar. Sem mudar a mente, nenhuma estratégia funciona.</div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-num">02</div>
+        <div class="pillar-title">Acção</div>
+        <div class="pillar-text">Ferramentas práticas, orçamentos reais em Meticais, passos concretos por fase de vida e classe social. Nada teórico que não possa ser implementado hoje, com o que cada pessoa tem agora.</div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-num">03</div>
+        <div class="pillar-title">Legado</div>
+        <div class="pillar-text">O dinheiro não é o fim. É o meio para uma vida com dignidade, liberdade e possibilidade de deixar algo melhor para os filhos. O livro termina onde toda a boa história termina: num futuro diferente.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════ -->
+<!-- PERSONAGENS -->
+<!-- ══════════════════════════════════ -->
+<section class="chars-section" id="personagens">
+  <div class="chars-inner">
+    <div class="section-eyebrow" style="color:var(--gold)">Inovação Editorial</div>
+    <h2 style="font-family:var(--display); font-size:clamp(36px,5vw,64px); letter-spacing:0.04em; line-height:1; margin-bottom:24px;">7 PERSONAGENS.<br>UMA MOÇAMBIQUE INTEIRA.</h2>
+    <p class="chars-intro">
+      Em vez de exemplos genéricos, o livro apresenta 7 personagens que surgem e evoluem ao longo de toda a obra. O leitor vai reconhecer-se em pelo menos um deles — e acompanhar a transformação financeira de cada um até ao último capítulo.
+    </p>
+
+    <div class="chars-grid">
+      <div class="char-card reveal">
+        <div class="char-header" style="background:linear-gradient(135deg,#fef9f0,white)">
+          <span class="char-emoji">👩🏾</span>
+          <div class="char-name">Amélia</div>
+          <div class="char-role">Maputo • Vendedora Informal • 38 anos</div>
+          <span class="char-tag" style="background:rgba(200,150,12,0.1); color:var(--gold);">● Classe Baixa</span>
+        </div>
+        <div class="char-body">Vende capulanas no mercado da Xipamanine. Ganha entre 2.000 e 4.000 MT por mês. Mãe solteira de 3 filhos. Já pediu emprestado ao agiota duas vezes. Sonha em ter uma banca coberta.</div>
+        <div class="char-thread">Representa: <strong>informalidade, sobrevivência, resiliência feminina</strong></div>
+      </div>
+
+      <div class="char-card reveal">
+        <div class="char-header" style="background:linear-gradient(135deg,#f0f4fe,white)">
+          <span class="char-emoji">👦🏾</span>
+          <div class="char-name">Tomás</div>
+          <div class="char-role">Beira • Estudante • 17 anos</div>
+          <span class="char-tag" style="background:rgba(27,79,114,0.1); color:var(--sky);">● Jovem Geração Z</span>
+        </div>
+        <div class="char-body">Filho de professores. Recebe 500 MT de mesada. Gasta tudo em dados e saídas com amigos. Viu os pais perderem tudo num negócio mal planeado. Quer mudar o padrão familiar.</div>
+        <div class="char-thread">Representa: <strong>juventude, pressão social, primeiro passo</strong></div>
+      </div>
+
+      <div class="char-card reveal">
+        <div class="char-header" style="background:linear-gradient(135deg,#f0fef4,white)">
+          <span class="char-emoji">👨🏾‍💼</span>
+          <div class="char-name">Eduardo</div>
+          <div class="char-role">Maputo • Engenheiro • 34 anos</div>
+          <span class="char-tag" style="background:rgba(45,80,22,0.1); color:var(--green);">● Classe Média</span>
+        </div>
+        <div class="char-body">Ganha 35.000 MT. Tem carro financiado, crédito habitação e cartão de crédito no limite. Toda a gente acha que é rico. Ele sabe que está um mês de distância da falência pessoal.</div>
+        <div class="char-thread">Representa: <strong>a ilusão da classe média, lifestyle inflation</strong></div>
+      </div>
+
+      <div class="char-card reveal">
+        <div class="char-header" style="background:linear-gradient(135deg,#fef0f0,white)">
+          <span class="char-emoji">👵🏾</span>
+          <div class="char-name">Dona Rosa</div>
+          <div class="char-role">Nampula • Reformada • 67 anos</div>
+          <span class="char-tag" style="background:rgba(181,69,27,0.1); color:var(--rust);">● Terceira Idade</span>
+        </div>
+        <div class="char-body">Recebe 6.500 MT de reforma. Os filhos esperam apoio financeiro dela. Não tem poupanças. Tem medo de ficar doente. Guarda dinheiro debaixo do colchão por desconfiança dos bancos.</div>
+        <div class="char-thread">Representa: <strong>a velhice desprotegida, desconfiança financeira</strong></div>
+      </div>
+
+      <div class="char-card reveal">
+        <div class="char-header" style="background:linear-gradient(135deg,#f8f0fe,white)">
+          <span class="char-emoji">👩🏾‍💻</span>
+          <div class="char-name">Inês</div>
+          <div class="char-role">Maputo • Freelancer Digital • 26 anos</div>
+          <span class="char-tag" style="background:rgba(107,63,160,0.1); color:var(--lilac);">● Nova Economia</span>
+        </div>
+        <div class="char-body">Faz design gráfico e conteúdo para marcas. Rende irregular — às vezes 5.000 MT, às vezes 20.000 MT. Não sabe como gerir rendimento variável. Quer investir mas não sabe por onde começar.</div>
+        <div class="char-thread">Representa: <strong>economia digital, renda variável, millennials</strong></div>
+      </div>
+
+      <div class="char-card reveal">
+        <div class="char-header" style="background:linear-gradient(135deg,#fffbf0,white)">
+          <span class="char-emoji">👨🏾‍🌾</span>
+          <div class="char-name">Samuel</div>
+          <div class="char-role">Gaza • Agricultor • 45 anos</div>
+          <span class="char-tag" style="background:rgba(212,169,106,0.15); color:var(--sand);">● Zona Rural</span>
+        </div>
+        <div class="char-body">Tem machamba familiar. Produz milho, amendoim e feijão. Rendimento anual de cerca de 40.000 MT mas irregular com as estações. Nunca pensou na machamba como investimento.</div>
+        <div class="char-thread">Representa: <strong>agricultura, economia rural, sazonal</strong></div>
+      </div>
+
+      <div class="char-card reveal">
+        <div class="char-header" style="background:linear-gradient(135deg,#f0f8fe,white)">
+          <span class="char-emoji">👩🏾‍⚕️</span>
+          <div class="char-name">Beatriz</div>
+          <div class="char-role">Tete • Médica • 41 anos</div>
+          <span class="char-tag" style="background:rgba(27,79,114,0.12); color:var(--sky);">● Alta Renda</span>
+        </div>
+        <div class="char-body">Ganha 80.000 MT por mês. Sustenta os pais, paga estudos de 2 irmãos e ainda tem dívidas. Nunca aprendeu a dizer não à família. Quer construir riqueza real mas sente-se presa pelo ubuntu financeiro.</div>
+        <div class="char-thread">Representa: <strong>alta renda, pressão familiar, ubuntu e dinheiro</strong></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════ -->
+<!-- ESTRUTURA COMPLETA -->
+<!-- ══════════════════════════════════ -->
+<section class="map-section" id="estrutura">
+  <div class="map-inner">
+    <div class="section-eyebrow" style="color:var(--gold)">Arquitectura do Livro</div>
+    <h2 style="font-family:var(--display); font-size:clamp(36px,5vw,64px); color:var(--paper); letter-spacing:0.04em; line-height:1; margin-bottom:16px;">3 UNIVERSOS.<br>21 CAPÍTULOS.</h2>
+    <p style="font-family:var(--serif); font-style:italic; font-size:18px; color:rgba(247,242,232,0.5); max-width:600px; line-height:1.8; margin-bottom:8px;">Clica em cada Universo para ver os capítulos completos com tópicos, personagens e ferramentas.</p>
+
+    <div class="universes reveal">
+
+      <!-- UNIVERSO 1 -->
+      <div class="universe open">
+        <div class="universe-header" onclick="toggleUni(this)">
+          <div class="uni-num">I</div>
+          <div class="uni-icon">🌱</div>
+          <div class="uni-info">
+            <div class="uni-label">Universo Um</div>
+            <div class="uni-title">SEMENTES — A MENTALIDADE</div>
+            <div class="uni-sub">"Antes de plantar, tens de preparar a terra"</div>
+          </div>
+          <div class="uni-chapters">7 Capítulos</div>
+          <div class="uni-toggle">+</div>
+        </div>
+        <div class="universe-body">
+          <div class="chapters-grid">
+
+            <div class="chapter-item">
+              <div class="ch-num">CAP. 01</div>
+              <div class="ch-title">O Dinheiro Não É Sujo — A Nossa Relação com a Riqueza</div>
+              <div class="ch-persona">🌟 Todos os personagens — Introdução</div>
+              <div class="ch-topics">
+                <div class="ch-topic">Crenças culturais e religiosas sobre dinheiro em Moçambique</div>
+                <div class="ch-topic">Como o nosso passado colonial moldou a relação com a riqueza</div>
+                <div class="ch-topic">Ubuntu e finanças — ser solidário sem se destruir</div>
+                <div class="ch-topic">Dinheiro como ferramenta de liberdade, não de ganância</div>
+              </div>
+              <div class="ch-tools">
+                <span class="ch-tool tool-story">História</span>
+                <span class="ch-tool tool-ex">Reflexão</span>
+                <span class="ch-tool tool-prov">Provérbio</span>
+              </div>
+            </div>
+
+            <div class="chapter-item">
+              <div class="ch-num">CAP. 02</div>
+              <div class="ch-title">O Trauma Financeiro — Quando o Passado Controla o Presente</div>
+              <div class="ch-persona">👵🏾 Dona Rosa + 👩🏾 Amélia</div>
+              <div class="ch-topics">
+                <div class="ch-topic">Como traumas geracionais (guerra, pobreza) criam hábitos destrutivos</div>
+                <div class="ch-topic">Desconfiança dos bancos — origem e como superar</div>
+                <div class="ch-topic">O guardador compulsivo vs o gastador compulsivo</div>
+                <div class="ch-topic">Exercício de mapeamento do trauma financeiro familiar</div>
+              </div>
+              <div class="ch-tools">
+                <span class="ch-tool tool-story">História</span>
+                <span class="ch-tool tool-ex">Exercício</span>
+                <span class="ch-tool tool-mis">Missão</span>
+              </div>
+            </div>
+
+            <div class="chapter-item">
+              <div class="ch-num">CAP. 03</div>
+              <div class="ch-title">Emoções e Dinheiro — Por que Compramos o que Não Precisamos</div>
+              <div class="ch-persona">👦🏾 Tomás + 👩🏾‍💻 Inês</div>
+              <div class="ch-topics">
+                <div class="ch-topic">Consumismo, redes sociais e a armadilha da comparação</div>
+                <div class="ch-topic">Compra emocional — tristeza, stress e celebração como gatilhos</div>
+                <div class="ch-topic">O "efeito FOMO" — medo de ficar de fora</div>
+                <div class="ch-topic">A diferença entre querer, precisar e merecer</div>
+              </div>
+              <div class="ch-tools">
+                <span class="ch-tool tool-data">Dados</span>
+                <span class="ch-tool tool-story">História</span>
+                <span class="ch-tool tool-mis">Missão 30 dias</span>
+              </div>
+            </div>
+
+            <div class="chapter-item">
+              <div class="ch-num">CAP. 04</div>
+              <div class="ch-title">A Mentalidade de Abundância vs Escassez</div>
+              <div class="ch-persona">👨🏾‍🌾 Samuel + 👨🏾‍💼 Eduardo</div>
+              <div class="ch-topics">
+                <div class="ch-topic">Por que pessoas com mais dinheiro às vezes têm mentalidade mais pobre</div>
+                <div class="ch-topic">O jogo de soma zero — a crença de que "há pouco para todos"</div>
+                <div class="ch-topic">Gratidão como ferramenta financeira — o que já tens que tens subestimado</div>
+                <div class="ch-topic">Pensamento de longo prazo — semear hoje para colher amanhã</div>
+              </div>
+              <div class="ch-tools">
+                <span class="ch-tool tool-prov">Provérbio</span>
+                <span class="ch-tool tool-ex">Exercício</span>
+                <span class="ch-tool tool-story">História</span>
+              </div>
+            </div>
+
+            <div class="chapter-item">
+              <div class="ch-num">CAP. 05</div>
+              <div class="ch-title">Conversar Sobre Dinheiro — Quebrando o Tabu Familiar</div>
+              <div class="ch-persona">👩🏾‍⚕️ Beatriz + 👵🏾 Dona Rosa</div>
+              <div class="ch-topics">
+                <div class="ch-topic">Por que as famílias moçambicanas não falam sobre dinheiro</div>
+                <div class="ch-topic">Como o silêncio financeiro perpetua a pobreza entre gerações</div>
+                <div class="ch-topic">Como ter a conversa difícil sobre dinheiro com pais e filhos</div>
+                <div class="ch-topic">Guia de regras financeiras familiares — o "contrato de casa"</div>
+              </div>
+              <div class="ch-tools">
+                <span class="ch-tool tool-story">História</span>
+                <span class="ch-tool tool-ex">Guia Prático</span>
+                <span class="ch-tool tool-mis">Missão</span>
+              </div>
+            </div>
+
+            <div class="chapter-item">
+              <div class="ch-num">CAP. 06</div>
+              <div class="ch-title">Dinheiro e Espiritualidade — Fé e Prosperidade</div>
+              <div class="ch-persona">👩🏾 Amélia + 👨🏾‍🌾 Samuel</div>
+              <div class="ch-topics">
+                <div class="ch-topic">Religião e dinheiro em Moçambique — católicos, islâmicos, evangélicos</div>
+                <div class="ch-topic">"Deus provê" vs responsabilidade pessoal — o equilíbrio saudável</div>
+                <div class="ch-topic">Dízimos e ofertas — como gerir no orçamento sem culpa</div>
+                <div class="ch-topic">Cerimónias, lobolo e despesas culturais — planear sem endividar</div>
+              </div>
+              <div class="ch-tools">
+                <span class="ch-tool tool-prov">Provérbio</span>
+                <span class="ch-tool tool-data">Dados</span>
+                <span class="ch-tool tool-ex">Ferramenta</span>
+              </div>
+            </div>
+
+            <div class="chapter-item">
+              <div class="ch-num">CAP. 07</div>
+              <div class="ch-title">O Diagnóstico — Onde Estás Financeiramente Agora?</div>
+              <div class="ch-persona">🌟 Todos os 7 personagens fazem o diagnóstico</div>
+              <div class="ch-topics">
+                <div class="ch-topic">O teste de saúde financeira (10 perguntas)</div>
+                <div class="ch-topic">Calcular o teu patrimônio líquido pela primeira vez</div>
+                <div class="ch-topic">Identificar o teu "arquétipo financeiro" — em qual te reconheces?</div>
+                <div class="ch-topic">Aceitar sem julgamento — o ponto de partida honesto</div>
+              </div>
+              <div class="ch-tools">
+                <span class="ch-tool tool-ex">Teste</span>
+                <span class="ch-tool tool-data">Tabela</span>
+                <span class="ch-tool tool-mis">Missão Arranque</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- UNIVERSO 2 -->
+      <div class="universe">
+        <div class="universe-header" onclick="toggleUni(this)">
+          <div class="uni-num">II</div>
+          <div class="uni-icon">🌿</div>
+          <div class="uni-info">
+            <div class="uni-label">Universo Dois</div>
+            <div class="uni-title">CULTIVO — A ACÇÃO</div>
+            <div class="uni-sub">"A terra não mente: colhes o que plantares"</div>
+          </div>
+          <div class="uni-chapters">8 Capítulos</div>
+          <div class="uni-toggle">+</div>
+        </div>
+        <div class="universe-body">
+          <div class="chapters-grid">
+
+            <div class="chapter-item">
+              <div class="ch-num">CAP. 08</div>
+              <div class="ch-title">O Orçamento que Realmente Funciona</div>
+              <div class="ch-persona">👩🏾 Amélia + 👨🏾‍💼 Eduardo</div>
+              <div class="ch-topics">
+                <div class="ch-topic">Método 50-30-20 adaptado à realidade moçambicana</div>
+                <div class="ch-topic">Como fazer orçamento com renda variável ou informal</div>
+                <div class="ch-topic">Orçamentos por faixa: 5.400 MT / 18.000 MT / 50.000 MT+</div>
+                <div class="ch-topic">Apps e ferramentas gratuitas para gerir em Meticais</div>
+              </div>
+              <div class="ch-tools">
+                <span class="ch-tool tool-data">Tabelas MT</span>
+                <span class="ch-tool tool-ex">Template</span>
+                <span class="ch-tool tool-mis">Missão 30 dias</span>
+              </div>
+            </div>
+
+            <div class="chapter-item">
+              <div class="ch-num">CAP. 09</div>
+              <div class="ch-title">Dívidas — Como Sair da Lama de Vez</div>
+              <div class="ch-persona">👩🏾 Amélia + 👨🏾‍💼 Eduardo</div>
+              <div class="ch-topics">
+                <div class="ch-topic">Tipos de dívida: boa, má e mortal (agiotas)</div>
+                <div class="ch-topic">Método bola de neve vs método avalanche</div>
+                <div class="ch-topic">Como negociar com bancos e credores em Moçambique</div>
+                <div class="ch-topic">Crédito responsável — quando faz sentido pedir emprestado</div>
+              </div>
+              <div class="ch-tools">
+                <span class="ch-tool tool-data">Calculadora</span>
+                <span class="ch-tool tool-ex">Plano Dívidas</span>
+                <span class="ch-tool tool-mis">Missão</span>
+              </div>
+            </div>
+
+            <div class="chapter-item">
+              <div class="ch-num">CAP. 10</div>
+              <div class="ch-title">O Fundo de Emergência — O Escudo da Família</div>
+              <div class="ch-persona">👩🏾 Amélia + 👵🏾 Dona Rosa</div>
+              <div class="ch-topics">
+                <div class="ch-topic">Por que 72% dos moçambicanos não resistem 1 mês sem renda</div>
+                <div class="ch-topic">Quanto guardar — metas realistas por nível de renda</div>
+                <div class="ch-topic">Onde guardar: M-Pesa, conta poupança ou Títulos do Tesouro</div>
+                <div class="ch-topic">Regras de ouro: quando tocar e quando não tocar</div>
+              </div>
+              <div class="ch-tools">
+                <span class="ch-tool tool-data">Tabela MT</span>
+                <span class="ch-tool tool-story">História Real</span>
+                <span class="ch-tool tool-mis">Missão 6 meses</span>
+              </div>
+            </div>
+
+            <div class="chapter-item">
+              <div class="ch-num">CAP. 11</div>
+              <div class="ch-title">Bancos, M-Pesa e o Dinheiro Digital</div>
+              <div class="ch-persona">👩🏾‍💻 Inês + 👵🏾 Dona Rosa</div>
+              <div class="ch-topics">
+                <div class="ch-topic">Guia completo dos bancos em Moçambique — qual escolher</div>
+                <div class="ch-topic">M-Pesa, e-Mola, Mkesh — como usar cada um com inteligência</div>
+                <div class="ch-topic">Segurança digital — golpes, PIN, e-mail falso</div>
+                <div class="ch-topic">Bancos digitais e o futuro das finanças em África</div>
+              </div>
+              <div class="ch-tools">
+                <span class="ch-tool tool-ex">Guia Bancos</span>
+                <span class="ch-tool tool-data">Comparativo</span>
+                <span class="ch-tool tool-mis">Missão</span>
+              </div>
+            </div>
+
+            <div class="chapter-item">
+              <div class="ch-num">CAP. 12</div>
+              <div class="ch-title">Investir com Pouco — Do Xitique à Bolsa</div>
+              <div class="ch-persona">👩🏾 Amélia + 👨🏾‍🌾 Samuel + 👩🏾‍💻 Inês</div>
+              <div class="ch-topics">
+                <div class="ch-topic">O Xitique moderno — regras, riscos e como maximizar</div>
+                <div class="ch-topic">Conta poupança, Títulos do Tesouro e BVM</div>
+                <div class="ch-topic">Investir 500 MT/mês — simulação de 10 anos</div>
+                <div class="ch-topic">O poder do juro composto explicado com capulanas</div>
+              </div>
+              <div class="ch-tools">
+                <span class="ch-tool tool-data">Simulador</span>
+                <span class="ch-tool tool-story">Histórias</span>
+                <span class="ch-tool tool-ex">Plano Invest.</span>
+              </div>
+            </div>
+
+            <div class="chapter-item">
+              <div class="ch-num">CAP. 13</div>
+              <div class="ch-title">Negócio Próprio — Do Sonho ao Plano Real</div>
+              <div class="ch-persona">👩🏾 Amélia + 👨🏾‍💼 Eduardo</div>
+              <div class="ch-topics">
+                <div class="ch-topic">Empreendedorismo informal vs formal em Moçambique</div>
+                <div class="ch-topic">Os 5 erros fatais dos pequenos negócios (misturar dinheiro pessoal/negócio)</div>
+                <div class="ch-topic">Registo de empresa, NUIT e formalização acessível</div>
+                <div class="ch-topic">Microcrédito: Socremo, Letshego e cooperativas</div>
+              </div>
+              <div class="ch-tools">
+                <span class="ch-tool tool-ex">Canvas Simples</span>
+                <span class="ch-tool tool-data">Tabela Custos</span>
+                <span class="ch-tool tool-mis">Missão</span>
+              </div>
+            </div>
+
+            <div class="chapter-item">
+              <div class="ch-num">CAP. 14</div>
+              <div class="ch-title">Imóveis e Terra — O Investimento Moçambicano por Excelência</div>
+              <div class="ch-persona">👨🏾‍🌾 Samuel + 👩🏾‍⚕️ Beatriz</div>
+              <div class="ch-topics">
+                <div class="ch-topic">DUAT — o que é e como obter terra legalmente</div>
+                <div class="ch-topic">Comprar vs arrendar — análise honesta</div>
+                <div class="ch-topic">Construção progressiva — o modelo moçambicano inteligente</div>
+                <div class="ch-topic">Agregar valor à terra: da machamba ao agronegócio</div>
+              </div>
+              <div class="ch-tools">
+                <span class="ch-tool tool-data">Mapa Preços</span>
+                <span class="ch-tool tool-story">Casos Reais</span>
+                <span class="ch-tool tool-ex">Calculadora</span>
+              </div>
+            </div>
+
+            <div class="chapter-item">
+              <div class="ch-num">CAP. 15</div>
+              <div class="ch-title">Aumentar o Rendimento — O Que a Escola Nunca Ensinou</div>
+              <div class="ch-persona">👦🏾 Tomás + 👩🏾‍💻 Inês</div>
+              <div class="ch-topics">
+                <div class="ch-topic">Negociar salário — guia passo a passo sem medo</div>
+                <div class="ch-topic">Segunda fonte de renda com 2 horas por dia</div>
+                <div class="ch-topic">Competências que valem dinheiro em Moçambique agora</div>
+                <div class="ch-topic">Economia digital: freelancing, conteúdo, e-commerce local</div>
+              </div>
+              <div class="ch-tools">
+                <span class="ch-tool tool-ex">Guia Negociação</span>
+                <span class="ch-tool tool-data">Lista Competências</span>
+                <span class="ch-tool tool-mis">Missão Renda+</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- UNIVERSO 3 -->
+      <div class="universe">
+        <div class="universe-header" onclick="toggleUni(this)">
+          <div class="uni-num">III</div>
+          <div class="uni-icon">🌳</div>
+          <div class="uni-info">
+            <div class="uni-label">Universo Três</div>
+            <div class="uni-title">COLHEITA — O LEGADO</div>
+            <div class="uni-sub">"Uma árvore com raízes profundas não teme tempestades"</div>
+          </div>
+          <div class="uni-chapters">6 Capítulos + Epílogo</div>
+          <div class="uni-toggle">+</div>
+        </div>
+        <div class="universe-body">
+          <div class="chapters-grid">
+
+            <div class="chapter-item">
+              <div class="ch-num">CAP. 16</div>
+              <div class="ch-title">Proteger o que Construíste — Seguros e Plano B</div>
+              <div class="ch-persona">👩🏾‍⚕️ Beatriz + 👨🏾‍💼 Eduardo</div>
+              <div class="ch-topics">
+                <div class="ch-topic">Seguros em Moçambique — o que existe e o que vale a pena</div>
+                <div class="ch-topic">Seguro de saúde vs poupança para saúde — análise real</div>
+                <div class="ch-topic">O que acontece ao teu dinheiro se morreres amanhã?</div>
+                <div class="ch-topic">Testamento simples — como fazer e por que poucos fazem</div>
+              </div>
+              <div class="ch-tools">
+                <span class="ch-tool tool-data">Comparativo</span>
+                <span class="ch-tool tool-ex">Checklist</span>
+                <span class="ch-tool tool-mis">Missão Protecção</span>
+              </div>
+            </div>
+
+            <div class="chapter-item">
+              <div class="ch-num">CAP. 17</div>
+              <div class="ch-title">Planear a Reforma — Começar aos 25 ou Urgente aos 50</div>
+              <div class="ch-persona">👩🏾‍⚕️ Beatriz + 👵🏾 Dona Rosa</div>
+              <div class="ch-topics">
+                <div class="ch-topic">O INSS em Moçambique — o que recebemos e o que não chega</div>
+                <div class="ch-topic">Simulação: poupar 1.000 MT/mês dos 25 vs dos 40 anos</div>
+                <div class="ch-topic">Fontes de renda passiva para a terceira idade</div>
+                <div class="ch-topic">Como cuidar dos pais sem destruir a própria reforma</div>
+              </div>
+              <div class="ch-tools">
+                <span class="ch-tool tool-data">Simulador</span>
+                <span class="ch-tool tool-story">Histórias</span>
+                <span class="ch-tool tool-ex">Plano Reforma</span>
+              </div>
+            </div>
+
+            <div class="chapter-item">
+              <div class="ch-num">CAP. 18</div>
+              <div class="ch-title">Educar Filhos para a Riqueza — O Maior Investimento</div>
+              <div class="ch-persona">👩🏾 Amélia + 👨🏾‍🌾 Samuel</div>
+              <div class="ch-topics">
+                <div class="ch-topic">Como falar de dinheiro com crianças de 5, 10 e 15 anos</div>
+                <div class="ch-topic">Mesada — valores, regras e lições escondidas</div>
+                <div class="ch-topic">Poupar para a educação dos filhos — planos reais em MT</div>
+                <div class="ch-topic">Criar o hábito de empreender desde criança</div>
+              </div>
+              <div class="ch-tools">
+                <span class="ch-tool tool-ex">Guia por Idade</span>
+                <span class="ch-tool tool-story">Histórias</span>
+                <span class="ch-tool tool-mis">Missão Família</span>
+              </div>
+            </div>
+
+            <div class="chapter-item">
+              <div class="ch-num">CAP. 19</div>
+              <div class="ch-title">Herança com Dignidade — Deixar um Legado Real</div>
+              <div class="ch-persona">👵🏾 Dona Rosa + 👩🏾‍⚕️ Beatriz</div>
+              <div class="ch-topics">
+                <div class="ch-topic">A diferença entre herdar dívidas e herdar riqueza</div>
+                <div class="ch-topic">Organizar os bens — documentos, contas, propriedades</div>
+                <div class="ch-topic">Fundos familiares — o conceito que muda gerações</div>
+                <div class="ch-topic">Conversa sobre morte e dinheiro — incómoda mas necessária</div>
+              </div>
+              <div class="ch-tools">
+                <span class="ch-tool tool-ex">Checklist</span>
+                <span class="ch-tool tool-story">História Emocionante</span>
+                <span class="ch-tool tool-mis">Missão Legado</span>
+              </div>
+            </div>
+
+            <div class="chapter-item">
+              <div class="ch-num">CAP. 20</div>
+              <div class="ch-title">Moçambique 2035 — A Geração da Mudança Financeira</div>
+              <div class="ch-persona">👦🏾 Tomás + 👩🏾‍💻 Inês</div>
+              <div class="ch-topics">
+                <div class="ch-topic">O futuro da economia moçambicana — gás natural, turismo, tech</div>
+                <div class="ch-topic">Oportunidades que a nova geração tem e os pais não tiveram</div>
+                <div class="ch-topic">Criptomoedas e investimentos digitais — com os pés no chão</div>
+                <div class="ch-topic">Ser o primeiro da família a construir riqueza real</div>
+              </div>
+              <div class="ch-tools">
+                <span class="ch-tool tool-data">Tendências</span>
+                <span class="ch-tool tool-story">Visão de Futuro</span>
+                <span class="ch-tool tool-mis">Manifesto</span>
+              </div>
+            </div>
+
+            <div class="chapter-item">
+              <div class="ch-num">CAP. 21</div>
+              <div class="ch-title">O Plano dos 1.000 Dias — Da Leitura à Transformação</div>
+              <div class="ch-persona">🌟 Todos os 7 personagens — 3 anos depois</div>
+              <div class="ch-topics">
+                <div class="ch-topic">Onde cada personagem chegou após os 1.000 dias</div>
+                <div class="ch-topic">O teu plano personalizado de 1.000 dias em MT</div>
+                <div class="ch-topic">Marcos de 30, 90, 180, 365 e 1.000 dias</div>
+                <div class="ch-topic">Construir a tua comunidade de crescimento financeiro</div>
+              </div>
+              <div class="ch-tools">
+                <span class="ch-tool tool-ex">Plano 1000 Dias</span>
+                <span class="ch-tool tool-story">Transformações</span>
+                <span class="ch-tool tool-mis">Missão Final</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════ -->
+<!-- DNA DE CADA CAPÍTULO -->
+<!-- ══════════════════════════════════ -->
+<section class="dna-section" id="formato">
+  <div class="dna-inner">
+    <div class="section-eyebrow" style="color:var(--gold)">Formato Único</div>
+    <h2 style="font-family:var(--display); font-size:clamp(36px,5vw,64px); color:var(--paper); letter-spacing:0.04em; line-height:1; margin-bottom:16px;">O ADN DE<br>CADA CAPÍTULO.</h2>
+    <p style="font-family:var(--serif); font-style:italic; font-size:18px; color:rgba(247,242,232,0.5); max-width:600px; line-height:1.8; margin-bottom:16px;">
+      Todos os 21 capítulos seguem a mesma estrutura de 6 camadas — do emocional ao prático. O leitor sabe sempre o que esperar, mas nunca sabe como vai ser surpreendido.
+    </p>
+
+    <div class="dna-flow reveal">
+
+      <div class="dna-step">
+        <div class="dna-circle" style="background:rgba(200,150,12,0.1); border-color:var(--gold);">📖</div>
+        <div class="dna-content">
+          <div class="dna-title" style="color:var(--gold2)">1. A CENA — História do Personagem</div>
+          <div class="dna-desc">Cada capítulo abre com uma cena vívida e emocional de um ou dois personagens a viver o problema financeiro do capítulo. O leitor é fisgado antes de qualquer teoria. Emoção primeiro, técnica depois.</div>
+          <div class="dna-example">"Era dia 8. O M-Pesa da Amélia mostrava 120 MT. Ainda faltavam 22 dias de mês."</div>
+        </div>
+      </div>
+
+      <div class="dna-step">
+        <div class="dna-circle" style="background:rgba(93,173,226,0.1); border-color:#5DADE2;">📊</div>
+        <div class="dna-content">
+          <div class="dna-title" style="color:#5DADE2;">2. A REALIDADE — Dados de Moçambique</div>
+          <div class="dna-desc">Depois da emoção, os dados. Estatísticas reais, estudos, números em Meticais que contextualizam o problema no país. O leitor percebe que não está sozinho — e que é um problema sistémico, não uma falha pessoal.</div>
+          <div class="dna-example">Caixas com dados visuais, gráficos simples, comparações por classe social.</div>
+        </div>
+      </div>
+
+      <div class="dna-step">
+        <div class="dna-circle" style="background:rgba(181,69,27,0.1); border-color:var(--rust);">🧠</div>
+        <div class="dna-content">
+          <div class="dna-title" style="color:#E8956D;">3. O CONCEITO — Teoria Simples e Clara</div>
+          <div class="dna-desc">A explicação teórica do tema — escrita com linguagem simples, sem jargão financeiro desnecessário. Analogias com o quotidiano moçambicano (machamba, capulana, xitique) tornam conceitos complexos imediatos.</div>
+          <div class="dna-example">O juro composto explicado com uma machamba que duplica a produção a cada 7 anos.</div>
+        </div>
+      </div>
+
+      <div class="dna-step">
+        <div class="dna-circle" style="background:rgba(130,224,170,0.1); border-color:#82E0AA;">🛠️</div>
+        <div class="dna-content">
+          <div class="dna-title" style="color:#82E0AA;">4. A FERRAMENTA — Template Prático</div>
+          <div class="dna-desc">Cada capítulo tem uma ferramenta prática para usar imediatamente: tabela de orçamento, plano de pagamento de dívidas, calculadora de poupança, checklist de seguros. Todas em Meticais, todas fotocopiáveis.</div>
+          <div class="dna-example">Tabelas para preencher à mão. QR Code para versão digital gratuita.</div>
+        </div>
+      </div>
+
+      <div class="dna-step">
+        <div class="dna-circle" style="background:rgba(215,189,226,0.1); border-color:var(--lilac);">🎯</div>
+        <div class="dna-content">
+          <div class="dna-title" style="color:#D7BDE2;">5. A MISSÃO — Desafio dos 30 Dias</div>
+          <div class="dna-desc">Antes de virar a página, o leitor recebe uma missão concreta com prazo. Não pode avançar no livro sem tentar. Este mecanismo de gamificação garante que o livro muda comportamentos — não apenas mentalidades.</div>
+          <div class="dna-example">"Missão: Abre hoje uma conta poupança separada. Transfere 50 MT agora mesmo."</div>
+        </div>
+      </div>
+
+      <div class="dna-step">
+        <div class="dna-circle" style="background:rgba(241,148,138,0.1); border-color:#F1948A;">🌍</div>
+        <div class="dna-content">
+          <div class="dna-title" style="color:#F1948A;">6. O PROVÉRBIO — Sabedoria Ancestral</div>
+          <div class="dna-desc">Cada capítulo fecha com um provérbio africano (moçambicano, bantu, ou pan-africano) que sintetiza a lição do capítulo. Liga a sabedoria moderna à ancestral — honrando as raízes enquanto constrói o futuro.</div>
+          <div class="dna-example">"Munhu munhu navanhu." — Uma pessoa é pessoa através das outras pessoas.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════ -->
+<!-- FAIXAS ETÁRIAS: TIMELINE -->
+<!-- ══════════════════════════════════ -->
+<section class="ages-section">
+  <div class="ages-inner">
+    <div class="section-eyebrow" style="color:var(--gold)">Jornada de Vida</div>
+    <h2 style="font-family:var(--display); font-size:clamp(36px,5vw,64px); letter-spacing:0.04em; line-height:1; margin-bottom:16px;">DO BERÇO<br>À SABEDORIA.</h2>
+    <p style="font-family:var(--serif); font-style:italic; font-size:18px; color:var(--mid); max-width:600px; line-height:1.8;">O livro acompanha cada faixa etária com tópicos específicos. Um jovem de 16 anos e uma avó de 65 encontram aqui a mesma relevância — em capítulos diferentes do mesmo livro.</p>
+
+    <div class="timeline">
+
+      <div class="tl-item reveal">
+        <div class="tl-content">
+          <div class="tl-age">6–12</div>
+          <div class="tl-title">A Semente — Infância Financeira</div>
+          <div class="tl-topics">O que é dinheiro e de onde vem • A diferença entre querer e precisar • O cofrinho dos 3 potes: Gastar / Poupar / Dar • Pequenos trabalhos e o valor do esforço • Primeiros jogos de finanças</div>
+          <div class="tl-persona">👦🏾 Tomás criança — história de origem</div>
+        </div>
+        <div class="tl-dot" style="background:var(--gold)">🌱</div>
+        <div class="tl-empty"></div>
+      </div>
+
+      <div class="tl-item right reveal">
+        <div class="tl-empty"></div>
+        <div class="tl-dot" style="background:var(--sky)">🔥</div>
+        <div class="tl-content">
+          <div class="tl-age">13–17</div>
+          <div class="tl-title">O Broto — Adolescência e o Dinheiro Real</div>
+          <div class="tl-topics">Primeira mesada — regras e responsabilidade • Redes sociais e pressão de consumo • Perigo das apostas e jogos online • Poupar para os sonhos: escola, viagem, computador • Empreender na escola</div>
+          <div class="tl-persona">👦🏾 Tomás adolescente — escolhas cruciais</div>
+        </div>
+      </div>
+
+      <div class="tl-item reveal">
+        <div class="tl-content">
+          <div class="tl-age">18–30</div>
+          <div class="tl-title">O Crescimento — Independência e Primeiros Erros</div>
+          <div class="tl-topics">Sair de casa — orçamento real • Primeiro emprego — negociar salário • Primeiro cartão de crédito — usar sem se destruir • Investir cedo: o poder dos 20 anos • Empreendedorismo jovem em Moçambique</div>
+          <div class="tl-persona">👩🏾‍💻 Inês — a freelancer que aprende</div>
+        </div>
+        <div class="tl-dot" style="background:var(--green2)">🌿</div>
+        <div class="tl-empty"></div>
+      </div>
+
+      <div class="tl-item right reveal">
+        <div class="tl-empty"></div>
+        <div class="tl-dot" style="background:var(--rust)">💪</div>
+        <div class="tl-content">
+          <div class="tl-age">31–50</div>
+          <div class="tl-title">A Maturidade — Construir com Consistência</div>
+          <div class="tl-topics">Família e finanças — alinhar com o cônjuge • Filhos: quanto custam realmente? • Crédito habitação — vale a pena? • Seguros e protecção da família • Múltiplas fontes de renda • Herança e testamento</div>
+          <div class="tl-persona">👨🏾‍💼 Eduardo + 👩🏾‍⚕️ Beatriz — adultos em construção</div>
+        </div>
+      </div>
+
+      <div class="tl-item reveal">
+        <div class="tl-content">
+          <div class="tl-age">51–64</div>
+          <div class="tl-title">A Colheita — Preparar o Que Vem a Seguir</div>
+          <div class="tl-topics">Preparar a reforma com urgência • Reduzir dívidas antes de parar • Plano de saúde prioritário • Ajudar os filhos sem se arruinar • Gerir herança recebida • Simplificar e proteger o que foi construído</div>
+          <div class="tl-persona">👨🏾‍🌾 Samuel — a última grande decisão da vida activa</div>
+        </div>
+        <div class="tl-dot" style="background:var(--sand)">🍂</div>
+        <div class="tl-empty"></div>
+      </div>
+
+      <div class="tl-item right reveal">
+        <div class="tl-empty"></div>
+        <div class="tl-dot" style="background:var(--lilac)">🌳</div>
+        <div class="tl-content">
+          <div class="tl-age">65+</div>
+          <div class="tl-title">A Árvore Grande — Viver com Dignidade</div>
+          <div class="tl-topics">Gerir a reforma / pensão INSS com inteligência • Evitar fraudes e golpes (esquemas financeiros) • Criar renda passiva com activos que já possui • Organizar herança e documentos • Direitos financeiros do idoso em Moçambique</div>
+          <div class="tl-persona">👵🏾 Dona Rosa — a transformação mais comovente do livro</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════ -->
+<!-- INOVAÇÕES EDITORIAIS -->
+<!-- ══════════════════════════════════ -->
+<section class="inno-section" id="inovacoes">
+  <div class="inno-inner">
+    <div class="section-eyebrow" style="color:rgba(247,242,232,0.6)">O que Ninguém Fez Ainda</div>
+    <h2 style="font-family:var(--display); font-size:clamp(36px,5vw,64px); color:var(--paper); letter-spacing:0.04em; line-height:1; margin-bottom:16px;">12 INOVAÇÕES<br>QUE MUDAM TUDO.</h2>
+
+    <div class="inno-grid">
+
+      <div class="inno-card reveal">
+        <div class="inno-badge">🎭 Narrativa</div>
+        <div class="inno-name">Os 7 Personagens Permanentes</div>
+        <div class="inno-text">7 moçambicanos reais (fictícios) que atravessam todo o livro e evoluem. O leitor cria laços emocionais e acompanha a transformação deles capítulo a capítulo.</div>
+        <div class="inno-wow">✦ Nenhum livro de finanças africano fez isto antes.</div>
+      </div>
+
+      <div class="inno-card reveal">
+        <div class="inno-badge">🎮 Gamificação</div>
+        <div class="inno-name">Missões dos 1.000 Dias</div>
+        <div class="inno-text">Cada capítulo tem uma missão com prazo. No final do livro, o leitor recebe um "Plano dos 1.000 Dias" personalizado — um roadmap completo da sua transformação financeira.</div>
+        <div class="inno-wow">✦ O livro não termina quando fechas a última página.</div>
+      </div>
+
+      <div class="inno-card reveal">
+        <div class="inno-badge">📱 Tecnologia</div>
+        <div class="inno-name">QR Codes de Valor Real</div>
+        <div class="inno-text">Cada capítulo tem QR Codes para: calculadoras digitais gratuitas, templates em Excel/PDF para download, vídeos explicativos, grupos de comunidade WhatsApp/Telegram.</div>
+        <div class="inno-wow">✦ O livro físico conecta ao mundo digital sem custo extra.</div>
+      </div>
+
+      <div class="inno-card reveal">
+        <div class="inno-badge">🌍 Cultura</div>
+        <div class="inno-name">Provérbios como Filosofia</div>
+        <div class="inno-text">Mais de 21 provérbios africanos (em português e línguas nacionais como Changana, Macua, Sena) como fechos filosóficos de cada capítulo. Honra a sabedoria ancestral.</div>
+        <div class="inno-wow">✦ Finanças modernas enraizadas na alma africana.</div>
+      </div>
+
+      <div class="inno-card reveal">
+        <div class="inno-badge">📊 Dados</div>
+        <div class="inno-name">100% Meticais e Moçambique</div>
+        <div class="inno-text">Todos os exemplos, tabelas, simulações e cálculos em Meticais. Todos os contextos são moçambicanos. Nunca genérico, nunca traduzido. Criado de raiz para este país.</div>
+        <div class="inno-wow">✦ O primeiro livro de finanças genuinamente moçambicano.</div>
+      </div>
+
+      <div class="inno-card reveal">
+        <div class="inno-badge">👶 Faixas Etárias</div>
+        <div class="inno-name">Capítulos "Por Dentro" por Idade</div>
+        <div class="inno-text">Cada capítulo principal tem uma secção lateral específica para cada faixa etária (6–12 / 13–17 / 18–30 / 31–50 / 51–64 / 65+) com aplicação prática da mesma lição.</div>
+        <div class="inno-wow">✦ Um livro, seis leituras diferentes.</div>
+      </div>
+
+      <div class="inno-card reveal">
+        <div class="inno-badge">🏘️ Classes Sociais</div>
+        <div class="inno-name">Tabelas Triplamente Adaptadas</div>
+        <div class="inno-text">Todas as ferramentas financeiras (orçamento, plano de poupança, investimentos) aparecem em 3 versões: Salário Mínimo (5.400 MT) / Classe Média (18.000 MT) / Alta Renda (50.000 MT+).</div>
+        <div class="inno-wow">✦ Ninguém é deixado para trás neste livro.</div>
+      </div>
+
+      <div class="inno-card reveal">
+        <div class="inno-badge">🤝 Comunidade</div>
+        <div class="inno-name">Círculos de Leitura Financeira</div>
+        <div class="inno-text">Guia incluído no livro para criar "Círculos de Leitura Financeira" em bairros, igrejas, locais de trabalho — grupos de 5 a 10 pessoas que lêem um capítulo por semana juntas e partilham missões.</div>
+        <div class="inno-wow">✦ Um livro que se multiplica pela comunidade.</div>
+      </div>
+
+      <div class="inno-card reveal">
+        <div class="inno-badge">🎨 Design</div>
+        <div class="inno-name">Visual de Revistão — Não de Manual</div>
+        <div class="inno-text">Design editorial de alta qualidade: infográficos, ilustrações inspiradas na arte moçambicana, citações em destaque tipográfico, páginas respiráveis. Um livro belo que dá gosto ter na mesa.</div>
+        <div class="inno-wow">✦ Mudar a percepção: educação financeira pode ser bonita.</div>
+      </div>
+
+      <div class="inno-card reveal">
+        <div class="inno-badge">🧘 Psicologia</div>
+        <div class="inno-name">Capítulos de "Desintoxicação"</div>
+        <div class="inno-text">Entre cada Universo, há uma "Pausa de Desintoxicação" — uma página de reflexão emocional, exercício de respiração e pergunta de autoconhecimento. O livro cuida da pessoa inteira, não só da carteira.</div>
+        <div class="inno-wow">✦ Finanças como bem-estar holístico.</div>
+      </div>
+
+      <div class="inno-card reveal">
+        <div class="inno-badge">✍️ Interativo</div>
+        <div class="inno-name">Espaços para Escrever no Livro</div>
+        <div class="inno-text">Em vez de "diário separado", o livro tem espaços deliberadamente brancos para o leitor escrever, calcular, rabiscar. O livro torna-se único de cada pessoa — impossível de fotocopiar com o mesmo impacto.</div>
+        <div class="inno-wow">✦ Cada exemplar é um diário financeiro pessoal.</div>
+      </div>
+
+      <div class="inno-card reveal">
+        <div class="inno-badge">🌱 Impacto</div>
+        <div class="inno-name">Modelo "1 Livro = 1 Escola"</div>
+        <div class="inno-text">Por cada livro vendido, um exemplar é doado a uma escola primária ou biblioteca comunitária em Moçambique. O impacto do livro é literalmente duplo — e o comprador sabe que fez parte disso.</div>
+        <div class="inno-wow">✦ Um modelo de negócio com alma africana.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════ -->
+<!-- PROVÉRBIOS -->
+<!-- ══════════════════════════════════ -->
+<section class="prov-section">
+  <div class="prov-inner">
+    <div class="section-eyebrow" style="color:rgba(232,184,75,0.6)">A Alma do Livro</div>
+    <h2 style="font-family:var(--display); font-size:clamp(32px,5vw,56px); color:var(--paper); letter-spacing:0.04em; line-height:1; margin-bottom:16px;">SABEDORIA<br>AFRICANA.</h2>
+    <p style="font-family:var(--serif); font-style:italic; font-size:17px; color:rgba(247,242,232,0.5); max-width:500px; line-height:1.8; margin-bottom:8px;">Uma selecção dos provérbios que encerram cada capítulo.</p>
+
+    <div class="prov-grid">
+      <div class="prov-card reveal">
+        <div class="prov-text">"A chuva não cai sobre um único tecto."</div>
+        <div class="prov-origin">Provérbio Bantu</div>
+        <div class="prov-lesson">Lição financeira: diversifica. Nunca depende de uma única fonte de renda ou de uma única pessoa.</div>
+      </div>
+      <div class="prov-card reveal">
+        <div class="prov-text">"Quem não sabe para onde vai, qualquer caminho serve."</div>
+        <div class="prov-origin">Provérbio africano</div>
+        <div class="prov-lesson">Lição financeira: um orçamento sem objectivo é dinheiro sem destino.</div>
+      </div>
+      <div class="prov-card reveal">
+        <div class="prov-text">"Munhu munhu navanhu." (Uma pessoa é pessoa através das outras)</div>
+        <div class="prov-origin">Língua Changana — Moçambique</div>
+        <div class="prov-lesson">Lição financeira: o xitique e a cooperativa não são fraqueza — são sabedoria colectiva.</div>
+      </div>
+      <div class="prov-card reveal">
+        <div class="prov-text">"Não acordes o crocodilo que dorme se não sabes nadar."</div>
+        <div class="prov-origin">Provérbio do Zimbabwe</div>
+        <div class="prov-lesson">Lição financeira: nunca invistas no que não entendes. Primeiro aprende, depois arrisca.</div>
+      </div>
+      <div class="prov-card reveal">
+        <div class="prov-text">"A árvore não esquece a semente que a gerou."</div>
+        <div class="prov-origin">Provérbio Moçambicano</div>
+        <div class="prov-lesson">Lição financeira: o legado que deixas aos teus filhos começa na semente que plantas hoje.</div>
+      </div>
+      <div class="prov-card reveal">
+        <div class="prov-text">"Quando a música muda, também a dança muda."</div>
+        <div class="prov-origin">Provérbio Hauçá — África Ocidental</div>
+        <div class="prov-lesson">Lição financeira: adapta o teu plano financeiro quando as circunstâncias mudam. Rigidez quebra, flexibilidade sobrevive.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════ -->
+<!-- VISÃO FINAL -->
+<!-- ══════════════════════════════════ -->
+<section class="vision-section">
+  <div class="vision-glow"></div>
+  <div class="vision-inner">
+    <div class="vision-h">UMA NAÇÃO<br><em>MAIS RICA.</em></div>
+    <p class="vision-body">
+      "Sementes de Riqueza" não é apenas um livro. É um movimento. Se cada leitor aplicar apenas 20% do que aprender aqui — e ensinar um familiar — Moçambique terá, em uma geração, uma classe média financeiramente letrada como nunca teve. Começa com um livro. Cresce com uma família. Transforma uma nação.
+    </p>
+
+    <div class="metrics-row">
+      <div class="metric reveal">
+        <div class="metric-val">21</div>
+        <div class="metric-lbl">Capítulos</div>
+      </div>
+      <div class="metric reveal">
+        <div class="metric-val">7</div>
+        <div class="metric-lbl">Personagens</div>
+      </div>
+      <div class="metric reveal">
+        <div class="metric-val">21+</div>
+        <div class="metric-lbl">Provérbios</div>
+      </div>
+      <div class="metric reveal">
+        <div class="metric-val">21</div>
+        <div class="metric-lbl">Missões</div>
+      </div>
+      <div class="metric reveal">
+        <div class="metric-val">∞</div>
+        <div class="metric-lbl">Gerações impactadas</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="footer-bar">
+  <span>© 2025 Sementes de Riqueza — Proposta Editorial</span>
+  <span>Inteligência Financeira para Moçambique</span>
+  <span>Todos os direitos reservados</span>
+</div>
+
+<script>
+function toggleUni(header) {
+  header.parentElement.classList.toggle('open');
+}
+
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if(e.isIntersecting) {
+      e.target.classList.add('on');
+      obs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.reveal').forEach((el, i) => {
+  el.style.transitionDelay = (i % 4) * 0.08 + 's';
+  obs.observe(el);
+});
+
+window.addEventListener('scroll', () => {
+  const ids = ['conceito','personagens','estrutura','formato','inovacoes'];
+  const links = document.querySelectorAll('.nav-links a');
+  let cur = '';
+  ids.forEach(id => {
+    const el = document.getElementById(id);
+    if(el && window.scrollY >= el.offsetTop - 80) cur = id;
+  });
+  links.forEach(l => {
+    l.style.color = l.getAttribute('href') === '#'+cur ? '#E8B84B' : '';
+  });
+});
+</script>
+</body>
+</html>
