@@ -3,138 +3,92 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sementes de Riqueza — Inteligência Financeira para Moçambique</title>
+<title>Sementes de Riqueza — Volume 1 (Caps. 1–9)</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500;600;700&family=Bebas+Neue&display=swap" rel="stylesheet">
 <style>
-:root {
-  --ink:#0E0B08; --paper:#F7F2E8; --warm:#EDE5D0; --gold:#C8960C; --gold2:#E8B84B;
-  --rust:#B5451B; --green:#2D5016; --green2:#4A7C2F; --sky:#1B4F72; --lilac:#6B3FA0;
-  --sand:#D4A96A; --charcoal:#2C2416; --mid:#6B5A3E; --light:#A89070;
-  --serif:'Cormorant Garamond',Georgia,serif; --sans:'DM Sans',sans-serif; --display:'Bebas Neue',sans-serif;
-  --red:#C0392B; --blue:#2980B9; --teal:#1ABC9C;
-}
-*{margin:0;padding:0;box-sizing:border-box;}
-html{scroll-behavior:smooth;}
+:root{--ink:#0E0B08;--paper:#F7F2E8;--warm:#EDE5D0;--gold:#C8960C;--gold2:#E8B84B;--rust:#B5451B;--green:#2D5016;--green2:#4A7C2F;--sky:#1B4F72;--sand:#D4A96A;--charcoal:#2C2416;--mid:#6B5A3E;--light:#A89070;--serif:'Cormorant Garamond',Georgia,serif;--sans:'DM Sans',sans-serif;--display:'Bebas Neue',sans-serif;--red:#C0392B;--blue:#2980B9;}
+*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
 body{font-family:var(--sans);background:var(--paper);color:var(--ink);overflow-x:hidden;line-height:1.7;}
 ::-webkit-scrollbar{width:5px;}::-webkit-scrollbar-track{background:var(--warm);}::-webkit-scrollbar-thumb{background:var(--gold);}
-
-/* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:300;background:rgba(14,11,8,0.97);backdrop-filter:blur(12px);height:52px;display:flex;align-items:center;justify-content:space-between;padding:0 28px;border-bottom:1px solid rgba(200,150,12,0.2);}
-.nav-brand{font-family:var(--display);font-size:16px;letter-spacing:.15em;color:var(--gold2);}
-.nav-right{display:flex;gap:6px;align-items:center;}
-.nav-btn{font-family:var(--sans);font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:rgba(200,150,12,.5);padding:5px 10px;text-decoration:none;border-radius:2px;transition:all .2s;background:transparent;border:none;cursor:pointer;}
-.nav-btn:hover{color:var(--gold2);background:rgba(200,150,12,.1);}
-.nav-index-btn{border:1px solid rgba(200,150,12,.3);color:var(--gold);}
-
-/* SIDEBAR TOC */
+nav{position:fixed;top:0;left:0;right:0;z-index:300;background:rgba(14,11,8,.97);height:52px;display:flex;align-items:center;justify-content:space-between;padding:0 28px;border-bottom:1px solid rgba(200,150,12,.2);}
+.nav-brand{font-family:var(--display);font-size:14px;letter-spacing:.15em;color:var(--gold2);}
+.nav-btn{font-family:var(--sans);font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);padding:5px 12px;border:1px solid rgba(200,150,12,.3);border-radius:2px;background:transparent;cursor:pointer;}
 .toc-overlay{position:fixed;inset:0;background:rgba(14,11,8,.7);z-index:400;opacity:0;pointer-events:none;transition:opacity .3s;}
 .toc-overlay.open{opacity:1;pointer-events:all;}
-.toc-panel{position:fixed;left:0;top:0;bottom:0;width:320px;background:var(--charcoal);z-index:401;transform:translateX(-100%);transition:transform .3s ease;overflow-y:auto;padding:52px 0 40px;}
+.toc-panel{position:fixed;left:0;top:0;bottom:0;width:290px;background:var(--charcoal);z-index:401;transform:translateX(-100%);transition:transform .3s;overflow-y:auto;padding:52px 0 40px;}
 .toc-panel.open{transform:translateX(0);}
-.toc-title{font-family:var(--display);font-size:22px;letter-spacing:.1em;color:var(--gold2);padding:24px 28px 16px;}
-.toc-uni{font-family:var(--sans);font-size:9px;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);padding:16px 28px 8px;}
-.toc-link{display:block;font-family:var(--sans);font-size:12px;color:rgba(247,242,232,.6);padding:9px 28px;text-decoration:none;border-left:2px solid transparent;transition:all .2s;}
+.toc-title{font-family:var(--display);font-size:18px;letter-spacing:.1em;color:var(--gold2);padding:18px 22px 10px;}
+.toc-uni{font-family:var(--sans);font-size:9px;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);padding:12px 22px 5px;}
+.toc-link{display:block;font-family:var(--sans);font-size:12px;color:rgba(247,242,232,.6);padding:7px 22px;text-decoration:none;border-left:2px solid transparent;transition:all .2s;}
 .toc-link:hover{color:var(--gold2);border-color:var(--gold);background:rgba(200,150,12,.06);}
-
-/* CAPA */
-.capa{min-height:100vh;background:var(--ink);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:80px 32px 60px;position:relative;overflow:hidden;}
-.capa::before{content:'';position:absolute;inset:0;background:repeating-conic-gradient(rgba(200,150,12,.025) 0deg,transparent 1deg,transparent 29deg,rgba(200,150,12,.025) 30deg),radial-gradient(ellipse at 30% 50%,rgba(200,150,12,.08) 0%,transparent 60%),radial-gradient(ellipse at 70% 30%,rgba(181,69,27,.06) 0%,transparent 50%);pointer-events:none;}
-.capa-eyebrow{font-family:var(--sans);font-size:9px;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(200,150,12,.3);padding:7px 18px;border-radius:1px;margin-bottom:36px;position:relative;z-index:2;animation:fadeUp .8s ease both;}
-.capa h1{font-family:var(--display);font-size:clamp(72px,12vw,140px);line-height:.88;color:var(--paper);letter-spacing:.04em;position:relative;z-index:2;animation:fadeUp .8s ease .1s both;}
+.capa{min-height:100vh;background:var(--ink);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:80px 32px;position:relative;overflow:hidden;}
+.capa::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(200,150,12,.07) 0%,transparent 60%);pointer-events:none;}
+.capa::after{content:'SEMENTES';position:absolute;font-family:var(--display);font-size:35vw;color:rgba(200,150,12,.025);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;white-space:nowrap;}
+.capa-eyebrow{font-family:var(--sans);font-size:9px;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(200,150,12,.3);padding:7px 18px;border-radius:1px;margin-bottom:36px;position:relative;z-index:2;}
+.capa h1{font-family:var(--display);font-size:clamp(72px,12vw,140px);line-height:.88;color:var(--paper);letter-spacing:.04em;position:relative;z-index:2;}
 .capa h1 em{color:var(--gold2);font-style:normal;display:block;}
-.capa-slogan{font-family:var(--serif);font-style:italic;font-size:clamp(17px,2.5vw,24px);color:rgba(232,184,75,.8);margin:28px 0 20px;line-height:1.5;position:relative;z-index:2;animation:fadeUp .8s ease .2s both;}
-.capa-sub{font-family:var(--sans);font-size:14px;color:rgba(247,242,232,.4);max-width:460px;margin:0 auto 48px;line-height:1.8;position:relative;z-index:2;animation:fadeUp .8s ease .25s both;}
-.capa-ornament{display:flex;align-items:center;gap:16px;margin-bottom:48px;position:relative;z-index:2;animation:fadeUp .8s ease .3s both;}
-.capa-ornament hr{flex:1;border:none;border-top:1px solid rgba(200,150,12,.2);}
-.capa-ornament span{color:var(--gold);font-size:20px;}
-.capa-stats{display:flex;gap:40px;justify-content:center;flex-wrap:wrap;position:relative;z-index:2;animation:fadeUp .8s ease .35s both;}
+.capa-slogan{font-family:var(--serif);font-style:italic;font-size:clamp(17px,2.5vw,24px);color:rgba(232,184,75,.8);margin:28px 0 20px;line-height:1.5;position:relative;z-index:2;}
+.capa-sub{font-family:var(--sans);font-size:14px;color:rgba(247,242,232,.4);max-width:460px;margin:0 auto 48px;line-height:1.8;position:relative;z-index:2;}
+.capa-stats{display:flex;gap:40px;justify-content:center;flex-wrap:wrap;position:relative;z-index:2;}
 .cs{text-align:center;}
 .cs-v{font-family:var(--display);font-size:36px;color:var(--gold2);line-height:1;}
 .cs-l{font-family:var(--sans);font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:rgba(200,150,12,.4);margin-top:4px;}
-.scroll-hint{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);font-family:var(--sans);font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:rgba(200,150,12,.3);animation:bounce 2s infinite;}
-@keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0);}50%{transform:translateX(-50%) translateY(8px);}}
-@keyframes fadeUp{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
-
-/* PREFÁCIO */
-.prefacio{background:var(--charcoal);padding:80px 40px;text-align:center;}
-.prefacio-inner{max-width:700px;margin:0 auto;}
-.prefacio h2{font-family:var(--display);font-size:clamp(36px,5vw,64px);color:var(--paper);letter-spacing:.04em;line-height:1;margin-bottom:28px;}
-.prefacio h2 em{color:var(--gold2);font-style:normal;}
-.prefacio p{font-family:var(--serif);font-style:italic;font-size:18px;line-height:1.9;color:rgba(247,242,232,.7);margin-bottom:20px;}
-.prefacio-assinatura{font-family:var(--sans);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(200,150,12,.4);margin-top:32px;}
-
-/* PERSONAGENS INTRO */
-.chars-intro{padding:80px 32px;background:var(--warm);}
-.chars-intro-inner{max-width:1000px;margin:0 auto;}
-.section-tag{font-family:var(--sans);font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:12px;margin-bottom:18px;}
-.section-tag::before{content:'';display:block;width:28px;height:1px;background:var(--gold);}
-.section-h{font-family:var(--display);font-size:clamp(32px,5vw,60px);letter-spacing:.03em;line-height:1;margin-bottom:20px;}
-.chars-row{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px;margin-top:36px;}
-.char-mini{background:white;border-radius:6px;padding:20px;border:1px solid rgba(107,90,62,.15);transition:all .3s;cursor:pointer;}
-.char-mini:hover{border-color:var(--gold);transform:translateY(-2px);box-shadow:0 8px 24px rgba(14,11,8,.08);}
-.char-mini-emoji{font-size:32px;margin-bottom:10px;display:block;}
-.char-mini-name{font-family:var(--serif);font-weight:700;font-size:17px;margin-bottom:3px;}
-.char-mini-role{font-family:var(--sans);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--light);margin-bottom:8px;}
-.char-mini-sal{font-family:var(--sans);font-size:12px;color:var(--gold);font-weight:700;}
-.char-mini-desc{font-family:var(--sans);font-size:11px;line-height:1.6;color:var(--mid);margin-top:6px;}
-
-/* UNIVERSO HEADER */
-.uni-header{background:var(--ink);padding:80px 32px;text-align:center;position:relative;overflow:hidden;}
-.uni-header::before{content:attr(data-num);position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:var(--display);font-size:200px;color:rgba(200,150,12,.04);pointer-events:none;white-space:nowrap;}
-.uni-num-label{font-family:var(--sans);font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;position:relative;z-index:2;}
-.uni-title{font-family:var(--display);font-size:clamp(48px,7vw,100px);color:var(--paper);letter-spacing:.05em;line-height:.9;position:relative;z-index:2;}
+.chars-section{padding:80px 32px;background:var(--warm);}
+.chars-inner{max-width:1000px;margin:0 auto;}
+.s-eyebrow{font-family:var(--sans);font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;}
+.s-title{font-family:var(--display);font-size:clamp(30px,4vw,52px);letter-spacing:.03em;line-height:1;margin-bottom:20px;}
+.chars-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:16px;margin-top:32px;}
+.char-card{background:white;border-radius:6px;padding:20px;border:1px solid rgba(107,90,62,.12);transition:box-shadow .2s;}
+.char-card:hover{box-shadow:0 4px 20px rgba(200,150,12,.12);}
+.char-emoji{font-size:28px;margin-bottom:8px;display:block;}
+.char-name{font-family:var(--serif);font-weight:700;font-size:18px;margin-bottom:2px;}
+.char-role{font-family:var(--sans);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--light);margin-bottom:6px;}
+.char-sal{font-family:var(--display);font-size:22px;color:var(--gold);line-height:1;margin-bottom:6px;}
+.char-desc{font-family:var(--sans);font-size:11px;line-height:1.7;color:var(--mid);}
+.char-pw{display:inline-block;font-family:var(--sans);font-size:10px;color:var(--red);margin-top:6px;font-weight:700;}
+.prefacio{background:var(--charcoal);padding:90px 40px;text-align:center;}
+.pref-inner{max-width:700px;margin:0 auto;}
+.pref-inner h2{font-family:var(--display);font-size:clamp(36px,5vw,64px);color:var(--paper);letter-spacing:.04em;line-height:1;margin-bottom:28px;}
+.pref-inner h2 em{color:var(--gold2);font-style:normal;}
+.pref-inner p{font-family:var(--serif);font-style:italic;font-size:18px;line-height:1.9;color:rgba(247,242,232,.7);margin-bottom:20px;}
+.pref-inner blockquote{border-left:3px solid var(--gold);padding-left:24px;margin:28px 0;font-family:var(--serif);font-style:italic;font-size:20px;color:var(--gold2);line-height:1.6;}
+.uni-header{background:var(--ink);padding:70px 32px;text-align:center;position:relative;overflow:hidden;}
+.uni-header::before{content:attr(data-bg);position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:var(--display);font-size:200px;color:rgba(200,150,12,.03);pointer-events:none;white-space:nowrap;}
+.uni-num{font-family:var(--sans);font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;position:relative;z-index:2;}
+.uni-title{font-family:var(--display);font-size:clamp(44px,7vw,90px);color:var(--paper);letter-spacing:.05em;line-height:.9;position:relative;z-index:2;}
 .uni-title em{color:var(--gold2);font-style:normal;display:block;}
-.uni-epigraph{font-family:var(--serif);font-style:italic;font-size:18px;color:rgba(232,184,75,.6);margin-top:20px;position:relative;z-index:2;}
-
-/* CAPÍTULO */
-.capitulo{max-width:800px;margin:0 auto;padding:80px 32px;}
-.cap-header{margin-bottom:48px;}
-.cap-num{font-family:var(--sans);font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;}
-.cap-title{font-family:var(--display);font-size:clamp(32px,5vw,60px);letter-spacing:.02em;line-height:1;margin-bottom:14px;}
-.cap-subtitle{font-family:var(--serif);font-style:italic;font-size:18px;color:var(--mid);margin-bottom:24px;line-height:1.5;}
-.cap-personagens{display:flex;gap:8px;flex-wrap:wrap;}
-.cap-per-tag{font-family:var(--sans);font-size:10px;letter-spacing:.1em;background:rgba(200,150,12,.1);color:var(--gold);border:1px solid rgba(200,150,12,.2);padding:4px 12px;border-radius:2px;}
-
-/* CENA DE ABERTURA */
-.cena{background:var(--charcoal);border-radius:8px;overflow:hidden;margin:36px 0;}
-.cena-stripe{height:4px;background:linear-gradient(90deg,var(--gold),var(--rust),var(--sand));}
-.cena-inner{padding:36px 40px;}
-.cena-label{font-family:var(--sans);font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;}
-.cena-text{font-family:var(--serif);font-size:17px;line-height:2;color:rgba(247,242,232,.85);}
-.cena-text p{margin-bottom:16px;}
-.cena-text em{color:var(--gold2);font-style:italic;}
-.cena-text strong{color:var(--paper);}
-
-/* DADOS / REALIDADE */
-.realidade{background:var(--sky);border-radius:8px;padding:32px 36px;margin:36px 0;color:white;}
-.realidade-label{font-family:var(--sans);font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:20px;}
-.realidade-title{font-family:var(--serif);font-weight:700;font-size:22px;margin-bottom:16px;}
-.dados-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:12px;margin-bottom:20px;}
-.dado-item{background:rgba(255,255,255,.08);border-radius:4px;padding:16px;text-align:center;}
-.dado-val{font-family:var(--display);font-size:32px;color:#81D4FA;line-height:1;}
-.dado-lbl{font-family:var(--sans);font-size:10px;color:rgba(255,255,255,.5);margin-top:4px;letter-spacing:.08em;}
-.realidade p{font-family:var(--sans);font-size:13px;line-height:1.8;color:rgba(255,255,255,.75);margin-bottom:10px;}
-.realidade p:last-child{margin-bottom:0;}
-
-/* TEXTO DO LIVRO */
-.txt{font-family:var(--serif);font-size:17px;line-height:2;color:var(--ink);margin-bottom:20px;}
-.txt strong{color:var(--charcoal);}
-.txt em{font-style:italic;color:var(--rust);}
-.subtitulo{font-family:var(--display);font-size:28px;letter-spacing:.03em;color:var(--charcoal);margin:40px 0 16px;}
-.subtitulo-small{font-family:var(--serif);font-weight:700;font-size:20px;color:var(--charcoal);margin:32px 0 12px;}
-
-/* PULLQUOTE */
-.pullquote{margin:40px -20px;background:var(--warm);border-left:4px solid var(--gold);padding:28px 40px;position:relative;}
-.pullquote::before{content:'"';position:absolute;top:-10px;left:28px;font-family:var(--serif);font-size:100px;color:rgba(200,150,12,.15);line-height:1;}
-.pullquote-text{font-family:var(--serif);font-style:italic;font-size:clamp(17px,2.5vw,22px);line-height:1.6;color:var(--charcoal);position:relative;z-index:1;}
-.pullquote-src{font-family:var(--sans);font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-top:10px;}
-
-/* HIGHLIGHT BOXES */
-.box{border-radius:6px;padding:24px 28px;margin:28px 0;}
+.uni-epigraph{font-family:var(--serif);font-style:italic;font-size:17px;color:rgba(232,184,75,.6);margin-top:18px;position:relative;z-index:2;}
+.capitulo{max-width:800px;margin:0 auto;padding:70px 32px;}
+.cap-num{font-family:var(--sans);font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;}
+.cap-title{font-family:var(--display);font-size:clamp(30px,5vw,58px);letter-spacing:.02em;line-height:1;margin-bottom:12px;}
+.cap-sub{font-family:var(--serif);font-style:italic;font-size:17px;color:var(--mid);margin-bottom:20px;line-height:1.5;}
+.cap-tags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:32px;}
+.cap-tag{font-family:var(--sans);font-size:10px;letter-spacing:.1em;background:rgba(200,150,12,.1);color:var(--gold);border:1px solid rgba(200,150,12,.2);padding:4px 12px;border-radius:2px;}
+.cena{background:var(--charcoal);border-radius:8px;overflow:hidden;margin:32px 0;}
+.cena-bar{height:4px;}
+.cena-inner{padding:32px 36px;}
+.cena-lbl{font-family:var(--sans);font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;}
+.cena-txt{font-family:var(--serif);font-size:17px;line-height:2;color:rgba(247,242,232,.85);}
+.cena-txt p{margin-bottom:14px;}.cena-txt em{color:var(--gold2);}.cena-txt strong{color:var(--paper);}
+.dados{background:var(--sky);border-radius:8px;padding:28px 32px;margin:32px 0;color:white;}
+.dados-lbl{font-family:var(--sans);font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:16px;}
+.dados-title{font-family:var(--serif);font-weight:700;font-size:20px;margin-bottom:14px;}
+.dados-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:10px;margin-bottom:18px;}
+.dado{background:rgba(255,255,255,.08);border-radius:4px;padding:14px;text-align:center;}
+.dado-v{font-family:var(--display);font-size:28px;color:#81D4FA;line-height:1;}
+.dado-l{font-family:var(--sans);font-size:10px;color:rgba(255,255,255,.5);margin-top:3px;}
+.dados p{font-family:var(--sans);font-size:13px;line-height:1.8;color:rgba(255,255,255,.75);margin-bottom:8px;}
+.txt{font-family:var(--serif);font-size:17px;line-height:2;color:var(--ink);margin-bottom:18px;}
+.txt strong{color:var(--charcoal);}.txt em{color:var(--rust);font-style:italic;}
+.h2{font-family:var(--display);font-size:26px;letter-spacing:.03em;color:var(--charcoal);margin:36px 0 14px;}
+.pullquote{margin:36px -16px;background:var(--warm);border-left:4px solid var(--gold);padding:24px 36px;position:relative;}
+.pullquote::before{content:'"';position:absolute;top:-10px;left:22px;font-family:var(--serif);font-size:90px;color:rgba(200,150,12,.12);line-height:1;}
+.pq-txt{font-family:var(--serif);font-style:italic;font-size:clamp(16px,2.5vw,21px);line-height:1.6;color:var(--charcoal);position:relative;z-index:1;}
+.pq-src{font-family:var(--sans);font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-top:8px;}
+.box{border-radius:6px;padding:22px 26px;margin:24px 0;}
 .box-label{font-family:var(--sans);font-size:9px;letter-spacing:.25em;text-transform:uppercase;margin-bottom:10px;font-weight:700;}
-.box p, .box li{font-family:var(--sans);font-size:14px;line-height:1.8;}
-.box ul{padding-left:20px;}
-.box ul li{margin-bottom:6px;}
+.box li,.box p{font-family:var(--sans);font-size:13px;line-height:1.8;}
+.box ul{padding-left:20px;}.box ul li{margin-bottom:5px;}
 .box-gold{background:rgba(200,150,12,.08);border:1px solid rgba(200,150,12,.25);border-left:4px solid var(--gold);}
 .box-gold .box-label{color:var(--gold);}
 .box-red{background:rgba(192,57,43,.07);border:1px solid rgba(192,57,43,.2);border-left:4px solid var(--red);}
@@ -143,96 +97,1142 @@ nav{position:fixed;top:0;left:0;right:0;z-index:300;background:rgba(14,11,8,0.97
 .box-green .box-label{color:var(--green2);}
 .box-blue{background:rgba(41,128,185,.07);border:1px solid rgba(41,128,185,.2);border-left:4px solid var(--blue);}
 .box-blue .box-label{color:var(--blue);}
-
-/* TABELAS */
-.table-wrap{overflow-x:auto;margin:32px 0;}
-.table-title{font-family:var(--sans);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;}
+.table-wrap{overflow-x:auto;margin:28px 0;}
+.table-lbl{font-family:var(--sans);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;}
 table{width:100%;border-collapse:collapse;font-family:var(--sans);font-size:13px;}
-th{background:var(--charcoal);color:var(--gold2);padding:13px 16px;text-align:left;font-size:10px;letter-spacing:.15em;text-transform:uppercase;font-weight:600;}
-th:last-child{text-align:right;}
-td{padding:12px 16px;border-bottom:1px solid rgba(107,90,62,.12);color:var(--ink);vertical-align:top;}
-td:last-child{text-align:right;font-weight:600;}
+th{background:var(--charcoal);color:var(--gold2);padding:12px 14px;text-align:left;font-size:10px;letter-spacing:.15em;text-transform:uppercase;font-weight:600;}
+td{padding:11px 14px;border-bottom:1px solid rgba(107,90,62,.12);color:var(--ink);vertical-align:top;}
 tr:hover td{background:rgba(200,150,12,.04);}
-.tr-total td{background:var(--charcoal);color:var(--paper);font-weight:700;font-size:14px;border:none;}
+.tr-total td{background:var(--charcoal);color:var(--paper);font-weight:700;border:none;}
 .tr-total td:last-child{color:var(--gold2);}
-.tr-saldo-pos td{background:rgba(39,174,96,.08);color:var(--green2);font-weight:700;}
-.tr-saldo-neg td{background:rgba(192,57,43,.08);color:var(--red);font-weight:700;}
-.tr-aviso td{background:rgba(200,150,12,.06);color:var(--gold);}
-.tr-section td{background:var(--warm);font-weight:700;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);}
+.tr-pos td{background:rgba(39,174,96,.08);color:var(--green2);font-weight:700;}
+.tr-neg td{background:rgba(192,57,43,.08);color:var(--red);font-weight:700;}
+.tr-warn td{background:rgba(200,150,12,.06);color:var(--gold);}
+.tr-sec td{background:var(--warm);font-weight:700;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--mid);}
+.ferramenta{border:2px dashed rgba(200,150,12,.3);border-radius:8px;padding:28px;margin:32px 0;}
+.ferr-hd{display:flex;align-items:center;gap:12px;margin-bottom:18px;}
+.ferr-icon{font-size:26px;}
+.ferr-title{font-family:var(--display);font-size:22px;letter-spacing:.05em;color:var(--charcoal);}
+.ferr-sub{font-family:var(--sans);font-size:11px;color:var(--light);}
+.missao{background:linear-gradient(135deg,#1a0f05,#2C1810);border:2px solid rgba(200,150,12,.3);border-radius:8px;padding:32px;margin:44px 0;}
+.m-hd{display:flex;align-items:center;gap:14px;margin-bottom:18px;}
+.m-icon{width:44px;height:44px;border-radius:50%;background:rgba(200,150,12,.15);border:2px solid var(--gold);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;}
+.m-title{font-family:var(--display);font-size:24px;color:var(--gold2);letter-spacing:.05em;}
+.m-prazo{font-family:var(--sans);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(200,150,12,.5);}
+.m-body{font-family:var(--sans);font-size:14px;line-height:1.9;color:rgba(247,242,232,.7);margin-bottom:18px;}
+.m-steps{display:flex;flex-direction:column;gap:10px;}
+.m-step{display:flex;gap:12px;align-items:flex-start;}
+.m-n{width:24px;height:24px;border-radius:50%;background:var(--gold);color:var(--ink);font-family:var(--sans);font-weight:700;font-size:11px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;}
+.m-t{font-family:var(--sans);font-size:13px;color:rgba(247,242,232,.8);line-height:1.6;}
+.proverb{background:var(--green);border-radius:8px;padding:32px;margin:36px 0;text-align:center;}
+.prov-txt{font-family:var(--serif);font-style:italic;font-size:clamp(17px,3vw,23px);line-height:1.6;color:var(--paper);margin-bottom:10px;}
+.prov-orig{font-family:var(--sans);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(232,184,75,.6);margin-bottom:12px;}
+.prov-lic{font-family:var(--sans);font-size:13px;color:rgba(247,242,232,.65);line-height:1.7;background:rgba(0,0,0,.2);padding:10px 14px;border-radius:4px;}
+.cr{border-left:4px solid var(--gold);padding:18px 22px;background:rgba(200,150,12,.05);margin:22px 0;border-radius:0 6px 6px 0;}
+.cr-who{font-family:var(--sans);font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:7px;}
+.cr-txt{font-family:var(--serif);font-style:italic;font-size:16px;line-height:1.8;color:var(--charcoal);}
+.cr-res{font-family:var(--sans);font-size:12px;color:var(--green2);margin-top:8px;font-weight:600;}
+.comp-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin:24px 0;}
+.comp-c{border-radius:6px;padding:18px;text-align:center;}
+.comp-lbl{font-family:var(--sans);font-size:9px;letter-spacing:.2em;text-transform:uppercase;margin-bottom:8px;}
+.comp-v{font-family:var(--display);font-size:32px;line-height:1;margin-bottom:5px;}
+.comp-d{font-family:var(--sans);font-size:12px;line-height:1.6;}
+.c-neg{background:rgba(192,57,43,.08);border:1px solid rgba(192,57,43,.2);}
+.c-neg .comp-lbl,.c-neg .comp-v{color:var(--red);}
+.c-pos{background:rgba(39,174,96,.08);border:1px solid rgba(39,174,96,.2);}
+.c-pos .comp-lbl,.c-pos .comp-v{color:var(--green2);}
+.c-neutral{background:rgba(200,150,12,.08);border:1px solid rgba(200,150,12,.2);}
+.c-neutral .comp-lbl,.c-neutral .comp-v{color:var(--gold);}
+.divider{height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:50px 0;}
+.sim{background:var(--charcoal);border-radius:8px;padding:28px;margin:28px 0;}
+.sim-title{font-family:var(--serif);font-weight:700;font-size:20px;color:var(--gold2);margin-bottom:18px;}
+.sim-row{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:14px;}
+.sim-item{flex:1;min-width:120px;background:rgba(200,150,12,.08);border-radius:4px;padding:14px;text-align:center;}
+.sim-v{font-family:var(--display);font-size:26px;color:var(--gold2);line-height:1;}
+.sim-l{font-family:var(--sans);font-size:10px;color:rgba(247,242,232,.4);margin-top:4px;letter-spacing:.08em;}
+footer{background:rgba(0,0,0,.4);padding:24px 32px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;}
+footer span{font-family:var(--sans);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:rgba(200,150,12,.3);}
+@media(max-width:700px){.capitulo{padding:50px 18px;}.cena-inner{padding:22px;}.missao{padding:22px;}}
+</style>
+</head>
+<body>
+<div class="toc-overlay" id="tO" onclick="this.classList.remove('open');document.getElementById('tP').classList.remove('open')"></div>
+<div class="toc-panel" id="tP">
+  <div class="toc-title">ÍNDICE — VOL. 1</div>
+  <div class="toc-uni">Prefácio</div>
+  <a class="toc-link" href="#prefacio">Uma Carta para Ti</a>
+  <a class="toc-link" href="#personagens">Os 7 Personagens</a>
+  <div class="toc-uni">Universo I — Sementes (Mentalidade)</div>
+  <a class="toc-link" href="#cap1">Cap. 1 — O Dinheiro Não É Sujo</a>
+  <a class="toc-link" href="#cap2">Cap. 2 — O Trauma Financeiro</a>
+  <a class="toc-link" href="#cap3">Cap. 3 — Emoções e Dinheiro</a>
+  <a class="toc-link" href="#cap4">Cap. 4 — Mentalidade de Abundância</a>
+  <a class="toc-link" href="#cap5">Cap. 5 — Conversar Sobre Dinheiro</a>
+  <a class="toc-link" href="#cap6">Cap. 6 — Dinheiro e Espiritualidade</a>
+  <a class="toc-link" href="#cap7">Cap. 7 — O Diagnóstico</a>
+  <div class="toc-uni">Universo II — Cultivo (Acção)</div>
+  <a class="toc-link" href="#cap8">Cap. 8 — O Orçamento Real</a>
+  <a class="toc-link" href="#cap9">Cap. 9 — Dívidas: Como Sair da Lama</a>
+  <div class="toc-uni" style="margin-top:12px;border-top:1px solid rgba(200,150,12,.15);padding-top:14px;">Volume 2 →</div>
+  <a class="toc-link" style="color:var(--gold);font-weight:600">Caps. 10–21 no Volume 2</a>
+</div>
+<nav>
+  <span class="nav-brand">SEMENTES DE RIQUEZA <span style="font-size:10px;letter-spacing:.1em;color:rgba(200,150,12,.4);margin-left:8px;font-family:var(--sans)">VOL. 1</span></span>
+  <button class="nav-btn" onclick="document.getElementById('tO').classList.add('open');document.getElementById('tP').classList.add('open')">☰ ÍNDICE</button>
+</nav>
 
-/* SIMULADOR VISUAL */
-.simulador{background:var(--charcoal);border-radius:8px;padding:32px;margin:32px 0;}
-.simulador-title{font-family:var(--serif);font-weight:700;font-size:22px;color:var(--gold2);margin-bottom:20px;}
-.sim-row{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:16px;}
-.sim-item{flex:1;min-width:140px;background:rgba(200,150,12,.08);border-radius:4px;padding:16px;text-align:center;}
-.sim-val{font-family:var(--display);font-size:28px;color:var(--gold2);line-height:1;}
-.sim-lbl{font-family:var(--sans);font-size:10px;color:rgba(247,242,232,.4);margin-top:4px;letter-spacing:.1em;}
-.sim-arrow{display:flex;align-items:center;justify-content:center;font-size:28px;color:rgba(200,150,12,.3);}
-.progress-bar-wrap{margin:16px 0;}
-.progress-label{font-family:var(--sans);font-size:11px;color:rgba(247,242,232,.5);margin-bottom:6px;display:flex;justify-content:space-between;}
-.progress-bar{height:8px;background:rgba(247,242,232,.1);border-radius:4px;overflow:hidden;}
-.progress-fill{height:100%;border-radius:4px;transition:width 1s ease;}
+<section class="capa">
+  <div class="capa-eyebrow">Inteligência Financeira para Moçambique</div>
+  <h1>SEMENTES<em>DE RIQUEZA</em></h1>
+  <div class="capa-slogan">"Tudo começa com uma semente.<br>A tua liberdade financeira também."</div>
+  <div class="capa-sub">21 capítulos · 7 personagens reais · Ferramentas práticas em Meticais<br>Para quem ganha pouco, médio ou muito — e quer mudar a relação com o dinheiro para sempre</div>
+  <div class="capa-stats">
+    <div class="cs"><div class="cs-v">21</div><div class="cs-l">Capítulos</div></div>
+    <div class="cs"><div class="cs-v">7</div><div class="cs-l">Personagens</div></div>
+    <div class="cs"><div class="cs-v">3</div><div class="cs-l">Universos</div></div>
+    <div class="cs"><div class="cs-v">1.000</div><div class="cs-l">Dias de Plano</div></div>
+  </div>
+</section>
 
-/* MISSÃO */
-.missao{background:linear-gradient(135deg,#1a0f05,#2C1810);border:2px solid rgba(200,150,12,.3);border-radius:8px;padding:36px;margin:48px 0;position:relative;overflow:hidden;}
-.missao::before{content:'MISSÃO';position:absolute;right:-10px;top:50%;transform:translateY(-50%) rotate(90deg);font-family:var(--display);font-size:80px;color:rgba(200,150,12,.04);pointer-events:none;white-space:nowrap;}
-.missao-header{display:flex;align-items:center;gap:14px;margin-bottom:20px;}
-.missao-icon{width:48px;height:48px;border-radius:50%;background:rgba(200,150,12,.15);border:2px solid var(--gold);display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;}
-.missao-title{font-family:var(--display);font-size:26px;color:var(--gold2);letter-spacing:.05em;}
-.missao-prazo{font-family:var(--sans);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(200,150,12,.5);}
-.missao-body{font-family:var(--sans);font-size:14px;line-height:1.9;color:rgba(247,242,232,.7);margin-bottom:20px;}
-.missao-steps{display:flex;flex-direction:column;gap:10px;}
-.missao-step{display:flex;gap:12px;align-items:flex-start;}
-.ms-num{width:24px;height:24px;border-radius:50%;background:var(--gold);color:var(--ink);font-family:var(--sans);font-weight:700;font-size:11px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
-.ms-txt{font-family:var(--sans);font-size:13px;color:rgba(247,242,232,.8);line-height:1.6;}
+<!-- PREFÁCIO -->
+<section class="prefacio" id="prefacio">
+  <div class="pref-inner">
+    <div style="font-family:var(--sans);font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;">Prefácio</div>
+    <h2>UMA CARTA<em>PARA TI</em></h2>
+    <p>Este livro foi escrito porque existe uma conspiração silenciosa em Moçambique. Não foi planeada por ninguém. Não tem um vilão central. Mas os seus efeitos são devastadores: a maioria das famílias moçambicanas nunca recebeu educação financeira.</p>
+    <p>Na escola, aprendemos matemática, português, ciências. Mas ninguém nos ensinou o que fazer quando o salário chega — e desaparece em dias. Ninguém nos explicou a diferença entre uma dívida boa e uma que destrói. Ninguém nos mostrou como poupar quando "não sobra nada".</p>
+    <p>Este livro não é para os ricos. É para quem ganha 5.400 MT por mês e quer fazer esse dinheiro durar. É para quem ganha 35.000 MT e não percebe para onde vai. É para quem tem medo de falar de dinheiro, de investir, de pedir o que merece.</p>
+    <blockquote>"O dinheiro é neutro. Não é bom nem mau. É apenas uma ferramenta — e como qualquer ferramenta, o resultado depende de quem a usa e como."</blockquote>
+    <p>Ao longo das páginas que se seguem, vais conhecer sete moçambicanos. Com histórias diferentes, rendimentos diferentes, problemas diferentes. Mas todos com a mesma coisa em comum: estavam presos numa relação tóxica com o dinheiro. E todos mudaram.</p>
+    <p>A tua vez começa agora.</p>
+  </div>
+</section>
 
-/* PROVÉRBIO */
-.proverb{background:var(--green);border-radius:8px;padding:36px;margin:40px 0;text-align:center;position:relative;overflow:hidden;}
-.proverb::before{content:'❝';position:absolute;top:-10px;left:20px;font-family:var(--serif);font-size:100px;color:rgba(255,255,255,.05);}
-.proverb-text{font-family:var(--serif);font-style:italic;font-size:clamp(18px,3vw,24px);line-height:1.6;color:var(--paper);margin-bottom:12px;position:relative;z-index:1;}
-.proverb-origin{font-family:var(--sans);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(232,184,75,.6);margin-bottom:14px;}
-.proverb-licao{font-family:var(--sans);font-size:13px;color:rgba(247,242,232,.6);line-height:1.7;background:rgba(0,0,0,.2);padding:12px 16px;border-radius:4px;}
+<section class="chars-section" id="personagens">
+  <div class="chars-inner">
+    <div class="s-eyebrow">Os 7 Personagens</div>
+    <div class="s-title">Conhece as pessoas cuja vida<br>este livro vai transformar</div>
+    <p style="font-family:var(--sans);font-size:13px;color:var(--mid);max-width:600px;line-height:1.8;">São fictícios nos nomes — mas reais nos problemas. Provavelmente vês-te em pelo menos um deles. Acompanha-os ao longo dos 21 capítulos e vê o que acontece quando alguém decide mudar.</p>
+    <div class="chars-grid">
+      <div class="char-card">
+        <span class="char-emoji">👩🏾</span>
+        <div class="char-name">Amélia</div>
+        <div class="char-role">Vendedora, Xipamanine, Maputo</div>
+        <div class="char-sal">2.000–4.000 MT/mês</div>
+        <div class="char-desc">Mãe solteira de 3 filhos. Vende capulanas há 7 anos. Tem dívida com agiota de 11.200 MT a 40%/mês. Nunca separou dinheiro pessoal do negócio.</div>
+        <span class="char-pw">⚠️ Maior fraqueza: ciclo de dívida informal</span>
+      </div>
+      <div class="char-card">
+        <span class="char-emoji">👦🏾</span>
+        <div class="char-name">Tomás</div>
+        <div class="char-role">Estudante, 17 anos, Beira</div>
+        <div class="char-sal">500 MT mesada/mês</div>
+        <div class="char-desc">Filho de professores. Passa 2.3h por dia no Instagram. Gastou 2.000 MT emprestados em sapatilhas para impressionar colegas. Não tem poupanças.</div>
+        <span class="char-pw">⚠️ Maior fraqueza: consumo emocional e pressão dos pares</span>
+      </div>
+      <div class="char-card">
+        <span class="char-emoji">👨🏾‍💼</span>
+        <div class="char-name">Eduardo</div>
+        <div class="char-role">Engenheiro, 34 anos, Maputo</div>
+        <div class="char-sal">35.000 MT/mês</div>
+        <div class="char-desc">Bom salário, vida cara. Carro financiado, apartamento caro, lifestyle inflation total. Património líquido: -145.000 MT. A um mês de crise.</div>
+        <span class="char-pw">⚠️ Maior fraqueza: aparência de riqueza vs. riqueza real</span>
+      </div>
+      <div class="char-card">
+        <span class="char-emoji">👵🏾</span>
+        <div class="char-name">Dona Rosa</div>
+        <div class="char-role">Reformada, 67 anos, Nampula</div>
+        <div class="char-sal">6.500 MT pensão/mês</div>
+        <div class="char-desc">32 anos de docência. Tem 47.000 MT guardados debaixo do colchão — trauma do banco desde 1984. A filha Celeste está preocupada.</div>
+        <span class="char-pw">⚠️ Maior fraqueza: trauma financeiro histórico</span>
+      </div>
+      <div class="char-card">
+        <span class="char-emoji">👩🏾‍💻</span>
+        <div class="char-name">Inês</div>
+        <div class="char-role">Freelancer digital, 26 anos, Maputo</div>
+        <div class="char-sal">5.000–20.000 MT/mês</div>
+        <div class="char-desc">Designer gráfica. Rendimento variável e imprevisível. Meses de abundância seguidos de meses de pânico. Sem orçamento. Sem fundo de emergência.</div>
+        <span class="char-pw">⚠️ Maior fraqueza: gestão de rendimento irregular</span>
+      </div>
+      <div class="char-card">
+        <span class="char-emoji">👨🏾‍🌾</span>
+        <div class="char-name">Samuel</div>
+        <div class="char-role">Agricultor, 45 anos, Gaza</div>
+        <div class="char-sal">40.000 MT/ano</div>
+        <div class="char-desc">Agricultor com machamba própria. Mentalidade de abundância natural. Património: +120.000 MT. O personagem mais rico em paz — apesar de ganhar menos.</div>
+        <span class="char-pw">✅ Modelo de: abundância e activos reais</span>
+      </div>
+      <div class="char-card">
+        <span class="char-emoji">👩🏾‍⚕️</span>
+        <div class="char-name">Beatriz</div>
+        <div class="char-role">Médica, 41 anos, Tete</div>
+        <div class="char-sal">80.000 MT/mês</div>
+        <div class="char-desc">Maior salário dos 7. Mas -85.000 MT de património. Família alargada consome 30.000+ MT por mês. Não consegue dizer não. Vive para os outros.</div>
+        <span class="char-pw">⚠️ Maior fraqueza: ubuntu tóxico e obrigações familiares</span>
+      </div>
+    </div>
+  </div>
+</section>
 
-/* DIVISOR DE CAPÍTULO */
-.cap-divider{height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:60px 0;}
-.cap-break{background:var(--warm);padding:48px 32px;margin:0;border-top:1px solid rgba(107,90,62,.15);border-bottom:1px solid rgba(107,90,62,.15);}
-.cap-break-inner{max-width:800px;margin:0 auto;display:flex;align-items:center;gap:24px;}
-.cb-icon{font-size:40px;flex-shrink:0;}
-.cb-title{font-family:var(--serif);font-weight:700;font-size:20px;margin-bottom:4px;}
-.cb-text{font-family:var(--sans);font-size:13px;color:var(--mid);line-height:1.6;}
+<!-- UNIVERSO I -->
+<div class="uni-header" data-bg="SEMENTES" style="margin-top:0">
+  <div class="uni-num">Universo I — Capítulos 1 ao 7</div>
+  <div class="uni-title">SEMENTES<em>A MENTALIDADE</em></div>
+  <div class="uni-epigraph">"Antes de mudar os teus números, tens de mudar o teu pensamento."</div>
+</div>
 
-/* FERRAMENTAS / TEMPLATES */
-.ferramenta{border:2px dashed rgba(200,150,12,.3);border-radius:8px;padding:32px;margin:36px 0;}
-.ferramenta-header{display:flex;align-items:center;gap:12px;margin-bottom:20px;}
-.ferramenta-icon{font-size:28px;}
-.ferramenta-title{font-family:var(--display);font-size:24px;letter-spacing:.05em;color:var(--charcoal);}
-.ferramenta-sub{font-family:var(--sans);font-size:11px;color:var(--light);}
+<!-- CAP 1 -->
+<article class="capitulo" id="cap1">
+  <div class="cap-num">Capítulo 1 — Universo I</div>
+  <div class="cap-title">O Dinheiro Não É Sujo</div>
+  <div class="cap-sub">Como Séculos de Condicionamento Cultural nos Ensinaram a Ter Vergonha da Riqueza — e Como Libertar-nos</div>
+  <div class="cap-tags"><span class="cap-tag">👩🏾 Amélia</span><span class="cap-tag">👩🏾‍⚕️ Beatriz</span></div>
 
-/* RESPOSTA DO PERSONAGEM */
-.char-response{border-left:4px solid var(--gold);padding:20px 24px;background:rgba(200,150,12,.05);margin:24px 0;border-radius:0 6px 6px 0;}
-.cr-who{font-family:var(--sans);font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;}
-.cr-text{font-family:var(--serif);font-style:italic;font-size:16px;line-height:1.8;color:var(--charcoal);}
-.cr-resultado{font-family:var(--sans);font-size:12px;color:var(--green2);margin-top:10px;font-weight:600;}
+  <div class="cena">
+    <div class="cena-bar" style="background:linear-gradient(90deg,var(--rust),var(--sand),var(--gold))"></div>
+    <div class="cena-inner">
+      <div class="cena-lbl">📖 O Casamento da Prima — Amélia, Xipamanine, Dezembro</div>
+      <div class="cena-txt">
+        <p>O casamento da prima Filomena foi num sábado de Dezembro — 38 graus, barraca de capim, música de coladeira que fazia tremer o chão de terra batida.</p>
+        <p>A Amélia estava sentada numa cadeira de plástico branco quando a tia Lurdes se aproximou com um sorriso que ela conhecia demasiado bem. <em>"Amélia, tens dado graças a Deus pela tua banca? Aquelas capulanas dão bem?"</em></p>
+        <p>A Amélia hesitou. Tinha vendido muito bem naquele mês — quase 4.000 MT de facturação. Mas sentiu o peso invisível da pergunta. <strong>Na família, falar bem do negócio era arriscar.</strong> A inveja era rápida. Os pedidos de empréstimo eram ainda mais rápidos.</p>
+        <p><em>"Vai assim assim"</em>, disse ela, com o sorriso de quem esconde. <em>"Deus é bom."</em></p>
+        <p>Mais tarde, a caminho do chapa, a Amélia pensou naquele momento. Porque é que tinha vergonha de dizer que o seu negócio estava bem? Porque é que a riqueza — mesmo uma riqueza pequena — sentia como algo que devia ser escondido?</p>
+        <p>A resposta estava em algo que ninguém lhe tinha ensinado mas que ela sabia de cor, herdada de gerações: <em>dinheiro chama problemas. Quem mostra o que tem, perde o que tem.</em></p>
+      </div>
+    </div>
+  </div>
 
-/* COMPARATIVO */
-.comparativo{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:28px 0;}
-.comp-card{border-radius:6px;padding:20px;text-align:center;}
-.comp-label{font-family:var(--sans);font-size:9px;letter-spacing:.2em;text-transform:uppercase;margin-bottom:10px;}
-.comp-val{font-family:var(--display);font-size:36px;line-height:1;margin-bottom:6px;}
-.comp-desc{font-family:var(--sans);font-size:12px;line-height:1.6;}
-.comp-neg{background:rgba(192,57,43,.08);border:1px solid rgba(192,57,43,.2);}
-.comp-neg .comp-label{color:var(--red);}
-.comp-neg .comp-val{color:var(--red);}
-.comp-pos{background:rgba(39,174,96,.08);border:1px solid rgba(39,174,96,.2);}
-.comp-pos .comp-label{color:var(--green2);}
-.comp-pos .comp-val{color:var(--green2);}
-.comp-neutral{background:rgba(200,150,12,.08);border:1px solid rgba(200,150,12,.2);}
-.comp-neutral .comp-label{color:var(--gold);}
-.comp-neutral .comp-val{color:var(--gold);}
+  <div class="dados">
+    <div class="dados-lbl">📊 A Vergonha do Dinheiro em Moçambique — Os Números</div>
+    <div class="dados-title">O que as pesquisas revelam sobre a relação dos moçambicanos com a riqueza</div>
+    <div class="dados-grid">
+      <div class="dado"><div class="dado-v">64%</div><div class="dado-l">Acreditam que "ricos fizeram algo errado" para enriquecer</div></div>
+      <div class="dado"><div class="dado-v">58%</div><div class="dado-l">Sentem-se envergonhados ao falar de dinheiro com a família</div></div>
+      <div class="dado"><div class="dado-v">500</div><div class="dado-l">Anos de colonização que associaram riqueza a exploração e poder externo</div></div>
+      <div class="dado"><div class="dado-v">89%</div><div class="dado-l">Dos pais nunca tiveram conversa explícita sobre finanças com os filhos</div></div>
+    </div>
+    <p>Em Moçambique, como em grande parte de África, existe uma relação complexa e frequentemente dolorosa com a riqueza. Décadas de colonialismo, seguidas de independência, guerra civil e ajustamento estrutural, criaram uma narrativa profundamente enraizada: a prosperidade pertence a outros — ao colonizador, ao patrão estrangeiro, ao político corrupto. Não a mim. Não à minha família.</p>
+  </div>
 
-/* PAUSA EMOCIONAL */
-.pausa{background:var(--charcoal);padding:64px 32px;text-align:center;}
-.pausa-inner{max-width:600px;margin:0 auto;}
-.pausa h3{font-family:var(--display);font-size:clamp(28px,4vw,52px);color:var(--paper);letter-spacing:.04em;margin-bottom:20px;line-height:1;}
-.pausa h3 em{color:var(--gold2);font-style:normal;}
-.pausa p{font-family:var(--serif);font-style:italic;font-size:17px;line-height:1.9;co
+  <div class="h2">De Onde Vem Esta Crença — A História Não Contada</div>
+  <div class="txt">Durante cinco séculos, os moçambicanos foram sistematicamente excluídos dos instrumentos de criação de riqueza: terra, crédito, educação, comércio formalizado. A mensagem implícita era clara: <strong>este sistema não é para ti.</strong></div>
+  <div class="txt">Depois da independência, a nacionalização das empresas e propriedades — necessária no seu contexto político — criou uma nova camada de desconfiança: o Estado é dono de tudo, logo o empreendedor é suspeito. A guerra civil destruiu o que restava de infraestrutura e confiança.</div>
+  <div class="txt">O resultado é que muitos moçambicanos de hoje carregam, sem saber, crenças herdadas de três gerações atrás: <em>dinheiro é para os outros, quem quer mais é ganancioso, ter sucesso sozinho é trair a comunidade.</em></div>
+
+  <div class="pullquote">
+    <div class="pq-txt">"Nunca foi o dinheiro que corrompeu as pessoas. Foi sempre a forma como a sociedade ensinou as pessoas a relacionar-se com ele."</div>
+    <div class="pq-src">Sementes de Riqueza — Cap. 1</div>
+  </div>
+
+  <div class="h2">Ubuntu Saudável vs. Ubuntu Tóxico</div>
+  <div class="txt">O Ubuntu — "Sou porque somos" — é um dos maiores valores da cultura africana. A solidariedade, o cuidado comunitário, a partilha: são forças enormes que muitas culturas individualizadas perderam. Mas o Ubuntu pode ser usado de formas que destroem a prosperidade individual.</div>
+  <div class="table-wrap">
+    <div class="table-lbl">Ubuntu Saudável vs. Ubuntu Tóxico — Como Identificar a Diferença</div>
+    <table>
+      <thead><tr><th>Aspecto</th><th>Ubuntu Saudável</th><th>Ubuntu Tóxico</th></tr></thead>
+      <tbody>
+        <tr><td>Partilha</td><td>Dou o que posso dar sem me destruir</td><td>Dou até ficar sem nada — e pedem mais</td></tr>
+        <tr><td>Sucesso</td><td>O teu sucesso inspira a família toda</td><td>O teu sucesso cria obrigações infinitas</td></tr>
+        <tr><td>Limites</td><td>Dizer não é respeitado</td><td>Dizer não é traição à família</td></tr>
+        <tr><td>Riqueza</td><td>Constrói-se individualmente e partilha-se de forma sustentável</td><td>Deve ser partilhada imediatamente ou é sinal de egoísmo</td></tr>
+        <tr><td>Resultado</td><td>Toda a família sobe juntos</td><td>Quem tenta subir é puxado para baixo</td></tr>
+        <tr class="tr-warn"><td>Reconheces-te?</td><td colspan="2">Se sentes que o teu sucesso é uma ameaça para as relações familiares — estás a lidar com Ubuntu tóxico. Não com Ubuntu real.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="box box-gold">
+    <div class="box-label">✈️ O Princípio da Máscara de Oxigénio</div>
+    <p>Em qualquer avião, a instrução é clara: coloca primeiro a tua máscara de oxigénio antes de ajudares a criança ao teu lado. Não porque a criança não importa. Mas porque morto ou inconsciente, não consegues ajudar ninguém.</p>
+    <p>A tua estabilidade financeira não é egoísmo. É o que te permite dar de forma genuína e sustentável. Um copo vazio não molha ninguém.</p>
+  </div>
+
+  <div class="cr">
+    <div class="cr-who">👩🏾‍⚕️ Beatriz — A Médica que Ganhou 80.000 MT e Tinha -85.000 MT de Património</div>
+    <div class="cr-txt">"Durante anos, achei que dar tudo era virtude. A minha família em Tete sabia que eu ganhava bem — e com cada mês que passava, os pedidos cresciam. Empréstimos que nunca voltavam. Viagens que eu pagava. Medicamentos, propinas, rações. Quando fiz as contas, tinha 80.000 MT de salário e -85.000 MT de riqueza líquida. Estava a trabalhar para todos menos para mim."</div>
+    <div class="cr-res">🔑 Revelação: Beatriz percebeu que dar sem limite não era generosidade — era auto-destruição disfarçada de virtude.</div>
+  </div>
+
+  <div class="h2">As 5 Crenças Herdadas Mais Comuns em Moçambique</div>
+  <div class="table-wrap">
+    <div class="table-lbl">Crenças Limitantes — De Onde Vêm e Como Reframeá-las</div>
+    <table>
+      <thead><tr><th>Crença</th><th>De Onde Vem</th><th>Nova Perspectiva</th></tr></thead>
+      <tbody>
+        <tr><td>"Dinheiro é raiz de todo o mal"</td><td>Interpretação bíblica descontextualizada</td><td>O texto original diz "o AMOR pelo dinheiro" — não o dinheiro em si. A ferramenta não é má.</td></tr>
+        <tr><td>"Ricos são sempre corruptos"</td><td>Traumas históricos com colonizadores e políticos</td><td>Existem ricos corruptos. E existem ricos honestos. O dinheiro amplifica quem já és.</td></tr>
+        <tr><td>"Não sou para grandes coisas"</td><td>Sistema educativo colonial que limitava as ambições</td><td>Esta crença foi implantada para te manter no lugar. Não é verdade.</td></tr>
+        <tr><td>"Falar de dinheiro é falta de educação"</td><td>Cultura de silêncio sobre temas "sensíveis"</td><td>Famílias que falam de dinheiro têm filhos financeiramente mais saudáveis.</td></tr>
+        <tr><td>"Poupar é desconfiar de Deus"</td><td>Interpretação religiosa incorrecta</td><td>José no Egipto guardou comida por 7 anos. A Bíblia e o Alcorão elogiam a prudência.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="missao">
+    <div class="m-hd"><div class="m-icon">🎯</div><div><div class="m-title">MISSÃO 01</div><div class="m-prazo">⏱ Esta semana — 30 minutos de reflexão honesta</div></div></div>
+    <div class="m-body">Antes de aprender a gerir dinheiro, tens de identificar o que acreditas sobre dinheiro. Esta missão parece simples. Não é.</div>
+    <div class="m-steps">
+      <div class="m-step"><div class="m-n">1</div><div class="m-t"><strong>Escreve 3 frases que ouviste sobre dinheiro na infância</strong> — de pais, avós, professores, Igreja. Não filtres. Escreve o que realmente ouves na tua cabeça quando pensas em riqueza.</div></div>
+      <div class="m-step"><div class="m-n">2</div><div class="m-t"><strong>Para cada frase, pergunta-te:</strong> "Esta crença serve-me hoje? Ou está a impedir-me de crescer?" Sê honesto. Ninguém está a ver.</div></div>
+      <div class="m-step"><div class="m-n">3</div><div class="m-t"><strong>Reescreve cada crença limitante</strong> numa afirmação nova que te sirva: "Dinheiro é raiz do mal" → "Dinheiro é uma ferramenta. O que faço com ela define o meu carácter."</div></div>
+      <div class="m-step"><div class="m-n">4</div><div class="m-t"><strong>Opcional mas poderoso:</strong> Tem uma conversa sobre dinheiro com alguém da tua família. Não para ensinar — para ouvir. Para perceber de onde vêm as crenças partilhadas.</div></div>
+    </div>
+  </div>
+
+  <div class="proverb">
+    <div class="prov-txt">"A riqueza é como névoa da manhã — não a verás com os olhos fechados."</div>
+    <div class="prov-orig">Provérbio Tsonga, Sul de Moçambique</div>
+    <div class="prov-lic">Lição financeira: A riqueza existe. Está disponível. Mas só a consegues ver — e alcançar — quando abres os olhos para ela. Crenças limitantes são os olhos fechados da tua vida financeira.</div>
+  </div>
+</article>
+
+<div class="divider"></div>
+
+<!-- CAP 2 -->
+<article class="capitulo" id="cap2">
+  <div class="cap-num">Capítulo 2 — Universo I</div>
+  <div class="cap-title">O Trauma Financeiro</div>
+  <div class="cap-sub">Por Que o Passado Continua a Controlar o Teu Dinheiro — e Como Sarar as Feridas Invisíveis</div>
+  <div class="cap-tags"><span class="cap-tag">👵🏾 Dona Rosa</span><span class="cap-tag">👩🏾 Amélia</span></div>
+
+  <div class="cena">
+    <div class="cena-bar" style="background:linear-gradient(90deg,#2C3E50,#4A6080,#85929E)"></div>
+    <div class="cena-inner">
+      <div class="cena-lbl">📖 Os 47.000 Meticais do Colchão</div>
+      <div class="cena-txt">
+        <p>A Celeste encontrou o dinheiro por acidente, numa tarde de Setembro, quando ajudava a mãe a virar o colchão para arejar. Notas. Muitas notas. Dobradas em plástico preto, preso com um elástico amarelo.</p>
+        <p>Contou. Voltou a contar. <strong>47.000 meticais.</strong></p>
+        <p><em>"Mãe,"</em> disse ela, com a voz que alterna entre preocupação e incredulidade, <em>"isto aqui não rende nada. A inflação está a comer isto vivo."</em></p>
+        <p>A Dona Rosa ficou em silêncio. Depois disse, com a calma de quem já pensou muito nisto: <em>"Em 1984, os bancos fecharam de um dia para o outro. O pai do teu pai tinha 8.000 escudos guardados. Quando abriram, disseram que tinham 800. O resto 'foi para o Estado'."</em></p>
+        <p>A Celeste não sabia o que dizer. O trauma da mãe tinha 40 anos. E 47.000 meticais escondidos debaixo do colchão eram a prova de que os traumas financeiros não envelhecem sozinhos — passam de geração em geração.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="dados">
+    <div class="dados-lbl">📊 O Trauma Financeiro — Mais Comum do Que Pensas</div>
+    <div class="dados-title">Como eventos históricos criaram feridas financeiras que persistem até hoje</div>
+    <div class="dados-grid">
+      <div class="dado"><div class="dado-v">1984</div><div class="dado-l">Ano da nationalização bancária que traumatizou uma geração inteira</div></div>
+      <div class="dado"><div class="dado-v">72%</div><div class="dado-l">Das famílias com parentes acima de 60 anos guardam algum dinheiro em casa por desconfiança bancária</div></div>
+      <div class="dado"><div class="dado-v">-40%</div><div class="dado-l">Poder de compra perdido anualmente por quem guarda dinheiro no colchão (inflação + sem juros)</div></div>
+    </div>
+    <p>O trauma financeiro não é fraqueza. É uma resposta natural do cérebro a experiências que provaram ser perigosas. A Dona Rosa não é irracional — ela está a proteger-se de algo que realmente aconteceu. O desafio é ajudá-la a ver que o contexto mudou.</p>
+  </div>
+
+  <div class="h2">Os 4 Padrões de Trauma Financeiro em Moçambique</div>
+  <div class="table-wrap">
+    <div class="table-lbl">Tipos de Trauma Financeiro — Reconheces-te?</div>
+    <table>
+      <thead><tr><th>Padrão</th><th>Comportamento Típico</th><th>Frase Interior</th><th>Origem Comum</th></tr></thead>
+      <tbody>
+        <tr><td>🏦 Guardador Compulsivo</td><td>Guarda dinheiro em locais físicos, desconfia de qualquer instituição</td><td>"Só confio no que vejo e toco"</td><td>Perdas históricas com bancos ou sistemas financeiros</td></tr>
+        <tr><td>💸 Gastador Imediato</td><td>Gasta tudo assim que recebe — não consegue guardar</td><td>"O dinheiro vai desaparecer de qualquer forma"</td><td>Cresceu em pobreza extrema onde guardar era inútil</td></tr>
+        <tr><td>🚫 Sabotador Inconsciente</td><td>Sempre que começa a acumular, cria uma razão para gastar tudo</td><td>"Não mereço ter dinheiro"</td><td>Mensagens de infância que associavam riqueza a culpa ou perigo</td></tr>
+        <tr class="tr-warn"><td>😰 Paralisado pelo Medo</td><td>Nunca toma decisões financeiras — espera pela decisão "perfeita"</td><td>"E se perder tudo?"</td><td>Testemunhou outros perder tudo em situações de risco</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="ferramenta">
+    <div class="ferr-hd"><div class="ferr-icon">🗺️</div><div><div class="ferr-title">MAPA DO TRAUMA FINANCEIRO</div><div class="ferr-sub">Ferramenta 2-A — Diagnóstico Pessoal</div></div></div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Pergunta</th><th>A Tua Resposta Honesta</th></tr></thead>
+        <tbody>
+          <tr><td>Qual foi a situação financeira mais dolorosa que viveste na infância?</td><td style="color:var(--light);font-style:italic">Escreve aqui...</td></tr>
+          <tr><td>Qual foi a situação financeira mais dolorosa que viveste como adulto?</td><td style="color:var(--light);font-style:italic">Escreve aqui...</td></tr>
+          <tr><td>Que emoção sentes quando vês o saldo da conta bancária?</td><td style="color:var(--light);font-style:italic">Escreve aqui...</td></tr>
+          <tr><td>Quando ganhas dinheiro extra, o que sentes? O que fazes?</td><td style="color:var(--light);font-style:italic">Escreve aqui...</td></tr>
+          <tr><td>Existe alguma situação em que sabotas as tuas próprias finanças?</td><td style="color:var(--light);font-style:italic">Escreve aqui...</td></tr>
+          <tr class="tr-warn"><td colspan="2">Padrão identificado: □ Guardador Compulsivo □ Gastador Imediato □ Sabotador □ Paralisado</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="h2">O Processo de Cura em 5 Passos</div>
+  <div class="box box-green">
+    <div class="box-label">✅ Como Sarar o Trauma Financeiro</div>
+    <ul>
+      <li><strong>Passo 1 — Nomear:</strong> Identificar o trauma pelo nome. "Tenho medo de bancos porque vi os meus avós perderem as poupanças." Nomear retira poder ao medo.</li>
+      <li><strong>Passo 2 — Contextualizar:</strong> Perguntar "Isto acontece ainda hoje?" O Fundo de Garantia de Depósitos protege até 500.000 MT hoje. O contexto de 1984 não é o de 2025.</li>
+      <li><strong>Passo 3 — Testar em segurança:</strong> Dar passos pequenos e controlados. Abrir uma conta com 100 MT. Esperar 30 dias. Ver que está lá. Confiar gradualmente.</li>
+      <li><strong>Passo 4 — Substituir o comportamento:</strong> Criar um novo ritual financeiro que substitui o antigo. Em vez de colchão, uma conta poupança SEM cartão de débito.</li>
+      <li><strong>Passo 5 — Celebrar a coragem:</strong> Cada passo fora da zona de conforto financeiro merece ser reconhecido. O trauma não desaparece — mas perde a sua força com cada acção contrária.</li>
+    </ul>
+  </div>
+
+  <div class="cr">
+    <div class="cr-who">👵🏾 Dona Rosa — 3 meses depois de abrir a conta poupança</div>
+    <div class="cr-txt">"A Celeste foi comigo ao banco. Abri a conta. Transferi 20.000 MT. Não dormi bem nessa noite — fiquei a pensar 'e se...'. Mas de manhã fui verificar pelo telemóvel da Celeste. Estava lá. Em Dezembro recebi um SMS: os meus 20.000 MT tinham gerado 133 MT de juros em 3 meses. O banco nunca me deu dinheiro antes. Desta vez deu-me."</div>
+    <div class="cr-res">✅ Dona Rosa ganhou os primeiros juros da sua vida: 133 MT em 3 meses. Pequeno mas transformador.</div>
+  </div>
+
+  <div class="missao">
+    <div class="m-hd"><div class="m-icon">🎯</div><div><div class="m-title">MISSÃO 02</div><div class="m-prazo">⏱ Esta semana</div></div></div>
+    <div class="m-body">A cura do trauma financeiro começa quando o nomeas — e tomas a primeira acção contrária, por mais pequena que seja.</div>
+    <div class="m-steps">
+      <div class="m-step"><div class="m-n">1</div><div class="m-t"><strong>Preenche o Mapa do Trauma Financeiro</strong> — honestamente, sem julgamento. Ninguém vai ler. É para ti.</div></div>
+      <div class="m-step"><div class="m-n">2</div><div class="m-t"><strong>Identifica o teu padrão dominante</strong> (Guardador, Gastador, Sabotador, Paralisado). Escreve uma situação recente em que esse padrão apareceu.</div></div>
+      <div class="m-step"><div class="m-n">3</div><div class="m-t"><strong>Escreve uma carta para o teu "eu futuro"</strong> — dentro de 3 anos — descrevendo como queres que seja a tua vida financeira. Guarda-a. Relê-a quando duvidares.</div></div>
+    </div>
+  </div>
+
+  <div class="proverb">
+    <div class="prov-txt">"Não deixes a ferida do teu pai tornar-se a prisão do teu filho."</div>
+    <div class="prov-orig">Provérbio Macua, Norte de Moçambique</div>
+    <div class="prov-lic">Lição financeira: Os traumas financeiros herdados de gerações anteriores são compreensíveis — mas não têm de definir o teu futuro. Com consciência e coragem, podes quebrar o ciclo.</div>
+  </div>
+</article>
+<div class="divider"></div>
+
+<article class="capitulo" id="cap3">
+  <div class="cap-num">Capítulo 3 — Universo I</div>
+  <div class="cap-title">Emoções e Dinheiro</div>
+  <div class="cap-sub">Por Que Compras o Que Não Precisas e Como Parar o Ciclo do Consumo Emocional</div>
+  <div class="cap-tags"><span class="cap-tag">👦🏾 Tomás</span><span class="cap-tag">👩🏾 Amélia</span></div>
+
+  <div class="cena">
+    <div class="cena-bar" style="background:linear-gradient(90deg,#1ABC9C,#2ECC71,#58D68D)"></div>
+    <div class="cena-inner">
+      <div class="cena-lbl">📖 As Sapatilhas do Tomás</div>
+      <div class="cena-txt">
+        <p>O Tomás viu as sapatilhas na conta do Instagram do colega Dário — brancas, limpas, com a sola colorida. Na descrição: <em>"Nikes novas. Beira City vibes."</em> 347 likes.</p>
+        <p>Nessa tarde, o Tomás não conseguia parar de pensar nelas. Não eram apenas sapatilhas. Era pertencer. Era respeito. Era não ser o miúdo com os tenis velhos na escola.</p>
+        <p>Pediu 2.000 MT emprestados ao primo Hélder. Disse que era para material escolar. No sábado, as sapatilhas chegaram. No domingo, o Tomás estava a usá-las na escola nova — e tinha uma dívida que ia demorar 4 meses a pagar.</p>
+        <p>Na segunda-feira, o Dário apareceu com umas ainda mais novas. O ciclo começou outra vez.</p>
+        <p><strong>O Tomás não comprou sapatilhas. Comprou a ilusão de aprovação — e pagou 2.000 MT por ela.</strong></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="dados">
+    <div class="dados-lbl">📊 O Consumo Emocional em Números</div>
+    <div class="dados-title">Quanto custam as emoções nas finanças dos jovens moçambicanos</div>
+    <div class="dados-grid">
+      <div class="dado"><div class="dado-v">67%</div><div class="dado-l">Das compras não planeadas têm origem emocional (tristeza, stress, comparação)</div></div>
+      <div class="dado"><div class="dado-v">32%</div><div class="dado-l">Do rendimento dos jovens urbanos vai para "imagem social" (roupa, calçado, saídas)</div></div>
+      <div class="dado"><div class="dado-v">2.3h</div><div class="dado-l">Tempo médio diário no Instagram/TikTok — principal gatilho de comparação social</div></div>
+      <div class="dado"><div class="dado-v">18×</div><div class="dado-l">Mais provável de comprar impulsivamente após 30min nas redes sociais</div></div>
+    </div>
+  </div>
+
+  <div class="h2">Os 6 Gatilhos Emocionais do Consumo</div>
+  <div class="table-wrap">
+    <div class="table-lbl">Gatilhos de Compra Emocional — Reconhece os Teus</div>
+    <table>
+      <thead><tr><th>Gatilho</th><th>Como Aparece</th><th>O Que Realmente Precisas</th><th>Alternativa Gratuita</th></tr></thead>
+      <tbody>
+        <tr><td>😢 Tristeza / Stress</td><td>"Mereço uma coisa boa depois deste dia horrível"</td><td>Conforto, auto-compaixão</td><td>Exercício, conversa com amigo, descanso</td></tr>
+        <tr><td>📱 Comparação Social</td><td>"O Dário tem aquilo — preciso de ter também"</td><td>Pertença, aprovação, identidade</td><td>Desligar redes sociais 24h, lista de gratidão</td></tr>
+        <tr><td>🎉 Celebração Excessiva</td><td>"Recebi o salário — vou comemorar!"</td><td>Reconhecimento, prazer</td><td>Celebrar com valor definido e limitado</td></tr>
+        <tr><td>⏰ FOMO (medo de perder)</td><td>"É só hoje! Promoção de 24h!"</td><td>Segurança, oportunidade</td><td>Regra dos 3 dias — se ainda queres depois, considera</td></tr>
+        <tr><td>🏷️ Promoções</td><td>"Está em saldo — seria parvo não comprar"</td><td>Senso de barganha</td><td>Perguntar: precisava disto antes de ver o saldo?</td></tr>
+        <tr class="tr-warn"><td>❤️ Presentes como Prova de Amor</td><td>"Se não der algo caro, não vão saber que me importo"</td><td>Validação, amor, aceitação</td><td>Tempo de qualidade, esforço personalizado</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="ferramenta">
+    <div class="ferr-hd"><div class="ferr-icon">⏱️</div><div><div class="ferr-title">REGRA DOS 3 DIAS</div><div class="ferr-sub">Ferramenta 3-A — Para qualquer compra acima de 500 MT</div></div></div>
+    <div class="box box-gold">
+      <div class="box-label">📋 Como Aplicar a Regra</div>
+      <ul>
+        <li><strong>Quando sentes vontade de comprar algo acima de 500 MT:</strong> Não compras. Esperas 3 dias.</li>
+        <li><strong>Escreve num papel:</strong> O item, o preço, e PORQUÊ queres comprar. Que emoção está a conduzir esta compra?</li>
+        <li><strong>Após 3 dias:</strong> Se ainda queres — e consegues pagar com dinheiro disponível sem comprometer o orçamento — considera comprar.</li>
+        <li><strong>Resultado típico:</strong> 60-70% das compras que passam pela Regra dos 3 Dias não são feitas. O desejo passou.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="cr">
+    <div class="cr-who">👦🏾 Tomás — 6 semanas depois de adoptar a Regra dos 3 Dias</div>
+    <div class="cr-txt">"Escrevi numa folha 8 coisas que quis comprar em 6 semanas. Só comprei 2 — um livro de matemática e umas meias. As outras 6, quando olhei 3 dias depois, já não queria. Poupei 2.200 MT que usaria em coisas que não me lembraria hoje."</div>
+    <div class="cr-res">✅ Tomás poupou 2.200 MT em 6 semanas apenas com a Regra dos 3 Dias.</div>
+  </div>
+
+  <div class="missao">
+    <div class="m-hd"><div class="m-icon">🎯</div><div><div class="m-title">MISSÃO 03</div><div class="m-prazo">⏱ Próximos 30 dias</div></div></div>
+    <div class="m-body">Vai precisar de um caderno (pode ser digital). Durante 30 dias, regista todas as tuas compras não planeadas — e a emoção que sentiste antes de comprar.</div>
+    <div class="m-steps">
+      <div class="m-step"><div class="m-n">1</div><div class="m-t"><strong>Activa a Regra dos 3 Dias</strong> para toda a compra acima de 500 MT a partir de hoje.</div></div>
+      <div class="m-step"><div class="m-n">2</div><div class="m-t"><strong>Mantém um Diário de Gastos Emocional</strong> — Data | Item | Valor | Emoção antes de comprar | Arrependo-me? (após 1 semana)</div></div>
+      <div class="m-step"><div class="m-n">3</div><div class="m-t"><strong>No final dos 30 dias</strong>, conta quanto poupaste com a Regra dos 3 Dias. A maioria das pessoas fica surpreendida.</div></div>
+    </div>
+  </div>
+
+  <div class="proverb">
+    <div class="prov-txt">"Quem corre atrás de dois coelhos ao mesmo tempo não apanha nenhum."</div>
+    <div class="prov-orig">Provérbio Africano</div>
+    <div class="prov-lic">Lição financeira: O consumo emocional divide a tua atenção e o teu dinheiro entre o que queres agora e o que precisas para o futuro. Só quando tens foco — e controlo emocional — apanhas o coelho certo.</div>
+  </div>
+</article>
+<div class="divider"></div>
+
+<!-- CAP 4 -->
+<article class="capitulo" id="cap4">
+  <div class="cap-num">Capítulo 4 — Universo I</div>
+  <div class="cap-title">Mentalidade de Abundância vs. Escassez</div>
+  <div class="cap-sub">Eduardo Ganha 10× Mais que Samuel — Mas Quem Vive com Mais Paz e Construiu Mais Riqueza?</div>
+  <div class="cap-tags"><span class="cap-tag">👨🏾‍💼 Eduardo</span><span class="cap-tag">👨🏾‍🌾 Samuel</span></div>
+
+  <div class="cena">
+    <div class="cena-bar" style="background:linear-gradient(90deg,var(--gold),#F0B22A,#FEE08B)"></div>
+    <div class="cena-inner">
+      <div class="cena-lbl">📖 Dois Homens, Dois Mundos Financeiros</div>
+      <div class="cena-txt">
+        <p>Eduardo acorda às 6h30. Ainda em pijama, abre o app do banco. O saldo mostra 2.340 MT — e o mês ainda tem 12 dias. Sente aquele aperto familiar no estômago. <em>Como é possível?</em> Ganhou 35.000 MT há 18 dias.</p>
+        <p>A 200km, em Gaza, Samuel está na machamba desde as 5h. O almoço de ontem foi frango do quintal com arroz colhido na semana passada. Não verificou o banco esta manhã — raramente o faz. Sabe o que tem. Sabe o que precisa. As contas batem certo.</p>
+        <p>Eduardo tem um carro novo que não é seu — é do banco. Samuel tem uma machamba que é dele há 12 anos. Eduardo tem 35.000 MT de salário e -145.000 MT de riqueza líquida. Samuel tem 40.000 MT anuais e +120.000 MT de riqueza líquida.</p>
+        <p><strong>Não é uma questão de quanto ganhas. É uma questão de como pensas sobre o que tens.</strong></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="table-wrap">
+    <div class="table-lbl">Mentalidade de Escassez vs. Mentalidade de Abundância — Comparação Completa</div>
+    <table>
+      <thead><tr><th>Aspecto</th><th>🔴 Mentalidade de Escassez</th><th>🟢 Mentalidade de Abundância</th></tr></thead>
+      <tbody>
+        <tr><td>Ver o dinheiro dos outros</td><td>"Se eles têm, eu não posso ter"</td><td>"O que fizeram que eu posso aprender?"</td></tr>
+        <tr><td>Erro financeiro</td><td>"Sou péssimo com dinheiro. Sempre fui."</td><td>"Cometi um erro. O que faço diferente?"</td></tr>
+        <tr><td>Oportunidade</td><td>"Não é para mim. Tenho pouca sorte."</td><td>"Como posso posicionar-me para aproveitar?"</td></tr>
+        <tr><td>Poupança</td><td>"Não sobra nada para poupar."</td><td>"Que posso redirigir para poupar?"</td></tr>
+        <tr><td>Conversas sobre dinheiro</td><td>Evita, envergonha, desvia</td><td>Busca, aprende, partilha</td></tr>
+        <tr><td>Resultado a longo prazo</td><td>Ciclo de escassez auto-perpetuante</td><td>Crescimento gradual e constante</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="ferramenta">
+    <div class="ferr-hd"><div class="ferr-icon">📔</div><div><div class="ferr-title">DIÁRIO DE GRATIDÃO FINANCEIRA (21 DIAS)</div><div class="ferr-sub">Ferramenta 4-A — A prática que muda a perspectiva</div></div></div>
+    <div class="txt" style="margin:0 0 14px">Todos os dias, durante 21 dias, escreve:</div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Dia</th><th>3 Recursos que Tenho</th><th>1 Capacidade que Tenho</th><th>1 Oportunidade que Vejo</th></tr></thead>
+        <tbody>
+          <tr><td>Exemplo</td><td>Saúde, telemóvel, competência de design</td><td>Sei falar inglês melhor que a maioria</td><td>Empresa X precisa de alguém como eu</td></tr>
+          <tr><td>Dia 1</td><td style="color:var(--light);font-style:italic">...</td><td style="color:var(--light);font-style:italic">...</td><td style="color:var(--light);font-style:italic">...</td></tr>
+          <tr><td>Dia 7</td><td style="color:var(--light);font-style:italic">...</td><td style="color:var(--light);font-style:italic">...</td><td style="color:var(--light);font-style:italic">...</td></tr>
+          <tr><td>Dia 21</td><td style="color:var(--light);font-style:italic">...</td><td style="color:var(--light);font-style:italic">...</td><td style="color:var(--light);font-style:italic">...</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="box box-blue" style="margin-top:12px">
+      <div class="box-label">🧠 Porque Isto Funciona</div>
+      <p>O cérebro humano tem um viés de negatividade — presta mais atenção às ameaças do que às oportunidades. A gratidão financeira não é ingenuidade. É treinar o cérebro a notar o que existe em vez de focar apenas no que falta. Este treino muda literalmente as decisões que tomas.</p>
+    </div>
+  </div>
+
+  <div class="cr">
+    <div class="cr-who">👨🏾‍💼 Eduardo — 30 dias de Diário de Gratidão</div>
+    <div class="cr-txt">"No dia 12, ao escrever 'capacidades', percebi que sei muito sobre estruturas metálicas — mais do que qualquer arquitecto da cidade. No dia 18, escrevi a oportunidade: dois arquitectos em Maputo que tinham projectos de armazéns mas não tinham o meu conhecimento. Fiz uma proposta. Aceitaram. São 4.000 MT por visita técnica."</div>
+    <div class="cr-res">✅ Eduardo descobriu uma consultoria de 8.000 MT/mês extra apenas mudando a forma de ver o que já tinha.</div>
+  </div>
+
+  <div class="missao">
+    <div class="m-hd"><div class="m-icon">🎯</div><div><div class="m-title">MISSÃO 04</div><div class="m-prazo">⏱ 21 dias consecutivos</div></div></div>
+    <div class="m-body">Pratica o Diário de Gratidão Financeira por 21 dias. Não saltes nenhum dia — a consistência é o que cria o novo padrão mental.</div>
+    <div class="m-steps">
+      <div class="m-step"><div class="m-n">1</div><div class="m-t"><strong>Cria um caderno físico ou nota no telemóvel</strong> chamado "Diário de Abundância".</div></div>
+      <div class="m-step"><div class="m-n">2</div><div class="m-t"><strong>Todos os dias de manhã, 5 minutos:</strong> 3 recursos + 1 capacidade + 1 oportunidade. Nada de "não tenho" — força o cérebro a encontrar o que existe.</div></div>
+      <div class="m-step"><div class="m-n">3</div><div class="m-t"><strong>No dia 21, relê tudo.</strong> Conta quantas oportunidades identificaste. Escolhe uma — e age sobre ela esta semana.</div></div>
+    </div>
+  </div>
+
+  <div class="proverb">
+    <div class="prov-txt">"Quando olhas para o chão, vês apenas pedras. Quando levantas os olhos para o horizonte, vês o caminho."</div>
+    <div class="prov-orig">Provérbio do Centro de Moçambique</div>
+    <div class="prov-lic">Lição financeira: A mentalidade de escassez mantém os olhos no chão — nos problemas, nas carências, nos medos. A mentalidade de abundância levanta o olhar para as possibilidades. Ambas são escolhas.</div>
+  </div>
+</article>
+<div class="divider"></div>
+
+<!-- CAP 5 -->
+<article class="capitulo" id="cap5">
+  <div class="cap-num">Capítulo 5 — Universo I</div>
+  <div class="cap-title">Conversar Sobre Dinheiro</div>
+  <div class="cap-sub">O Silêncio que Destrói Casamentos, Famílias e Futuros — e Como Abrir a Conversa Certa</div>
+  <div class="cap-tags"><span class="cap-tag">👩🏾‍⚕️ Beatriz</span><span class="cap-tag">👨🏾‍💼 Eduardo</span></div>
+
+  <div class="cena">
+    <div class="cena-bar" style="background:linear-gradient(90deg,#6C3483,#9B59B6,#C39BD3)"></div>
+    <div class="cena-inner">
+      <div class="cena-lbl">📖 O Almoço de Domingo da Beatriz</div>
+      <div class="cena-txt">
+        <p>Todo o domingo, a casa da Beatriz em Tete enchia-se. A mãe. Os dois irmãos mais novos e os seus filhos. A tia Gracinda que viajava de Chimoio de propósito. O cunhado que "passava a ver como estava".</p>
+        <p>Enquanto servia o arroz, a Beatriz fazia cálculos invisíveis. <em>Frango: 1.200 MT. Arroz: 400 MT. Refrigerantes: 600 MT. Propina do sobrinho que "ainda não tinha como pagar": 4.500 MT. O empréstimo do irmão de há 3 meses que nunca voltou: 8.000 MT.</em></p>
+        <p>Ninguém falava de dinheiro. Falavam do futebol, da novela, do primo que tinha ido para Portugal. Mas o dinheiro estava em tudo — em cada pedido não dito, em cada expectativa não verbalizada.</p>
+        <p>A Beatriz não conseguia dizer não. Não porque não soubesse. Mas porque ninguém a tinha ensinado como dizer não com amor — e manter as relações intactas.</p>
+        <p><strong>O silêncio sobre dinheiro não protege as relações. Muitas vezes é o que as destrói.</strong></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="dados">
+    <div class="dados-lbl">📊 O Silêncio Financeiro nas Relações</div>
+    <div class="dados-grid">
+      <div class="dado"><div class="dado-v">83%</div><div class="dado-l">Dos casais nunca discutiram um orçamento conjunto</div></div>
+      <div class="dado"><div class="dado-v">76%</div><div class="dado-l">Não sabem o salário exacto do cônjuge</div></div>
+      <div class="dado"><div class="dado-v">91%</div><div class="dado-l">Dos pais nunca ensinaram finanças explicitamente aos filhos</div></div>
+      <div class="dado"><div class="dado-v">#1</div><div class="dado-l">Causa de divórcio em Moçambique: conflitos financeiros</div></div>
+    </div>
+  </div>
+
+  <div class="h2">Script para Falar de Dinheiro em Família — Ubuntu Inteligente</div>
+  <div class="box box-gold">
+    <div class="box-label">💬 Como Conversar com a Família sobre Contribuições — Sem Romper Laços</div>
+    <ul>
+      <li><strong>Contexto (nunca de surpresa):</strong> "Mãe/Irmão/Tia, precisava de falar sobre uma coisa importante. Quando tens 20 minutos?"</li>
+      <li><strong>Partir de amor, não de recusa:</strong> "Amo a nossa família e quero continuar a apoiar-vos. Por isso preciso de ser honesto sobre o que consigo fazer de forma sustentável."</li>
+      <li><strong>Mostrar a realidade (números reais):</strong> "O meu salário é X. As minhas despesas são Y. O que consigo disponibilizar para a família é Z — de forma consistente, todos os meses."</li>
+      <li><strong>Oferecer uma alternativa clara:</strong> "Posso comprometer-me a [valor fixo] por mês. Para além disso, precisaria de muito aviso e de considerar caso a caso."</li>
+      <li><strong>Terminar com afirmação:</strong> "Isto não é abandono. É garantir que consigo apoiar-vos por muitos anos — e não só até esgotar."</li>
+    </ul>
+  </div>
+
+  <div class="h2">Os 3 Modelos de Gestão Financeira para Casais</div>
+  <div class="table-wrap">
+    <div class="table-lbl">Modelos de Gestão Financeira Conjugal — Vantagens e Riscos</div>
+    <table>
+      <thead><tr><th>Modelo</th><th>Como Funciona</th><th>Vantagem</th><th>Risco</th><th>Para Quem</th></tr></thead>
+      <tbody>
+        <tr><td>🤝 Tudo Junto</td><td>Todos os rendimentos numa conta conjunta</td><td>Simplicidade, transparência total</td><td>Perde autonomia, conflito se valores diferentes</td><td>Casais com valores financeiros muito alinhados</td></tr>
+        <tr><td>🔀 Tudo Separado</td><td>Cada um paga as suas despesas, dividem as comuns</td><td>Máxima autonomia</td><td>Quem ganha menos fica mais vulnerável</td><td>Uniões recentes, rendimentos muito diferentes</td></tr>
+        <tr class="tr-warn"><td>⭐ Sistema dos 3 Potes</td><td>Conta conjunta para despesas comuns + contas individuais para gastos pessoais</td><td>Equilíbrio entre partilha e autonomia</td><td>Requer conversa regular e acordo sobre valores</td><td>A maioria dos casais — recomendado</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="h2">Educação Financeira por Idade — O Que Ensinar e Quando</div>
+  <div class="table-wrap">
+    <div class="table-lbl">Guia de Educação Financeira para Pais</div>
+    <table>
+      <thead><tr><th>Idade</th><th>Conceito Principal</th><th>Actividade Prática</th><th>Mesada Sugerida</th></tr></thead>
+      <tbody>
+        <tr><td>4–6 anos</td><td>Dinheiro não nasce nas árvores — vem do trabalho</td><td>3 potes físicos: Gastar / Poupar / Dar. Tarefas simples por pequena recompensa.</td><td>10–20 MT/semana</td></tr>
+        <tr><td>7–10 anos</td><td>Escolha: se compras A, não podes comprar B</td><td>Lista de desejos e poupança para objectivo. Visita ao banco juntos.</td><td>30–70 MT/semana</td></tr>
+        <tr><td>11–14 anos</td><td>Necessidade vs. Desejo. Pressão dos pares.</td><td>Gerir mesada para objectivo de 3 meses. Primeiro trabalho em casa por valor extra.</td><td>150–300 MT/mês</td></tr>
+        <tr><td>15–17 anos</td><td>Orçamento, crédito, primeiro investimento</td><td>Conta bancária própria. Gestão de orçamento real. Primeiros BT com assinatura parental.</td><td>400–600 MT/mês</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="cr">
+    <div class="cr-who">👩🏾‍⚕️ Beatriz — 2 meses depois da conversa com a família</div>
+    <div class="cr-txt">"Tive a conversa mais difícil da minha vida. Disse à minha mãe que só podia contribuir com 5.000 MT por mês fixos — e que para além disso precisava de aviso de 2 semanas. A mãe ficou em silêncio. Depois disse: 'Beatriz, nunca soubemos o que ganhaste. Pensávamos que eras rica.' Naquele momento, percebi que o problema era o silêncio — não a família."</div>
+    <div class="cr-res">✅ Beatriz poupou 22.000 MT nos primeiros 2 meses depois da conversa — com as mesmas relações familiares.</div>
+  </div>
+
+  <div class="missao">
+    <div class="m-hd"><div class="m-icon">🎯</div><div><div class="m-title">MISSÃO 05</div><div class="m-prazo">⏱ Próximas 2 semanas</div></div></div>
+    <div class="m-body">Identifica a conversa financeira que tens evitado. Prepara-a. Tem-na.</div>
+    <div class="m-steps">
+      <div class="m-step"><div class="m-n">1</div><div class="m-t"><strong>Identifica a conversa financeira que mais adias</strong> — com o cônjuge, com a família, com um irmão que te deve dinheiro. Escreve o que temes que aconteça se a tiveres.</div></div>
+      <div class="m-step"><div class="m-n">2</div><div class="m-t"><strong>Prepara o script usando o modelo Ubuntu Inteligente</strong> — começa com amor, apresenta a realidade com números, oferece uma alternativa clara.</div></div>
+      <div class="m-step"><div class="m-n">3</div><div class="m-t"><strong>Marca a conversa para esta semana.</strong> Não adiar. O silêncio não protege ninguém — e o dinheiro continua a sair.</div></div>
+    </div>
+  </div>
+
+  <div class="proverb">
+    <div class="prov-txt">"Palavra dita com amor constrói. Palavra engolida por medo destrói por dentro."</div>
+    <div class="prov-orig">Provérbio do Sul de Moçambique</div>
+    <div class="prov-lic">Lição financeira: O silêncio sobre dinheiro não é gentileza — é uma bomba de relógio nas relações. Falar com amor e clareza é o maior acto de respeito que podes dar à tua família.</div>
+  </div>
+</article>
+<div class="divider"></div>
+
+<!-- CAP 6 -->
+<article class="capitulo" id="cap6">
+  <div class="cap-num">Capítulo 6 — Universo I</div>
+  <div class="cap-title">Dinheiro e Espiritualidade</div>
+  <div class="cap-sub">Fé, Cultura e Finanças — Como Honrar os Valores Espirituais sem Destruir a Estabilidade Financeira</div>
+  <div class="cap-tags"><span class="cap-tag">👩🏾 Amélia</span><span class="cap-tag">👨🏾‍🌾 Samuel</span></div>
+
+  <div class="cena">
+    <div class="cena-bar" style="background:linear-gradient(90deg,var(--green),var(--green2),#82E0AA)"></div>
+    <div class="cena-inner">
+      <div class="cena-lbl">📖 A Colecta da Amélia</div>
+      <div class="cena-txt">
+        <p>No domingo de Outubro, o pastor pediu à congregação que contribuísse para a construção da nova ala da igreja. A meta era 500.000 MT. "Quem der hoje, Deus multiplicará em sete vezes."</p>
+        <p>A Amélia tinha 4.200 MT para durar o mês inteiro — renda, comida, escola dos filhos. Sentiu aquela pressão familiar no peito quando o cesto passou.</p>
+        <p>Colocou 3.000 MT. <strong>Quase 71% do que tinha para sobreviver ao mês.</strong></p>
+        <p>Na semana seguinte, o filho do meio ficou doente. Não tinha dinheiro para os medicamentos. Voltou a pedir emprestado ao agiota.</p>
+        <p>A Amélia amava a sua fé. Mas a fé não lhe tinha ensinado — e a Igreja raramente ensina — que a generosidade sustentável exige estabilidade. Que um copo vazio não serve ninguém.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="h2">O Que a Bíblia e o Alcorão Realmente Dizem sobre Dar</div>
+  <div class="table-wrap">
+    <div class="table-lbl">O que os textos sagrados ensinam sobre doação e prosperidade</div>
+    <table>
+      <thead><tr><th>Tradição</th><th>O Que Diz</th><th>O Que NÃO Diz</th></tr></thead>
+      <tbody>
+        <tr><td>Cristã</td><td>"Cada um dê conforme decidiu em seu coração, não com tristeza nem por obrigação" (2 Cor 9:7). Sugerido: 10% do rendimento.</td><td>Não diz para dar o que não tens. Não diz para criar dívida para dar.</td></tr>
+        <tr><td>Islâmica (Zakat)</td><td>2.5% da poupança que excede o nisab (mínimo vital) que permanece há 1 ano lunar.</td><td>O Zakat incide sobre o EXCESSO, não sobre o rendimento total. Quem não tem excesso, não paga Zakat.</td></tr>
+        <tr><td>Cultura Tradicional</td><td>Participação nos ritos da comunidade, partilha de abundância, respeito pelos antepassados.</td><td>Não exige miséria. Os antepassados pedem respeito e honra — não destruição pessoal.</td></tr>
+        <tr class="tr-warn"><td>Conclusão</td><td colspan="2">Nenhuma tradição espiritual séria pede que destruas a tua estabilidade para dar. A generosidade sustentável começa pela tua própria estabilidade.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="h2">Cerimónias Culturais — Como Planear Lobolo, Casamentos e Funerais</div>
+  <div class="table-wrap">
+    <div class="table-lbl">Custos Típicos de Cerimónias Culturais e Plano de Poupança</div>
+    <table>
+      <thead><tr><th>Cerimónia</th><th>Custo Mínimo</th><th>Custo Médio</th><th>Custo Máximo</th><th>Plano de Poupança 2 Anos</th></tr></thead>
+      <tbody>
+        <tr><td>Lobolo (negociação)</td><td>30.000 MT</td><td>55.000 MT</td><td>120.000+ MT</td><td>2.292 MT/mês para 55.000 MT</td></tr>
+        <tr><td>Casamento (cerimónia)</td><td>80.000 MT</td><td>140.000 MT</td><td>300.000+ MT</td><td>5.833 MT/mês para 140.000 MT</td></tr>
+        <tr><td>Funeral digno</td><td>20.000 MT</td><td>45.000 MT</td><td>100.000+ MT</td><td>1.875 MT/mês para 45.000 MT</td></tr>
+        <tr><td>Baptizado / 7.º dia</td><td>5.000 MT</td><td>15.000 MT</td><td>40.000 MT</td><td>625 MT/mês para 15.000 MT</td></tr>
+        <tr class="tr-warn"><td>Estratégia</td><td colspan="4">Cria uma conta poupança dedicada a "Cerimónias Familiares". Contribui mensalmente, independentemente da urgência. Quando vier o evento, o dinheiro está lá.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="box box-gold">
+    <div class="box-label">💡 Contribuição Espiritual Sustentável — Como Calcular a Tua</div>
+    <ul>
+      <li><strong>Regra geral:</strong> Nunca contribuir mais do que 10–15% do rendimento líquido mensal para fins espirituais/culturais combinados.</li>
+      <li><strong>Para quem ganha 5.400 MT:</strong> Máximo 540–810 MT/mês para Igreja + cerimónias. Não mais.</li>
+      <li><strong>Para quem ganha 18.000 MT:</strong> Máximo 1.800–2.700 MT/mês.</li>
+      <li><strong>Dar com paz é mais poderoso do que dar com ansiedade.</strong> O teu estado emocional ao dar é parte do acto espiritual.</li>
+    </ul>
+  </div>
+
+  <div class="cr">
+    <div class="cr-who">👩🏾 Amélia — Depois de conversar com o Pastor</div>
+    <div class="cr-txt">"Fui falar com o Pastor Ernesto. Com muito respeito, expliquei a minha situação. Disse que amava a Igreja mas que 3.000 MT de uma vez era destruidor para mim. Propus 500 MT todos os meses — regular, fiel, durante o ano inteiro. O Pastor ficou mais satisfeito do que esperava. Disse que consistência vale mais do que gestos grandes e únicos. Passei a dar 6.000 MT por ano — mais do que antes — mas de forma sustentável."</div>
+    <div class="cr-res">✅ Amélia passou a dar mais à Igreja — de forma sustentável — e terminou o ciclo de dívida para financiar a fé.</div>
+  </div>
+
+  <div class="missao">
+    <div class="m-hd"><div class="m-icon">🎯</div><div><div class="m-title">MISSÃO 06</div><div class="m-prazo">⏱ Este mês</div></div></div>
+    <div class="m-body">Define o teu orçamento espiritual e cultural de forma consciente e sustentável.</div>
+    <div class="m-steps">
+      <div class="m-step"><div class="m-n">1</div><div class="m-t"><strong>Lista todas as contribuições espirituais e culturais</strong> que fazes actualmente (Igreja, cerimónias, presentes obrigatórios). Soma o total mensal.</div></div>
+      <div class="m-step"><div class="m-n">2</div><div class="m-t"><strong>Verifica se esse valor representa menos de 10–15%</strong> do teu rendimento. Se exceder, identifica o que pode ser ajustado.</div></div>
+      <div class="m-step"><div class="m-n">3</div><div class="m-t"><strong>Abre uma conta poupança dedicada a "Cerimónias"</strong> e contribui um valor fixo mensal para futuros eventos. A paz de já ter o dinheiro quando o evento vier não tem preço.</div></div>
+    </div>
+  </div>
+
+  <div class="proverb">
+    <div class="prov-txt">"Os antepassados pedem respeito — não miséria."</div>
+    <div class="prov-orig">Adaptação — Sabedoria das Comunidades do Norte de Moçambique</div>
+    <div class="prov-lic">Lição financeira: Honrar a fé, a cultura e os antepassados é compatível com a estabilidade financeira. Uma família estável honra melhor os seus valores do que uma família que se destrói financeiramente para pagar rituais.</div>
+  </div>
+</article>
+<div class="divider"></div>
+
+<!-- ═══════ CAP 7 ═══════ -->
+<div class="divider"></div>
+<article class="capitulo" id="cap7">
+  <div class="cap-header">
+    <div class="cap-num">Capítulo 7 — Universo I</div>
+    <div class="cap-title">O Diagnóstico Financeiro</div>
+    <div class="cap-subtitle">A Verdade Que Liberta — Conhecer a Tua Situação Real em Números</div>
+    <div class="cap-personagens"><span class="cap-per-tag">🌟 Todos os 7 Personagens</span></div>
+  </div>
+
+  <div class="cena">
+    <div class="cena-stripe" style="background:linear-gradient(90deg,#1B2631,#21618C,#C8960C)"></div>
+    <div class="cena-inner">
+      <div class="cena-label">📖 O Momento da Verdade</div>
+      <div class="cena-text">
+        <p>Havia sete pessoas sentadas à volta de uma mesa imaginária. A Amélia, o Tomás, o Eduardo, a Dona Rosa, a Inês, o Samuel e a Beatriz. Nenhuma se conhecia. Mas todas partilhavam o mesmo desconforto naquele momento: estavam prestes a olhar para os números reais da sua vida financeira pela primeira vez.</p>
+        <p>O Eduardo tinha medo do que ia encontrar. A Amélia estava nervosa. A Dona Rosa queria ir embora.</p>
+        <p>Mas o Samuel — com os seus 45 anos e as mãos calejadas da terra — disse algo que ficou no ar: <em>"Não há nada que a verdade me possa mostrar que eu não possa mudar. Mas há muito que a mentira me pode esconder que me vai destruir lentamente."</em></p>
+        <p>O diagnóstico financeiro não é um julgamento. É uma bússola. E ninguém pode navegar sem saber onde está.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="subtitulo">Ferramenta 7-A: O Teu Rendimento Real</div>
+  <div class="ferramenta">
+    <div class="ferramenta-header"><div class="ferramenta-icon">🧮</div><div><div class="ferramenta-title">CALCULADORA DE RENDIMENTO REAL</div><div class="ferramenta-sub">O que entra realmente no teu bolso cada mês</div></div></div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Componente</th><th>O Teu Valor (MT)</th><th>Exemplo Amélia</th><th>Exemplo Eduardo</th></tr></thead>
+        <tbody>
+          <tr><td>Salário bruto / rendimento bruto</td><td style="color:var(--light);font-style:italic">_____ MT</td><td>3.000 MT</td><td>35.000 MT</td></tr>
+          <tr><td>(-) Impostos e INSS</td><td style="color:var(--light);font-style:italic">_____ MT</td><td>0 MT (informal)</td><td>-7.000 MT</td></tr>
+          <tr><td>(-) Prestações descontadas na folha</td><td style="color:var(--light);font-style:italic">_____ MT</td><td>0 MT</td><td>-3.500 MT</td></tr>
+          <tr><td>(+) Rendimentos extras regulares</td><td style="color:var(--light);font-style:italic">_____ MT</td><td>+800 MT (fim semana)</td><td>0 MT</td></tr>
+          <tr class="tr-total"><td>RENDIMENTO REAL MENSAL</td><td>_____ MT</td><td>3.800 MT</td><td>24.500 MT</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="subtitulo">Ferramenta 7-B: O Mapa Completo das Despesas</div>
+  <div class="ferramenta">
+    <div class="ferramenta-header"><div class="ferramenta-icon">📊</div><div><div class="ferramenta-title">MAPA COMPLETO DE DESPESAS MENSAIS</div><div class="ferramenta-sub">Regista tudo — sem excepções</div></div></div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Categoria</th><th>Subcategoria</th><th>O Teu Valor (MT)</th><th>Necessidade ou Desejo?</th></tr></thead>
+        <tbody>
+          <tr class="tr-section"><td colspan="4">HABITAÇÃO</td></tr>
+          <tr><td>Habitação</td><td>Renda / prestação hipoteca</td><td style="color:var(--light);font-style:italic">_____ MT</td><td>Necessidade</td></tr>
+          <tr><td>Habitação</td><td>Água + Electricidade</td><td style="color:var(--light);font-style:italic">_____ MT</td><td>Necessidade</td></tr>
+          <tr><td>Habitação</td><td>Gás / carvão / lenha</td><td style="color:var(--light);font-style:italic">_____ MT</td><td>Necessidade</td></tr>
+          <tr class="tr-section"><td colspan="4">ALIMENTAÇÃO E HIGIENE</td></tr>
+          <tr><td>Alimentação</td><td>Mercado / supermercado</td><td style="color:var(--light);font-style:italic">_____ MT</td><td>Necessidade</td></tr>
+          <tr><td>Alimentação</td><td>Refeições fora de casa</td><td style="color:var(--light);font-style:italic">_____ MT</td><td>Verificar</td></tr>
+          <tr><td>Higiene</td><td>Sabão, pasta, higiene pessoal</td><td style="color:var(--light);font-style:italic">_____ MT</td><td>Necessidade</td></tr>
+          <tr class="tr-section"><td colspan="4">TRANSPORTE</td></tr>
+          <tr><td>Transporte</td><td>Chapa / autocarro / combustível</td><td style="color:var(--light);font-style:italic">_____ MT</td><td>Necessidade</td></tr>
+          <tr><td>Transporte</td><td>Prestação do carro</td><td style="color:var(--light);font-style:italic">_____ MT</td><td>Verificar</td></tr>
+          <tr class="tr-section"><td colspan="4">EDUCAÇÃO E SAÚDE</td></tr>
+          <tr><td>Educação</td><td>Propinas + material escolar</td><td style="color:var(--light);font-style:italic">_____ MT</td><td>Necessidade</td></tr>
+          <tr><td>Saúde</td><td>Consultas + medicamentos</td><td style="color:var(--light);font-style:italic">_____ MT</td><td>Necessidade</td></tr>
+          <tr class="tr-section"><td colspan="4">COMUNICAÇÃO E LAZER</td></tr>
+          <tr><td>Telecom</td><td>Telemóvel + internet</td><td style="color:var(--light);font-style:italic">_____ MT</td><td>Necessidade/Desejo</td></tr>
+          <tr><td>Lazer</td><td>Saídas, entretenimento, viagens</td><td style="color:var(--light);font-style:italic">_____ MT</td><td>Desejo</td></tr>
+          <tr class="tr-section"><td colspan="4">DÍVIDAS E OBRIGAÇÕES</td></tr>
+          <tr><td>Dívidas</td><td>Prestações de empréstimos</td><td style="color:var(--light);font-style:italic">_____ MT</td><td>Obrigação</td></tr>
+          <tr><td>Família</td><td>Contribuições para família alargada</td><td style="color:var(--light);font-style:italic">_____ MT</td><td>Verificar</td></tr>
+          <tr><td>Espiritual</td><td>Igreja + cerimónias culturais</td><td style="color:var(--light);font-style:italic">_____ MT</td><td>Verificar</td></tr>
+          <tr class="tr-total"><td colspan="2">TOTAL DESPESAS MENSAIS</td><td>_____ MT</td><td></td></tr>
+          <tr class="tr-saldo-pos"><td colspan="2">SALDO (Rendimento - Despesas)</td><td>_____ MT</td><td>Positivo = estás a avançar</td></tr>
+          <tr class="tr-saldo-neg"><td colspan="2">DEFICIT (se negativo)</td><td>_____ MT</td><td>Negativo = urgência de acção</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="subtitulo">Ferramenta 7-C: O Balanço Patrimonial Pessoal</div>
+  <div class="ferramenta">
+    <div class="ferramenta-header"><div class="ferramenta-icon">⚖️</div><div><div class="ferramenta-title">O QUE VALE (ACTIVOS) vs O QUE DEVES (PASSIVOS)</div><div class="ferramenta-sub">O teu Património Líquido = Activos − Passivos</div></div></div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>ACTIVOS — O Que Tens</th><th>Valor (MT)</th><th>PASSIVOS — O Que Deves</th><th>Valor (MT)</th></tr></thead>
+        <tbody>
+          <tr><td>Dinheiro em contas bancárias</td><td style="color:var(--light);font-style:italic">_____ MT</td><td>Empréstimos bancários</td><td style="color:var(--light);font-style:italic">_____ MT</td></tr>
+          <tr><td>Dinheiro em M-Pesa/e-Mola</td><td style="color:var(--light);font-style:italic">_____ MT</td><td>Crédito de agiotas</td><td style="color:var(--light);font-style:italic">_____ MT</td></tr>
+          <tr><td>Imóvel / terreno (DUAT)</td><td style="color:var(--light);font-style:italic">_____ MT</td><td>Prestação do carro em dívida</td><td style="color:var(--light);font-style:italic">_____ MT</td></tr>
+          <tr><td>Veículo próprio (valor real)</td><td style="color:var(--light);font-style:italic">_____ MT</td><td>Dívidas a familiares</td><td style="color:var(--light);font-style:italic">_____ MT</td></tr>
+          <tr><td>Negócio próprio (valor estimado)</td><td style="color:var(--light);font-style:italic">_____ MT</td><td>Cartão de crédito em dívida</td><td style="color:var(--light);font-style:italic">_____ MT</td></tr>
+          <tr><td>Equipamentos e bens de valor</td><td style="color:var(--light);font-style:italic">_____ MT</td><td>Outras dívidas</td><td style="color:var(--light);font-style:italic">_____ MT</td></tr>
+          <tr class="tr-total"><td>TOTAL ACTIVOS</td><td>_____ MT</td><td>TOTAL PASSIVOS</td><td>_____ MT</td></tr>
+          <tr class="tr-aviso"><td colspan="2" style="font-weight:700;color:var(--gold)">PATRIMÓNIO LÍQUIDO = ACTIVOS − PASSIVOS</td><td colspan="2" style="font-weight:700;font-size:16px">_____ MT</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="subtitulo">Os 7 Personagens Fazem o Diagnóstico</div>
+  <div class="table-wrap">
+    <div class="table-title">Resultados do Balanço Patrimonial — Os 7 Personagens</div>
+    <table>
+      <thead><tr><th>Personagem</th><th>Rendimento</th><th>Activos</th><th>Passivos</th><th>Património Líquido</th><th>Situação</th></tr></thead>
+      <tbody>
+        <tr><td>👩🏾 Amélia</td><td>3.800 MT/mês</td><td>2.500 MT</td><td>11.000 MT</td><td style="color:var(--red);font-weight:700">-8.500 MT</td><td>🔴 Dívida urgente</td></tr>
+        <tr><td>👦🏾 Tomás</td><td>500 MT/mês</td><td>800 MT</td><td>500 MT</td><td style="color:var(--green2);font-weight:700">+300 MT</td><td>🟡 Início positivo</td></tr>
+        <tr><td>👨🏾‍💼 Eduardo</td><td>24.500 MT/mês</td><td>80.000 MT</td><td>225.000 MT</td><td style="color:var(--red);font-weight:700">-145.000 MT</td><td>🔴 Crise oculta</td></tr>
+        <tr><td>👵🏾 Dona Rosa</td><td>6.500 MT/mês</td><td>47.000 MT</td><td>0 MT</td><td style="color:var(--green2);font-weight:700">+47.000 MT</td><td>🟡 Capital mal aplicado</td></tr>
+        <tr><td>👩🏾‍💻 Inês</td><td>10.000 MT/mês (média)</td><td>12.000 MT</td><td>10.000 MT</td><td style="color:var(--green2);font-weight:700">+2.000 MT</td><td>🟡 Instável mas positivo</td></tr>
+        <tr><td>👨🏾‍🌾 Samuel</td><td>40.000 MT/ano</td><td>180.000 MT</td><td>60.000 MT</td><td style="color:var(--green2);font-weight:700">+120.000 MT</td><td>🟢 Sólido — pode crescer</td></tr>
+        <tr><td>👩🏾‍⚕️ Beatriz</td><td>80.000 MT/mês</td><td>50.000 MT</td><td>135.000 MT</td><td style="color:var(--red);font-weight:700">-85.000 MT</td><td>🔴 Alto rendimento, risco alto</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="pullquote">
+    <div class="pullquote-text">"O Eduardo ganhou 24.500 MT líquidos em Janeiro. Em 15 de Janeiro, já não tinha nada. O Samuel ganhou 3.333 MT em Janeiro. Em 31 de Janeiro, tinha 1.200 MT poupados. Rendimento não é riqueza. Hábito é riqueza."</div>
+    <div class="pullquote-src">Sementes de Riqueza — Cap. 7</div>
+  </div>
+
+  <div class="missao">
+    <div class="missao-header"><div class="missao-icon">🎯</div><div><div class="missao-title">MISSÃO 07</div><div class="missao-prazo">⏱ Hoje — leva 2 horas mas muda a vida</div></div></div>
+    <div class="missao-body">Preenche os três instrumentos de diagnóstico com os teus números reais. Sem mentiras, sem arredondamentos confortáveis. A verdade é o início da transformação.</div>
+    <div class="missao-steps">
+      <div class="missao-step"><div class="ms-num">1</div><div class="ms-txt"><strong>Ferramenta 7-A:</strong> Calcula o teu rendimento real mensal — o que realmente entra no bolso depois de impostos, descontos e obrigações.</div></div>
+      <div class="missao-step"><div class="ms-num">2</div><div class="ms-txt"><strong>Ferramenta 7-B:</strong> Lista TODAS as despesas mensais. Inclui despesas anuais divididas por 12. Não omitas nada.</div></div>
+      <div class="missao-step"><div class="ms-num">3</div><div class="ms-txt"><strong>Ferramenta 7-C:</strong> Calcula o teu património líquido. Seja qual for o resultado — positivo ou negativo — escreve-o. É o teu ponto de partida.</div></div>
+      <div class="missao-step"><div class="ms-num">4</div><div class="ms-txt"><strong>Identifica os 3 maiores problemas financeiros</strong> que os números revelaram. Estes vão ser os teus alvos principais no Universo II — Acção.</div></div>
+    </div>
+  </div>
+
+  <div class="proverb">
+    <div class="proverb-text">"Só conhece o caminho quem primeiro sabe onde está."</div>
+    <div class="proverb-origin">Provérbio Maconde, Norte de Moçambique</div>
+    <div class="proverb-licao">Lição financeira: O diagnóstico não é o problema — é o remédio. Sem ele, toda a acção é às cegas. Com ele, cada decisão financeira passa a ter direcção e propósito.</div>
+  </div>
+</article>
+
+<!-- PAUSA ENTRE UNIVERSOS -->
+<div class="pausa">
+  <div class="pausa-inner">
+    <h3>PASSAGEM PARA<br><em>A ACÇÃO</em></h3>
+    <p>Completaste o Universo I — Sementes. Trabalháste a mentalidade, curaste traumas, identificaste emoções, aprendeste a comunicar sobre dinheiro, alinhaste a fé com as finanças e fizeste o diagnóstico completo da tua situação.</p>
+    <p>Agora começa o trabalho das mãos. O dinheiro não se gere com pensamentos bonitos. Gere-se com orçamentos, com planos de dívida, com contas abertas e ferramentas concretas.</p>
+    <div class="pausa-pergunta">🤔 Antes de avançar: O teu diagnóstico revela um problema principal? Dívidas? Sem poupanças? Despesas que excedem o rendimento? Escreve-o — é o teu alvo do próximo universo.</div>
+  </div>
+</div>
+
+<!-- UNIVERSO II -->
+<div class="uni-header">
+  <div class="uni-num-label">Universo II — Capítulos 8 ao 15</div>
+  <div class="uni-title">CULTIVO<br><em>A ACÇÃO</em></div>
+  <div class="uni-epigraph">"A enxada que não trabalha não alimenta ninguém."</div>
+</div>
+
+<!-- ═══════ CAP 8 ═══════ -->
+<div class="divider"></div>
+<article class="capitulo" id="cap8">
+  <div class="cap-header">
+    <div class="cap-num">Capítulo 8 — Universo II</div>
+    <div class="cap-title">O Orçamento que Realmente Funciona</div>
+    <div class="cap-subtitle">Chega de Planilhas Que Abandonas em Fevereiro — O Método Adaptado à Realidade Moçambicana</div>
+    <div class="cap-personagens"><span class="cap-per-tag">👨🏾‍💼 Eduardo</span><span class="cap-per-tag">👩🏾‍💻 Inês</span><span class="cap-per-tag">👨🏾‍🌾 Samuel</span></div>
+  </div>
+
+  <div class="cena">
+    <div class="cena-stripe" style="background:linear-gradient(90deg,#1A5276,#2980B9,#85C1E9)"></div>
+    <div class="cena-inner">
+      <div class="cena-label">📖 O Dia do Salário do Eduardo</div>
+      <div class="cena-text">
+        <p>O Eduardo recebia o salário no dia 25 de cada mês. Em Janeiro, recebeu 24.500 MT líquidos.</p>
+        <p>Em 40 minutos, 12.400 MT já tinham saído da conta: 9.000 MT de renda automática, 1.800 MT de prestação do carro, 1.600 MT da mensalidade do condomínio.</p>
+        <p>Na manhã seguinte, foi ao supermercado. Saiu com 2.200 MT a menos — para uma semana de comida que ficou no corredor.</p>
+        <p>No dia 3 de Fevereiro — oito dias depois do salário — o Eduardo tinha 4.100 MT na conta. Para 22 dias do mês.</p>
+        <p><em>"Onde foi o dinheiro?"</em> era a pergunta que fazia todos os meses. A resposta: nunca tinha ido a lado nenhum de propósito. Tinha simplesmente... escorregado.</p>
+        <p>O orçamento não é uma punição. É a resposta a essa pergunta — antes que o dinheiro escorregue.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="subtitulo">O Método 50-30-20 Adaptado a Moçambique</div>
+  <p class="txt">O método 50-30-20 é a base mais simples e eficaz de orçamento pessoal: 50% do rendimento para necessidades, 30% para desejos, 20% para poupanças e dívidas. Mas em Moçambique, as proporções precisam de ajuste — especialmente para rendimentos baixos.</p>
+
+  <div class="table-wrap">
+    <div class="table-title">Método 50-30-20 Adaptado — 3 Níveis de Rendimento</div>
+    <table>
+      <thead><tr><th>Categoria</th><th>Rendimento 5.400 MT</th><th>% Sugerida</th><th>Rendimento 18.000 MT</th><th>% Sugerida</th><th>Rendimento 50.000 MT</th><th>% Sugerida</th></tr></thead>
+      <tbody>
+        <tr class="tr-section"><td colspan="7">NECESSIDADES (fixas e essenciais)</td></tr>
+        <tr><td>Habitação</td><td>1.500 MT</td><td rowspan="5" style="vertical-align:middle;text-align:center;font-weight:700;color:var(--rust);font-size:20px">65%</td><td>4.500 MT</td><td rowspan="5" style="vertical-align:middle;text-align:center;font-weight:700;color:var(--gold);font-size:20px">55%</td><td>12.000 MT</td><td rowspan="5" style="vertical-align:middle;text-align:center;font-weight:700;color:var(--green2);font-size:20px">50%</td></tr>
+        <tr><td>Alimentação</td><td>1.200 MT</td><td>3.800 MT</td><td>8.000 MT</td></tr>
+        <tr><td>Transporte</td><td>500 MT</td><td>1.500 MT</td><td>4.000 MT</td></tr>
+        <tr><td>Educação + Saúde</td><td>300 MT</td><td>1.200 MT</td><td>3.000 MT</td></tr>
+        <tr><td>Água + Luz + Telecom</td><td>500 MT</td><td>1.600 MT</td><td>6.000 MT</td></tr>
+        <tr class="tr-section"><td colspan="7">DESEJOS (variáveis e controláveis)</td></tr>
+        <tr><td>Lazer + saídas</td><td>200 MT</td><td rowspan="3" style="vertical-align:middle;text-align:center;font-weight:700;color:var(--blue);font-size:20px">15%</td><td>1.500 MT</td><td rowspan="3" style="vertical-align:middle;text-align:center;font-weight:700;color:var(--blue);font-size:20px">20%</td><td>6.000 MT</td><td rowspan="3" style="vertical-align:middle;text-align:center;font-weight:700;color:var(--blue);font-size:20px">25%</td></tr>
+        <tr><td>Vestuário + imagem</td><td>200 MT</td><td>1.000 MT</td><td>4.000 MT</td></tr>
+        <tr><td>Extras + imprevistos</td><td>410 MT</td><td>1.100 MT</td><td>3.500 MT</td></tr>
+        <tr class="tr-section"><td colspan="7">POUPANÇAS E DÍVIDAS</td></tr>
+        <tr><td>Fundo de emergência</td><td>200 MT</td><td rowspan="3" style="vertical-align:middle;text-align:center;font-weight:700;color:var(--green2);font-size:20px">20%</td><td>1.000 MT</td><td rowspan="3" style="vertical-align:middle;text-align:center;font-weight:700;color:var(--green2);font-size:20px">25%</td><td>4.000 MT</td><td rowspan="3" style="vertical-align:middle;text-align:center;font-weight:700;color:var(--green2);font-size:20px">25%</td></tr>
+        <tr><td>Investimento / poupança longo prazo</td><td>150 MT</td><td>1.700 MT</td><td>6.500 MT</td></tr>
+        <tr><td>Pagamento de dívidas extra</td><td>540 MT</td><td>1.800 MT</td><td>2.000 MT</td></tr>
+        <tr class="tr-total"><td>TOTAL</td><td>5.400 MT</td><td>100%</td><td>18.000 MT</td><td>100%</td><td>50.000 MT</td><td>100%</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="subtitulo">Para Rendimentos Variáveis — O Método da Média Móvel</div>
+  <p class="txt">A Inês e o Samuel têm rendimentos irregulares. O método da média móvel resolve isto: calcula a média dos últimos 3 meses e usa esse valor como base do orçamento. Nos meses acima da média, o excesso vai directamente para a Reserva de Variação.</p>
+
+  <div class="table-wrap">
+    <div class="table-title">Método da Média Móvel — Exemplo da Inês (Freelancer)</div>
+    <table>
+      <thead><tr><th>Mês</th><th>Rendimento Real</th><th>Base Orçamento (média 3m)</th><th>Diferença</th><th>Acção</th></tr></thead>
+      <tbody>
+        <tr><td>Janeiro</td><td>5.000 MT</td><td>—</td><td>—</td><td>Registar</td></tr>
+        <tr><td>Fevereiro</td><td>18.000 MT</td><td>—</td><td>—</td><td>Registar</td></tr>
+        <tr><td>Março</td><td>8.000 MT</td><td>10.333 MT (média Jan-Mar)</td><td>-2.333 MT</td><td>Usar Reserva de Variação</td></tr>
+        <tr class="tr-aviso"><td>Abril</td><td>20.000 MT</td><td>10.333 MT</td><td>+9.667 MT</td><td>9.667 MT → Reserva de Variação</td></tr>
+        <tr><td>Maio</td><td>6.000 MT</td><td>11.333 MT (média Fev-Abr)</td><td>-5.333 MT</td><td>Usar Reserva de Variação</td></tr>
+        <tr class="tr-saldo-pos"><td>Resultado</td><td colspan="4">A Inês vive com base estável de ~11.000 MT/mês — independentemente dos picos e vales do freelancing</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="box box-red">
+    <div class="box-label">⚠️ Os 5 Erros Mais Comuns nos Orçamentos em Moçambique</div>
+    <ul>
+      <li><strong>Esquecer as despesas anuais:</strong> Propinas do ano inteiro, seguros anuais, reparações sazonais — divide por 12 e inclui no orçamento mensal.</li>
+      <li><strong>Orçar o salário bruto em vez do líquido:</strong> O orçamento é sempre com o dinheiro que realmente recebes na mão.</li>
+      <li><strong>Não incluir a família alargada:</strong> Se sabes que vais ajudar alguém todos os meses, orça esse valor. "Surpresas" que acontecem todos os meses não são surpresas.</li>
+      <li><strong>Orçamento perfeito que abandonas:</strong> Um orçamento simples que segues é melhor do que um perfeito que abandonas em Março.</li>
+      <li><strong>Não fazer revisão mensal:</strong> O orçamento não é uma vez por ano. É um documento vivo — revê e ajusta no primeiro dia de cada mês.</li>
+    </ul>
+  </div>
+
+  <div class="char-response">
+    <div class="cr-who">👨🏾‍💼 Eduardo — 1 mês depois de criar o primeiro orçamento real</div>
+    <div class="cr-text">"Descobri que gastava 2.800 MT por mês em coisas que não conseguia nomear. Depois de registar tudo, vi: 600 MT em cafés e pequenos-almoços no trabalho, 800 MT em Uber quando podia apanhar chapa, 1.400 MT em refeições ao almoço no restaurante. Cortei 1.600 MT sem mudar a qualidade de vida — só os hábitos inconscientes."</div>
+    <div class="cr-resultado">✅ Eduardo poupou 1.600 MT extras por mês sem sentir sacrifício — apenas tornando o gasto consciente.</div>
+  </div>
+
+  <div class="missao">
+    <div class="missao-header"><div class="missao-icon">🎯</div><div><div class="missao-title">MISSÃO 08</div><div class="missao-prazo">⏱ Hoje + primeiro dia de cada mês</div></div></div>
+    <div class="missao-body">Cria o teu primeiro orçamento real. Não o orçamento que queres ter — o orçamento da tua realidade actual, com margem para melhorar.</div>
+    <div class="missao-steps">
+      <div class="missao-step"><div class="ms-num">1</div><div class="ms-txt"><strong>Usa o método 50-30-20</strong> (ou ajustado à tua realidade) para distribuir o rendimento real calculado na Missão 7.</div></div>
+      <div class="missao-step"><div class="ms-num">2</div><div class="ms-txt"><strong>Abre uma conta poupança separada</strong> esta semana. Transfere o valor de poupança imediatamente no dia do salário — antes de gastar qualquer coisa.</div></div>
+      <div class="missao-step"><div class="ms-num">3</div><div class="ms-txt"><strong>Regista os gastos diários</strong> durante 30 dias (caderno físico, app ou WhatsApp). No final do mês, compara com o orçamento — e ajusta para o mês seguinte.</div></div>
+    </div>
+  </div>
+
+  <div class="proverb">
+    <div class="proverb-text">"Plantar sem medir é trabalhar para o vento."</div>
+    <div class="proverb-origin">Provérbio dos Agricultores de Sofala</div>
+    <div class="proverb-licao">Lição financeira: O orçamento é a medição do plantio financeiro. Sem ele, o esforço existe mas o resultado é imprevisível. Com ele, cada metical tem uma função e o mês tem um destino.</div>
+  </div>
+</article>
+
+<!-- ═══════ CAP 9 ═══════ -->
+<div class="divider"></div>
+<article class="capitulo" id="cap9">
+  <div class="cap-header">
+    <div class="cap-num">Capítulo 9 — Universo II</div>
+    <div class="cap-title">Dívidas — Como Sair da Lama</div>
+    <div class="cap-subtitle">Do Agiota ao Banco — Estratégias Reais para Liquidar Dívidas em Moçambique</div>
+    <div class="cap-personagens"><span class="cap-per-tag">👩🏾 Amélia</span><span class="cap-per-tag">👨🏾‍💼 Eduardo</span></div>
+  </div>
+
+  <div class="cena">
+    <div class="cena-stripe" style="background:linear-gradient(90deg,#7B241C,#C0392B,#E74C3C)"></div>
+    <div class="cena-inner">
+      <div class="cena-label">📖 A Dívida que Cresceu como Capim</div>
+      <div class="cena-text">
+        <p>Em Março, a Amélia pediu 3.000 MT emprestados ao Chico Agiota do bairro. Era urgente — material escolar do Hélio mais medicamentos para a mãe. A taxa era de 40% ao mês. Ela sabia que era muito. Mas era a única opção naquela semana.</p>
+        <p>Em Abril: devia 4.200 MT. Pagou 1.000 MT — o que pôde.</p>
+        <p>Em Maio: devia 4.480 MT sobre o saldo restante. Pagou 800 MT.</p>
+        <p>Em Agosto — cinco meses depois de um empréstimo de 3.000 MT — a Amélia devia 11.200 MT. Quase quatro vezes o valor original. E o Chico Agiota começava a aparecer na banca dela.</p>
+        <p><em>"Não é empréstimo,"</em> sussurrou a Amélia a uma amiga. <em>"É uma armadilha. E eu entrei de olhos abertos porque não tinha alternativa."</em></p>
+        <p>Mas havia alternativa. Ela é que nunca tinha sabido onde procurar.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="realidade">
+    <div class="realidade-label">📊 O Mercado da Dívida em Moçambique</div>
+    <div class="realidade-title">As taxas de juro que destroem famílias</div>
+    <div class="dados-grid">
+      <div class="dado-item"><div class="dado-val">40%</div><div class="dado-lbl">Taxa mensal típica de agiota — 480% ao ano</div></div>
+      <div class="dado-item"><div class="dado-val">72%</div><div class="dado-lbl">Moçambicanos adultos com alguma dívida activa</div></div>
+      <div class="dado-item"><div class="dado-val">3.000</div><div class="dado-lbl">MT emprestados ao agiota → 11.200 MT em 5 meses</div></div>
+      <div class="dado-item"><div class="dado-val">25%</div><div class="dado-lbl">Taxa anual do microcrédito formal — 20x mais barato</div></div>
+    </div>
+    <p>O crédito informal (agiotas) é omnipresente em Moçambique porque é rápido, sem burocracia e acessível a quem não tem historial bancário. Mas as taxas são predatórias — e transformam um problema financeiro temporário numa crise permanente.</p>
+  </div>
+
+  <div class="subtitulo">A Hierarquia das Dívidas — Da Mortal à Aceitável</div>
+  <div class="table-wrap">
+    <div class="table-title">Classificação das Dívidas em Moçambique</div>
+    <table>
+      <thead><tr><th>Tipo</th><th>Taxa Típica</th><th>Classificação</th><th>Acção Prioritária</th></tr></thead>
+      <tbody>
+        <tr style="background:rgba(192,57,43,.1)"><td>💀 Agiota / crédito informal</td><td>30–60%/mês (360–720%/ano)</td><td style="color:var(--red);font-weight:700">MORTAL</td><td>Eliminar primeiro — URGÊNCIA MÁXIMA</td></tr>
+        <tr style="background:rgba(231,76,60,.07)"><td>🔴 Cartão de crédito não pago</td><td>2–5%/mês (24–60%/ano)</td><td style="color:var(--red)">MÁ</td><td>Eliminar segundo — pagar total mensal</td></tr>
+        <tr style="background:rgba(200,150,12,.07)"><td>🟡 Crédito pessoal bancário</td><td>18–30%/ano</td><td style="color:var(--gold)">GERÍVEL</td><td>Gerir e reduzir sistematicamente</td></tr>
+        <tr style="background:rgba(39,174,96,.07)"><td>🟢 Microcrédito formal (Socremo)</td><td>18–25%/ano</td><td style="color:var(--green2)">ACEITÁVEL</td><td>Melhor alternativa ao agiota</td></tr>
+        <tr style="background:rgba(41,128,185,.07)"><td>🔵 Crédito habitação</td><td>10–18%/ano</td><td style="color:var(--blue)">BOA</td><td>Manter — constrói activo real</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="subtitulo">2 Estratégias para Liquidar Dívidas — Escolhe a Tua</div>
+  <div class="comparativo">
+    <div class="comp-card comp-neutral">
+      <div class="comp-label">⚡ Método Avalanche</div>
+      <div class="comp-val" style="font-size:18px;margin-bottom:10px">Mais rápido</div>
+      <div class="comp-desc">Paga o mínimo em todas as dívidas. Coloca o máximo disponível na dívida com <strong>maior taxa de juro</strong>. Quando pagar, passa para a próxima taxa mais alta. <strong>Poupa mais dinheiro</strong> em juros totais.</div>
+    </div>
+    <div class="comp-card comp-pos">
+      <div class="comp-label">❄️ Método Bola de Neve</div>
+      <div class="comp-val" style="font-size:18px;margin-bottom:10px">Mais motivador</div>
+      <div class="comp-desc">Paga o mínimo em todas as dívidas. Coloca o máximo disponível na dívida com <strong>menor saldo total</strong>. Quando pagar, passa para a próxima menor. <strong>Vitórias rápidas</strong> mantêm a motivação.</div>
+    </div>
+  </div>
+
+  <div class="ferramenta">
+    <div class="ferramenta-header"><div class="ferramenta-icon">📋</div><div><div class="ferramenta-title">PLANO DE LIQUIDAÇÃO DE DÍVIDAS</div><div class="ferramenta-sub">Ferramenta 9-A — Lista todas as tuas dívidas e define a ordem</div></div></div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Dívida</th><th>Saldo Total (MT)</th><th>Taxa Juro</th><th>Pagamento Mínimo</th><th>Ordem (Avalanche ou Bola de Neve)</th></tr></thead>
+        <tbody>
+          <tr><td>Dívida 1: _______________</td><td style="color:var(--light);font-style:italic">_____ MT</td><td style="color:var(--light);font-style:italic">____%</td><td style="color:var(--light);font-style:italic">_____ MT</td><td style="color:var(--light);font-style:italic">_____</td></tr>
+          <tr><td>Dívida 2: _______________</td><td style="color:var(--light);font-style:italic">_____ MT</td><td style="color:var(--light);font-style:italic">____%</td><td style="color:var(--light);font-style:italic">_____ MT</td><td style="color:var(--light);font-style:italic">_____</td></tr>
+          <tr><td>Dívida 3: _______________</td><td style="color:var(--light);font-style:italic">_____ MT</td><td style="color:var(--light);font-style:italic">____%</td><td style="color:var(--light);font-style:italic">_____ MT</td><td style="color:var(--light);font-style:italic">_____</td></tr>
+          <tr><td>Dívida 4: _______________</td><td style="color:var(--light);font-style:italic">_____ MT</td><td style="color:var(--light);font-style:italic">____%</td><td style="color:var(--light);font-style:italic">_____ MT</td><td style="color:var(--light);font-style:italic">_____</td></tr>
+          <tr class="tr-total"><td>TOTAL DE DÍVIDAS</td><td>_____ MT</td><td>Média ____%</td><td>_____ MT/mês</td><td>Meta: livre em ___ meses</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="subtitulo">Estratégia de Emergência Para Dívida com Agiota</div>
+  <div class="box box-red">
+    <div class="box-label">🚨 Se Tens Dívida com Agiota — Plano de Saída em 3 Passos</div>
+    <ul>
+      <li><strong>Passo 1 — Substituição imediata:</strong> Vai ao Socremo ou Letshego esta semana. Pede um empréstimo do valor da dívida ao agiota (25%/ano vs 480%/ano). Usa esse dinheiro para pagar o agiota na totalidade. Passas a dever ao banco — que é 20x mais barato.</li>
+      <li><strong>Passo 2 — Se o banco não aprovar:</strong> Mobiliza o teu xitique de emergência — 5 a 10 pessoas de confiança que contribuem para te ajudar a pagar o agiota, e tu pagas ao grupo ao longo de 6 meses sem juros.</li>
+      <li><strong>Passo 3 — Se nenhum funcionar:</strong> Negocia directamente com o agiota — propõe um plano de pagamento fixo sem novos juros. Muitos aceitam receber algo certo em vez de nada. Traz uma testemunha e exige um documento assinado.</li>
+    </ul>
+  </div>
+
+  <div class="table-wrap">
+    <div class="table-title">Simulação — Amélia Substitui o Agiota pelo Microcrédito Formal</div>
+    <table>
+      <thead><tr><th>Cenário</th><th>Dívida Actual</th><th>Taxa</th><th>Pagamento Mensal</th><th>Total Pago em 12 Meses</th><th>Poupança</th></tr></thead>
+      <tbody>
+        <tr style="background:rgba(192,57,43,.08)"><td>💀 Continuar com Agiota</td><td>11.200 MT</td><td>40%/mês</td><td>~5.000 MT (mínimo)</td><td>~60.000 MT</td><td>—</td></tr>
+        <tr class="tr-saldo-pos"><td>✅ Substituir por Socremo</td><td>11.200 MT</td><td>25%/ano</td><td>~1.060 MT</td><td>~12.720 MT</td><td>47.280 MT</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="char-response">
+    <div class="cr-who">👩🏾 Amélia — 3 meses depois de substituir o agiota</div>
+    <div class="cr-text">"Fui ao Socremo com a minha declaração de rendimentos da banca. Em 3 dias aprovaram 11.500 MT. Paguei o Chico Agiota na totalidade. Agora pago 1.060 MT por mês ao Socremo. Antes pagava 5.000 MT por mês ao agiota e a dívida crescia. A pressão que saiu dos meus ombros não tem preço."</div>
+    <div class="cr-resultado">✅ Amélia poupou mais de 45.000 MT em juros com uma única decisão — ir ao banco formal.</div>
+  </div>
+
+  <div class="missao">
+    <div class="missao-header"><div class="missao-icon">🎯</div><div><div class="missao-title">MISSÃO 09</div><div class="missao-prazo">⏱ Esta semana + plano mensal</div></div></div>
+    <div class="missao-body">Enfrenta as tuas dívidas de frente. Lista tudo. Escolhe uma estratégia. Toma a primeira acção.</div>
+    <div class="missao-steps">
+      <div class="missao-step"><div class="ms-num">1</div><div class="ms-txt"><strong>Preenche a Ferramenta 9-A</strong> — lista todas as dívidas com saldo, taxa e mínimo. Inclui dívidas a familiares.</div></div>
+      <div class="missao-step"><div class="ms-num">2</div><div class="ms-txt"><strong>Se tens dívida com agiota:</strong> vai ao Socremo ou Letshego esta semana. Não na próxima semana. Esta.</div></div>
+      <div class="missao-step"><div class="ms-num">3</div><div class="ms-txt"><strong>Escolhe Avalanche ou Bola de Neve</strong> e define qual é a primeira dívida a atacar. Calcula quanto podes colocar extra por mês nessa dívida.</div></div>
+      <div class="missao-step"><div class="ms-num">4</div><div class="ms-txt"><strong>Compromete-te:</strong> enquanto estiveres em modo de liquidação de dívidas, zero novas dívidas de consumo. Nenhuma.</div></div>
+    </div>
+  </div>
+
+  <div class="proverb">
+    <div class="proverb-text">"Não há correntes mais pesadas do que as dívidas mal compreendidas."</div>
+    <div class="proverb-origin">Adaptação — Sabedoria dos Comerciantes de Nampula</div>
+    <div class="proverb-licao">Lição financeira: A dívida não é o inimigo — o desconhecimento sobre dívida é. Quando compreendes os números, podes controlá-los. Quando os ignorares, eles controlam-te a ti.</div>
+  </div>
+</article>
+
+<!-- LINK PARA VOL 2 -->
+<div class="pausa" id="vol2-link">
+  <div class="pausa-inner">
+    <h3>CONTINUA NO<br><em>VOLUME 2</em></h3>
+    <p>Os capítulos 10 a 21 estão no Volume 2 — onde terminas o Universo II (Caps. 10–15: Fundo de Emergência, Bancos, Investimentos, Negócio, Imóveis, Aumentar Rendimento) e completas o Universo III (Caps. 16–21: Protecção, Reforma, Filhos, Herança, Moçambique 2035, e o Plano dos 1.000 Dias).</p>
+    <div class="pausa-pergunta">📚 Volume 2 — Capítulos 10 a 21: O caminho da acção ao legado completo.</div>
+  </div>
+</div>
+
+<footer>
+  <span>Sementes de Riqueza — Volume 1 — Capítulos 1 a 9</span>
+  <span>© 2025 — Inteligência Financeira para Moçambique</span>
+  <span>Continua no Volume 2 — Caps. 10 a 21</span>
+</footer>
+
+<script>
+document.querySelectorAll('.toc-link').forEach(l => l.addEventListener('click', () => {
+  document.getElementById('tocOverlay').classList.remove('open');
+  document.getElementById('tocPanel').classList.remove('open');
+}));
+</script>
+</body>
+</html>
