@@ -3,1511 +3,895 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sementes de Riqueza — Volume 2: Caps 10–21</title>
+<title>Sementes de Riqueza — O Livro que Moçambique Precisava</title>
+<meta name="description" content="21 capítulos. 7 histórias reais. O guia de inteligência financeira feito para a realidade moçambicana. Começa hoje.">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500;600;700&family=Bebas+Neue&display=swap" rel="stylesheet">
 <style>
 :root{
-  --ink:#0E0B08;--paper:#F7F2E8;--warm:#EDE5D0;--gold:#C8960C;--gold2:#E8B84B;
-  --rust:#B5451B;--green:#2D5016;--green2:#4A7C2F;--sky:#1B4F72;--lilac:#6B3FA0;
-  --sand:#D4A96A;--charcoal:#2C2416;--mid:#6B5A3E;--light:#A89070;
-  --red:#C0392B;--blue:#2980B9;--teal:#1ABC9C;
-  --serif:'Cormorant Garamond',Georgia,serif;
-  --sans:'DM Sans',sans-serif;
-  --display:'Bebas Neue',sans-serif;
+  --ink:#0A0805;--paper:#F5F0E6;--warm:#EDE4CC;--gold:#C8960C;--gold2:#E8B84B;
+  --rust:#B5451B;--green:#1E3D0A;--green2:#3A6B1F;--mid:#6B5A3E;--light:#A89070;
+  --charcoal:#1C1208;--serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'DM Sans',sans-serif;--display:'Bebas Neue',sans-serif;
 }
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
-body{font-family:var(--sans);background:var(--paper);color:var(--ink);overflow-x:hidden;line-height:1.7;}
-::-webkit-scrollbar{width:4px;}::-webkit-scrollbar-track{background:var(--warm);}::-webkit-scrollbar-thumb{background:var(--gold);}
+body{font-family:var(--sans);background:var(--ink);color:var(--paper);overflow-x:hidden;}
+::-webkit-scrollbar{width:4px;}::-webkit-scrollbar-thumb{background:var(--gold);}
 
-nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(14,11,8,.97);backdrop-filter:blur(12px);height:52px;display:flex;align-items:center;justify-content:space-between;padding:0 28px;border-bottom:1px solid rgba(200,150,12,.2);}
-.nav-brand{font-family:var(--display);font-size:16px;letter-spacing:.15em;color:var(--gold2);}
-.nav-vol{font-family:var(--sans);font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:rgba(200,150,12,.4);border:1px solid rgba(200,150,12,.2);padding:4px 10px;border-radius:2px;}
-
-/* TOC */
-.toc-side{position:fixed;left:0;top:52px;bottom:0;width:220px;background:var(--charcoal);overflow-y:auto;z-index:100;transform:translateX(-100%);transition:transform .3s;}
-.toc-side.open{transform:translateX(0);}
-.toc-link{display:block;font-family:var(--sans);font-size:11px;color:rgba(247,242,232,.5);padding:8px 20px;text-decoration:none;border-left:2px solid transparent;transition:all .2s;}
-.toc-link:hover,.toc-link.active{color:var(--gold2);border-color:var(--gold);background:rgba(200,150,12,.06);}
-.toc-uni{font-family:var(--sans);font-size:8px;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);padding:14px 20px 6px;}
-.toc-btn{position:fixed;bottom:24px;right:24px;z-index:201;background:var(--gold);color:var(--ink);border:none;border-radius:50%;width:48px;height:48px;font-size:20px;cursor:pointer;box-shadow:0 4px 20px rgba(0,0,0,.3);transition:all .2s;}
-.toc-btn:hover{background:var(--gold2);transform:scale(1.1);}
-
-.vol-banner{background:var(--ink);padding:80px 32px 60px;text-align:center;position:relative;overflow:hidden;}
-.vol-banner::before{content:'VOLUME 2';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:var(--display);font-size:180px;color:rgba(200,150,12,.04);white-space:nowrap;pointer-events:none;}
-.vol-banner-tag{font-family:var(--sans);font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(200,150,12,.3);padding:6px 16px;display:inline-block;margin-bottom:24px;position:relative;z-index:2;}
-.vol-banner h1{font-family:var(--display);font-size:clamp(48px,8vw,100px);color:var(--paper);line-height:.9;letter-spacing:.04em;position:relative;z-index:2;}
-.vol-banner h1 em{color:var(--gold2);font-style:normal;display:block;}
-.vol-banner-sub{font-family:var(--serif);font-style:italic;font-size:18px;color:rgba(232,184,75,.6);margin-top:16px;position:relative;z-index:2;}
-
-.uni-header{background:var(--charcoal);padding:64px 32px;text-align:center;position:relative;overflow:hidden;}
-.uni-header::before{content:attr(data-bg);position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:var(--display);font-size:160px;color:rgba(200,150,12,.03);white-space:nowrap;pointer-events:none;}
-.uni-badge{font-family:var(--sans);font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;position:relative;z-index:2;}
-.uni-title{font-family:var(--display);font-size:clamp(40px,6vw,90px);color:var(--paper);letter-spacing:.04em;line-height:.9;position:relative;z-index:2;}
-.uni-title em{color:var(--gold2);font-style:normal;display:block;}
-.uni-epi{font-family:var(--serif);font-style:italic;font-size:17px;color:rgba(232,184,75,.55);margin-top:16px;position:relative;z-index:2;}
-
-.capitulo{max-width:800px;margin:0 auto;padding:72px 32px;}
-.cap-num{font-family:var(--sans);font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;}
-.cap-title{font-family:var(--display);font-size:clamp(30px,5vw,58px);letter-spacing:.02em;line-height:1;margin-bottom:12px;}
-.cap-sub{font-family:var(--serif);font-style:italic;font-size:17px;color:var(--mid);margin-bottom:20px;line-height:1.5;}
-.cap-tags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:40px;}
-.cap-tag{font-family:var(--sans);font-size:10px;letter-spacing:.1em;background:rgba(200,150,12,.1);color:var(--gold);border:1px solid rgba(200,150,12,.2);padding:4px 12px;border-radius:2px;}
-
-.cena{background:var(--charcoal);border-radius:8px;overflow:hidden;margin:32px 0;}
-.cena-bar{height:4px;}
-.cena-inner{padding:32px 36px;}
-.cena-lbl{font-family:var(--sans);font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;}
-.cena-txt{font-family:var(--serif);font-size:17px;line-height:2;color:rgba(247,242,232,.85);}
-.cena-txt p{margin-bottom:14px;}
-.cena-txt p:last-child{margin-bottom:0;}
-.cena-txt em{color:var(--gold2);font-style:italic;}
-.cena-txt strong{color:var(--paper);}
-
-.dados{background:var(--sky);border-radius:8px;padding:28px 32px;margin:28px 0;color:white;}
-.dados-lbl{font-family:var(--sans);font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:14px;}
-.dados-title{font-family:var(--serif);font-weight:700;font-size:20px;margin-bottom:14px;}
-.dados-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:10px;margin-bottom:16px;}
-.dado{background:rgba(255,255,255,.08);border-radius:4px;padding:14px;text-align:center;}
-.dado-v{font-family:var(--display);font-size:30px;color:#81D4FA;line-height:1;}
-.dado-l{font-family:var(--sans);font-size:9px;color:rgba(255,255,255,.5);margin-top:4px;}
-.dados p{font-family:var(--sans);font-size:13px;line-height:1.8;color:rgba(255,255,255,.7);margin-bottom:8px;}
-
-.txt{font-family:var(--serif);font-size:17px;line-height:2;color:var(--ink);margin-bottom:18px;}
-.txt strong{color:var(--charcoal);}
-.txt em{font-style:italic;color:var(--rust);}
-
-.sub{font-family:var(--display);font-size:26px;letter-spacing:.02em;color:var(--charcoal);margin:36px 0 14px;}
-.sub2{font-family:var(--serif);font-weight:700;font-size:19px;color:var(--charcoal);margin:28px 0 10px;}
-
-.pq{margin:36px -16px;background:var(--warm);border-left:4px solid var(--gold);padding:24px 36px;position:relative;}
-.pq::before{content:'"';position:absolute;top:-8px;left:24px;font-family:var(--serif);font-size:90px;color:rgba(200,150,12,.12);line-height:1;}
-.pq-t{font-family:var(--serif);font-style:italic;font-size:clamp(16px,2.5vw,21px);line-height:1.6;color:var(--charcoal);position:relative;z-index:1;}
-.pq-s{font-family:var(--sans);font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-top:10px;}
-
-.box{border-radius:6px;padding:22px 26px;margin:24px 0;}
-.box-lbl{font-family:var(--sans);font-size:9px;letter-spacing:.22em;text-transform:uppercase;font-weight:700;margin-bottom:10px;}
-.box p,.box li{font-family:var(--sans);font-size:13px;line-height:1.8;}
-.box ul,.box ol{padding-left:20px;}
-.box li{margin-bottom:6px;}
-.gold-box{background:rgba(200,150,12,.08);border:1px solid rgba(200,150,12,.25);border-left:4px solid var(--gold);}
-.gold-box .box-lbl{color:var(--gold);}
-.red-box{background:rgba(192,57,43,.07);border:1px solid rgba(192,57,43,.2);border-left:4px solid var(--red);}
-.red-box .box-lbl{color:var(--red);}
-.green-box{background:rgba(39,174,96,.07);border:1px solid rgba(39,174,96,.2);border-left:4px solid var(--green2);}
-.green-box .box-lbl{color:var(--green2);}
-.blue-box{background:rgba(41,128,185,.07);border:1px solid rgba(41,128,185,.2);border-left:4px solid var(--blue);}
-.blue-box .box-lbl{color:var(--blue);}
-.teal-box{background:rgba(26,188,156,.07);border:1px solid rgba(26,188,156,.2);border-left:4px solid var(--teal);}
-.teal-box .box-lbl{color:var(--teal);}
-
-.tw{overflow-x:auto;margin:28px 0;}
-.tw-title{font-family:var(--sans);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;}
-table{width:100%;border-collapse:collapse;font-family:var(--sans);font-size:13px;}
-th{background:var(--charcoal);color:var(--gold2);padding:12px 14px;text-align:left;font-size:9px;letter-spacing:.15em;text-transform:uppercase;}
-td{padding:11px 14px;border-bottom:1px solid rgba(107,90,62,.12);vertical-align:top;}
-tr:hover td{background:rgba(200,150,12,.03);}
-.tr-total td{background:var(--charcoal);color:var(--paper);font-weight:700;border:none;}
-.tr-total td:last-child{color:var(--gold2);}
-.tr-pos td{background:rgba(39,174,96,.08);color:var(--green2);font-weight:600;}
-.tr-neg td{background:rgba(192,57,43,.08);color:var(--red);font-weight:600;}
-.tr-warn td{background:rgba(200,150,12,.07);color:var(--gold);}
-.tr-sec td{background:var(--warm);font-weight:700;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);}
-
-.sim{background:var(--charcoal);border-radius:8px;padding:28px 32px;margin:28px 0;}
-.sim-t{font-family:var(--serif);font-weight:700;font-size:20px;color:var(--gold2);margin-bottom:18px;}
-.sim-row{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:14px;}
-.sim-i{flex:1;min-width:120px;background:rgba(200,150,12,.08);border-radius:4px;padding:14px;text-align:center;}
-.sim-v{font-family:var(--display);font-size:26px;color:var(--gold2);line-height:1;}
-.sim-l{font-family:var(--sans);font-size:10px;color:rgba(247,242,232,.4);margin-top:4px;}
-.sim-note{font-family:var(--sans);font-size:12px;color:rgba(247,242,232,.45);margin-top:10px;line-height:1.7;}
-
-.ferr{border:2px dashed rgba(200,150,12,.3);border-radius:8px;padding:28px 32px;margin:32px 0;}
-.ferr-h{display:flex;align-items:center;gap:12px;margin-bottom:16px;}
-.ferr-icon{font-size:26px;}
-.ferr-title{font-family:var(--display);font-size:22px;letter-spacing:.04em;color:var(--charcoal);}
-.ferr-sub{font-family:var(--sans);font-size:10px;color:var(--light);}
-
-.resp{border-left:4px solid var(--gold);padding:18px 22px;background:rgba(200,150,12,.05);margin:22px 0;border-radius:0 6px 6px 0;}
-.resp-who{font-family:var(--sans);font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;}
-.resp-txt{font-family:var(--serif);font-style:italic;font-size:15px;line-height:1.8;color:var(--charcoal);}
-.resp-res{font-family:var(--sans);font-size:11px;color:var(--green2);margin-top:8px;font-weight:600;}
-
-.missao{background:linear-gradient(135deg,#1a0f05,#2C1810);border:2px solid rgba(200,150,12,.3);border-radius:8px;padding:32px;margin:44px 0;position:relative;overflow:hidden;}
-.missao::before{content:'MISSÃO';position:absolute;right:-8px;top:50%;transform:translateY(-50%) rotate(90deg);font-family:var(--display);font-size:70px;color:rgba(200,150,12,.04);white-space:nowrap;}
-.m-head{display:flex;align-items:center;gap:14px;margin-bottom:18px;}
-.m-icon{width:46px;height:46px;border-radius:50%;background:rgba(200,150,12,.15);border:2px solid var(--gold);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;}
-.m-title{font-family:var(--display);font-size:24px;color:var(--gold2);letter-spacing:.04em;}
-.m-prazo{font-family:var(--sans);font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:rgba(200,150,12,.5);}
-.m-body{font-family:var(--sans);font-size:13px;line-height:1.9;color:rgba(247,242,232,.65);margin-bottom:18px;}
-.m-steps{display:flex;flex-direction:column;gap:10px;}
-.m-step{display:flex;gap:12px;}
-.ms-n{width:24px;height:24px;border-radius:50%;background:var(--gold);color:var(--ink);font-family:var(--sans);font-weight:700;font-size:11px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;}
-.ms-t{font-family:var(--sans);font-size:13px;color:rgba(247,242,232,.75);line-height:1.6;}
-
-.prov{background:var(--green);border-radius:8px;padding:32px;margin:36px 0;text-align:center;position:relative;overflow:hidden;}
-.prov::before{content:'❝';position:absolute;top:-8px;left:16px;font-family:var(--serif);font-size:90px;color:rgba(255,255,255,.04);}
-.prov-t{font-family:var(--serif);font-style:italic;font-size:clamp(16px,2.8vw,22px);line-height:1.6;color:var(--paper);margin-bottom:10px;position:relative;z-index:1;}
-.prov-o{font-family:var(--sans);font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:rgba(232,184,75,.6);margin-bottom:12px;}
-.prov-l{font-family:var(--sans);font-size:12px;color:rgba(247,242,232,.55);line-height:1.7;background:rgba(0,0,0,.2);padding:10px 14px;border-radius:4px;}
-
-.divider{height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:56px 0;}
-
-.comp-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin:24px 0;}
-.comp{border-radius:6px;padding:18px;text-align:center;}
-.comp-lbl{font-family:var(--sans);font-size:9px;letter-spacing:.18em;text-transform:uppercase;margin-bottom:8px;}
-.comp-v{font-family:var(--display);font-size:34px;line-height:1;margin-bottom:6px;}
-.comp-d{font-family:var(--sans);font-size:11px;line-height:1.6;}
-.c-neg{background:rgba(192,57,43,.08);border:1px solid rgba(192,57,43,.2);}
-.c-neg .comp-lbl,.c-neg .comp-v{color:var(--red);}
-.c-pos{background:rgba(39,174,96,.08);border:1px solid rgba(39,174,96,.2);}
-.c-pos .comp-lbl,.c-pos .comp-v{color:var(--green2);}
-.c-neu{background:rgba(200,150,12,.08);border:1px solid rgba(200,150,12,.2);}
-.c-neu .comp-lbl,.c-neu .comp-v{color:var(--gold);}
-
-.reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease;}
-.reveal.on{opacity:1;transform:translateY(0);}
-
-.pausa{background:var(--charcoal);padding:60px 32px;text-align:center;}
-.pausa-inner{max-width:580px;margin:0 auto;}
-.pausa h3{font-family:var(--display);font-size:clamp(26px,4vw,52px);color:var(--paper);letter-spacing:.04em;margin-bottom:18px;line-height:1;}
-.pausa h3 em{color:var(--gold2);font-style:normal;}
-.pausa p{font-family:var(--serif);font-style:italic;font-size:16px;line-height:1.9;color:rgba(247,242,232,.6);margin-bottom:14px;}
-.pausa-q{background:rgba(200,150,12,.1);border:1px solid rgba(200,150,12,.25);border-radius:6px;padding:18px 22px;margin-top:24px;font-family:var(--sans);font-size:13px;color:var(--gold2);line-height:1.7;}
-
-.epilogo{background:var(--ink);padding:100px 32px;text-align:center;position:relative;overflow:hidden;}
-.epilogo::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(200,150,12,.1) 0%,transparent 65%);}
-.epilogo-inner{max-width:700px;margin:0 auto;position:relative;z-index:2;}
-.epilogo h2{font-family:var(--display);font-size:clamp(40px,7vw,90px);color:var(--paper);letter-spacing:.04em;line-height:.9;margin-bottom:24px;}
-.epilogo h2 em{color:var(--gold2);font-style:normal;display:block;}
-.epilogo p{font-family:var(--serif);font-style:italic;font-size:18px;line-height:1.9;color:rgba(247,242,232,.65);margin-bottom:18px;}
-.plano-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;margin:40px 0;}
-.plano-card{background:rgba(200,150,12,.08);border:1px solid rgba(200,150,12,.2);border-radius:6px;padding:20px;text-align:left;}
-.plano-card-t{font-family:var(--display);font-size:28px;color:var(--gold2);letter-spacing:.04em;line-height:1;}
-.plano-card-l{font-family:var(--sans);font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:rgba(200,150,12,.5);margin-bottom:10px;}
-.plano-card-items{font-family:var(--sans);font-size:12px;color:rgba(247,242,232,.55);line-height:1.8;}
-
-footer{background:rgba(0,0,0,.6);padding:24px 32px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
-footer span{font-family:var(--sans);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:rgba(200,150,12,.3);}
-
-@media(max-width:700px){
-  .capitulo{padding:52px 18px;}
-  .cena-inner{padding:22px 20px;}
-  .pq{margin:28px 0;padding:20px 22px;}
-  .missao{padding:22px;}
-  .comp-grid{grid-template-columns:1fr 1fr;}
-  footer{flex-direction:column;text-align:center;}
+/* ─── GRAIN OVERLAY ─── */
+body::before{
+  content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  opacity:.4;mix-blend-mode:overlay;
 }
+
+/* ─── STICKY NAV ─── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:500;
+  padding:0 32px;height:56px;
+  display:flex;align-items:center;justify-content:space-between;
+  background:rgba(10,8,5,.92);
+  border-bottom:1px solid rgba(200,150,12,.12);
+  backdrop-filter:blur(12px);
+  transition:all .3s;
+}
+.nav-logo{font-family:var(--display);font-size:16px;letter-spacing:.15em;color:var(--gold2);}
+.nav-cta{
+  background:var(--gold);color:var(--ink);
+  font-family:var(--sans);font-size:11px;font-weight:700;
+  letter-spacing:.12em;text-transform:uppercase;
+  padding:9px 22px;border-radius:2px;
+  text-decoration:none;transition:all .2s;
+  white-space:nowrap;
+}
+.nav-cta:hover{background:var(--gold2);transform:translateY(-1px);}
+
+/* ─── HERO ─── */
+.hero{
+  min-height:100vh;display:flex;align-items:center;
+  padding:100px 32px 80px;
+  position:relative;overflow:hidden;
+  background:var(--ink);
+}
+.hero::before{
+  content:'';position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 60% 60% at 80% 40%, rgba(200,150,12,.07) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 80% at 10% 80%, rgba(181,69,27,.05) 0%, transparent 60%);
+}
+.hero-bg-text{
+  position:absolute;right:-40px;top:50%;transform:translateY(-50%);
+  font-family:var(--display);font-size:clamp(180px,25vw,380px);
+  color:rgba(200,150,12,.03);line-height:1;pointer-events:none;
+  white-space:nowrap;letter-spacing:-.02em;
+}
+.hero-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 420px;gap:80px;align-items:center;position:relative;z-index:2;width:100%;}
+.hero-eyebrow{font-family:var(--sans);font-size:9px;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(200,150,12,.25);display:inline-block;padding:6px 16px;margin-bottom:24px;}
+.hero h1{font-family:var(--display);font-size:clamp(56px,7vw,96px);line-height:.9;letter-spacing:.02em;margin-bottom:20px;}
+.hero h1 em{color:var(--gold2);font-style:normal;display:block;}
+.hero-lead{font-family:var(--serif);font-style:italic;font-size:clamp(18px,2.2vw,24px);line-height:1.6;color:rgba(232,184,75,.75);margin-bottom:32px;max-width:520px;}
+.hero-proof{display:flex;gap:32px;flex-wrap:wrap;margin-bottom:40px;}
+.hp{text-align:center;}
+.hp-val{font-family:var(--display);font-size:clamp(28px,3.5vw,40px);color:var(--gold2);line-height:1;}
+.hp-lbl{font-family:var(--sans);font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:rgba(200,150,12,.4);margin-top:3px;}
+.hero-cta-group{display:flex;flex-direction:column;gap:12px;align-items:flex-start;}
+.cta-primary{
+  background:linear-gradient(135deg,var(--gold),var(--rust));
+  color:var(--paper);font-family:var(--sans);font-size:13px;font-weight:700;
+  letter-spacing:.12em;text-transform:uppercase;padding:16px 36px;
+  border-radius:2px;text-decoration:none;display:inline-block;
+  transition:all .25s;box-shadow:0 4px 30px rgba(200,150,12,.25);
+}
+.cta-primary:hover{transform:translateY(-2px);box-shadow:0 8px 40px rgba(200,150,12,.4);}
+.cta-guarantee{font-family:var(--sans);font-size:11px;color:rgba(200,150,12,.4);display:flex;align-items:center;gap:6px;}
+
+/* ─── BOOK MOCKUP ─── */
+.book-mockup{
+  position:relative;display:flex;justify-content:center;align-items:center;
+}
+.book-wrap{
+  width:280px;height:380px;position:relative;
+  filter:drop-shadow(0 40px 80px rgba(0,0,0,.8));
+  transform:perspective(800px) rotateY(-8deg) rotateX(2deg);
+  transition:transform .4s ease;
+}
+.book-wrap:hover{transform:perspective(800px) rotateY(-2deg) rotateX(1deg);}
+.book-cover{
+  width:100%;height:100%;border-radius:3px 8px 8px 3px;
+  background:linear-gradient(145deg,#1A0E03 0%,#0A0805 40%,#1C1208 100%);
+  border:1px solid rgba(200,150,12,.15);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  padding:30px 24px;text-align:center;position:relative;overflow:hidden;
+}
+.book-cover::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse at 30% 20%,rgba(200,150,12,.12) 0%,transparent 55%);
+}
+.book-spine{
+  position:absolute;left:0;top:0;bottom:0;width:18px;
+  background:linear-gradient(180deg,#C8960C,#8B6508,#C8960C);
+  border-radius:3px 0 0 3px;
+}
+.book-title{font-family:var(--display);font-size:38px;color:var(--paper);line-height:.9;letter-spacing:.04em;margin-bottom:8px;position:relative;z-index:1;}
+.book-title em{color:var(--gold2);font-style:normal;display:block;}
+.book-subtitle{font-family:var(--serif);font-style:italic;font-size:12px;color:rgba(232,184,75,.6);margin-bottom:20px;position:relative;z-index:1;}
+.book-ornament{font-size:32px;margin-bottom:16px;position:relative;z-index:1;}
+.book-author{font-family:var(--sans);font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:rgba(200,150,12,.4);position:relative;z-index:1;}
+.book-badge{
+  position:absolute;top:-14px;right:-14px;
+  width:72px;height:72px;border-radius:50%;
+  background:linear-gradient(135deg,var(--gold),var(--rust));
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  font-family:var(--display);font-size:22px;color:var(--ink);line-height:1;
+  box-shadow:0 4px 20px rgba(200,150,12,.5);z-index:10;
+}
+.book-badge span{font-family:var(--sans);font-size:8px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;}
+
+/* ─── SECTION BASE ─── */
+section{padding:90px 32px;}
+.container{max-width:960px;margin:0 auto;}
+.container-wide{max-width:1100px;margin:0 auto;}
+.s-label{font-family:var(--sans);font-size:9px;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;display:block;}
+.s-title{font-family:var(--display);font-size:clamp(34px,5vw,64px);letter-spacing:.03em;line-height:.95;margin-bottom:20px;}
+.s-title em{color:var(--gold2);font-style:normal;}
+.s-body{font-family:var(--serif);font-style:italic;font-size:clamp(16px,2vw,20px);line-height:1.8;color:rgba(232,184,75,.65);max-width:640px;}
+
+/* ─── PROBLEM SECTION ─── */
+.problem{background:var(--charcoal);position:relative;overflow:hidden;}
+.problem::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;background:linear-gradient(180deg,var(--rust),transparent);}
+.problem-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1px;background:rgba(200,150,12,.08);margin-top:48px;border:1px solid rgba(200,150,12,.08);}
+.prob-item{padding:28px;background:var(--charcoal);}
+.prob-icon{font-size:28px;margin-bottom:12px;}
+.prob-q{font-family:var(--serif);font-weight:700;font-size:18px;color:var(--paper);margin-bottom:8px;line-height:1.3;}
+.prob-txt{font-family:var(--sans);font-size:13px;color:rgba(200,180,140,.55);line-height:1.7;}
+
+/* ─── STORY SECTION ─── */
+.story{background:var(--ink);}
+.story-inner{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
+.story-text .s-body{margin-bottom:24px;}
+.story-stat{background:rgba(200,150,12,.06);border:1px solid rgba(200,150,12,.15);border-radius:4px;padding:20px 24px;margin-top:24px;}
+.ss-num{font-family:var(--display);font-size:48px;color:var(--gold2);line-height:1;}
+.ss-txt{font-family:var(--sans);font-size:13px;color:rgba(200,180,140,.6);line-height:1.6;margin-top:4px;}
+.story-visual{position:relative;}
+.stat-blocks{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.stat-block{background:rgba(200,150,12,.06);border:1px solid rgba(200,150,12,.1);border-radius:6px;padding:20px;text-align:center;}
+.sb-val{font-family:var(--display);font-size:clamp(28px,3vw,40px);color:var(--gold2);line-height:1;}
+.sb-lbl{font-family:var(--sans);font-size:10px;color:rgba(200,150,12,.4);margin-top:4px;letter-spacing:.08em;line-height:1.4;}
+
+/* ─── CHARACTERS SECTION ─── */
+.chars{background:var(--warm);color:var(--ink);}
+.chars .s-title{color:var(--charcoal);}
+.chars .s-body{color:var(--mid);}
+.chars-subtitle{font-family:var(--serif);font-style:italic;font-size:16px;color:var(--mid);margin-bottom:40px;margin-top:10px;}
+.chars-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px;margin-top:40px;}
+.char-card{
+  background:white;border-radius:8px;padding:24px;
+  border:1px solid rgba(107,90,62,.1);
+  transition:all .3s;position:relative;overflow:hidden;
+}
+.char-card::before{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--rust));transform:scaleX(0);transition:transform .3s;transform-origin:left;}
+.char-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(107,90,62,.15);}
+.char-card:hover::before{transform:scaleX(1);}
+.char-emoji{font-size:34px;margin-bottom:10px;display:block;}
+.char-name{font-family:var(--serif);font-weight:700;font-size:19px;color:var(--charcoal);margin-bottom:3px;}
+.char-role{font-family:var(--sans);font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:var(--light);margin-bottom:10px;}
+.char-before{font-family:var(--sans);font-size:12px;color:#C0392B;margin-bottom:6px;line-height:1.5;}
+.char-after{font-family:var(--sans);font-size:12px;color:var(--green2);font-weight:600;line-height:1.5;}
+.char-quote{font-family:var(--serif);font-style:italic;font-size:13px;color:var(--mid);margin-top:10px;padding-top:10px;border-top:1px solid rgba(107,90,62,.1);line-height:1.5;}
+
+/* ─── CONTENTS ─── */
+.contents{background:var(--charcoal);}
+.universos{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2px;margin-top:48px;}
+.uni-block{background:rgba(200,150,12,.03);padding:32px;}
+.ub-badge{font-family:var(--sans);font-size:9px;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(200,150,12,.2);display:inline-block;padding:5px 12px;margin-bottom:16px;}
+.ub-title{font-family:var(--display);font-size:28px;color:var(--paper);letter-spacing:.04em;margin-bottom:4px;}
+.ub-subtitle{font-family:var(--serif);font-style:italic;font-size:14px;color:rgba(200,150,12,.5);margin-bottom:20px;}
+.ub-caps{display:flex;flex-direction:column;gap:8px;}
+.ub-cap{display:flex;gap:10px;align-items:baseline;}
+.ub-cap-num{font-family:var(--sans);font-size:9px;color:var(--gold);font-weight:700;flex-shrink:0;width:36px;}
+.ub-cap-title{font-family:var(--sans);font-size:13px;color:rgba(200,180,140,.65);line-height:1.4;}
+
+/* ─── TESTIMONIALS ─── */
+.testi{background:var(--ink);}
+.testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin-top:48px;}
+.testi-card{
+  background:rgba(200,150,12,.04);border:1px solid rgba(200,150,12,.1);
+  border-radius:8px;padding:28px;position:relative;
+}
+.testi-quote{font-family:var(--serif);font-style:italic;font-size:clamp(15px,2vw,17px);line-height:1.8;color:rgba(232,184,75,.8);margin-bottom:20px;}
+.testi-quote::before{content:'"';font-family:var(--display);font-size:60px;color:rgba(200,150,12,.12);position:absolute;top:10px;left:20px;line-height:1;}
+.testi-author{display:flex;align-items:center;gap:12px;}
+.ta-avatar{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--rust));display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;}
+.ta-name{font-family:var(--sans);font-size:13px;font-weight:600;color:var(--paper);}
+.ta-role{font-family:var(--sans);font-size:11px;color:rgba(200,150,12,.4);}
+.testi-stars{color:var(--gold);font-size:14px;margin-bottom:14px;letter-spacing:2px;}
+
+/* ─── WHAT YOU GET ─── */
+.includes{background:var(--warm);color:var(--ink);}
+.includes .s-title{color:var(--charcoal);}
+.inc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:48px;}
+.inc-item{background:white;border-radius:6px;padding:24px;border:1px solid rgba(107,90,62,.12);display:flex;flex-direction:column;gap:10px;}
+.inc-icon{font-size:28px;}
+.inc-title{font-family:var(--sans);font-size:14px;font-weight:700;color:var(--charcoal);}
+.inc-desc{font-family:var(--sans);font-size:12px;color:var(--mid);line-height:1.6;}
+.inc-tag{font-family:var(--sans);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--green2);font-weight:700;}
+
+/* ─── PRICING ─── */
+.pricing{background:var(--ink);text-align:center;}
+.pricing-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;max-width:800px;margin:48px auto 0;}
+.price-card{
+  border:1px solid rgba(200,150,12,.15);border-radius:8px;padding:36px;
+  background:rgba(200,150,12,.03);transition:all .3s;
+}
+.price-card.featured{
+  border-color:var(--gold);background:rgba(200,150,12,.07);
+  transform:scale(1.03);box-shadow:0 0 60px rgba(200,150,12,.12);
+}
+.price-tag{font-family:var(--sans);font-size:9px;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(200,150,12,.25);display:inline-block;padding:5px 14px;margin-bottom:20px;border-radius:20px;}
+.price-name{font-family:var(--display);font-size:26px;color:var(--paper);letter-spacing:.05em;margin-bottom:8px;}
+.price-amount{font-family:var(--display);font-size:clamp(48px,7vw,72px);color:var(--gold2);line-height:1;margin-bottom:4px;}
+.price-currency{font-family:var(--sans);font-size:16px;color:var(--gold);vertical-align:super;}
+.price-period{font-family:var(--sans);font-size:11px;color:rgba(200,150,12,.4);margin-bottom:24px;letter-spacing:.1em;}
+.price-features{list-style:none;margin-bottom:28px;display:flex;flex-direction:column;gap:10px;text-align:left;}
+.price-features li{font-family:var(--sans);font-size:13px;color:rgba(200,180,140,.7);display:flex;gap:8px;align-items:flex-start;line-height:1.5;}
+.price-features li::before{content:'✓';color:var(--gold);font-weight:700;flex-shrink:0;margin-top:1px;}
+.btn-comprar{
+  display:block;text-align:center;
+  background:linear-gradient(135deg,var(--gold),var(--rust));
+  color:var(--paper);font-family:var(--sans);font-size:12px;font-weight:700;
+  letter-spacing:.15em;text-transform:uppercase;padding:15px;
+  border-radius:3px;text-decoration:none;transition:all .25s;
+  box-shadow:0 4px 20px rgba(200,150,12,.2);
+}
+.btn-comprar:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(200,150,12,.35);}
+.btn-comprar-alt{
+  display:block;text-align:center;
+  border:1px solid rgba(200,150,12,.3);
+  color:var(--gold);font-family:var(--sans);font-size:12px;font-weight:700;
+  letter-spacing:.15em;text-transform:uppercase;padding:15px;
+  border-radius:3px;text-decoration:none;transition:all .25s;
+  background:transparent;
+}
+.btn-comprar-alt:hover{background:rgba(200,150,12,.08);}
+.guarantee-box{
+  max-width:560px;margin:48px auto 0;
+  background:rgba(200,150,12,.05);border:1px solid rgba(200,150,12,.15);
+  border-radius:8px;padding:28px;display:flex;gap:20px;align-items:flex-start;
+  text-align:left;
+}
+.gb-icon{font-size:36px;flex-shrink:0;}
+.gb-title{font-family:var(--serif);font-weight:700;font-size:18px;color:var(--paper);margin-bottom:6px;}
+.gb-text{font-family:var(--sans);font-size:13px;color:rgba(200,150,12,.5);line-height:1.7;}
+
+/* ─── FAQ ─── */
+.faq{background:var(--charcoal);}
+.faq-list{max-width:700px;margin:48px auto 0;display:flex;flex-direction:column;gap:2px;}
+.faq-item{background:rgba(200,150,12,.03);border:1px solid rgba(200,150,12,.08);}
+.faq-q{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:20px 24px;cursor:pointer;
+  font-family:var(--sans);font-size:14px;font-weight:600;color:var(--paper);
+  transition:color .2s;gap:16px;
+}
+.faq-q:hover{color:var(--gold2);}
+.faq-icon{font-size:18px;color:var(--gold);flex-shrink:0;transition:transform .3s;}
+.faq-a{
+  max-height:0;overflow:hidden;transition:max-height .4s ease;
+  font-family:var(--sans);font-size:13px;color:rgba(200,180,140,.6);
+  line-height:1.8;padding:0 24px;
+}
+.faq-item.open .faq-a{max-height:200px;padding:0 24px 20px;}
+.faq-item.open .faq-icon{transform:rotate(45deg);}
+
+/* ─── FINAL CTA ─── */
+.final-cta{
+  background:var(--ink);padding:120px 32px;text-align:center;
+  position:relative;overflow:hidden;
+}
+.final-cta::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 80% 60% at 50% 50%,rgba(200,150,12,.06) 0%,transparent 70%);
+}
+.final-cta-inner{position:relative;z-index:2;max-width:700px;margin:0 auto;}
+.fct-label{font-family:var(--sans);font-size:9px;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;}
+.fct-title{font-family:var(--display);font-size:clamp(44px,7vw,90px);line-height:.9;letter-spacing:.03em;margin-bottom:20px;}
+.fct-title em{color:var(--gold2);font-style:normal;display:block;}
+.fct-sub{font-family:var(--serif);font-style:italic;font-size:clamp(17px,2.5vw,22px);color:rgba(232,184,75,.6);margin-bottom:40px;line-height:1.6;}
+.fct-cta{
+  display:inline-block;
+  background:linear-gradient(135deg,var(--gold),var(--rust));
+  color:var(--paper);font-family:var(--sans);font-size:14px;font-weight:700;
+  letter-spacing:.15em;text-transform:uppercase;
+  padding:20px 52px;border-radius:2px;text-decoration:none;
+  transition:all .25s;box-shadow:0 6px 40px rgba(200,150,12,.3);
+}
+.fct-cta:hover{transform:translateY(-3px);box-shadow:0 12px 50px rgba(200,150,12,.45);}
+.fct-small{font-family:var(--sans);font-size:12px;color:rgba(200,150,12,.3);margin-top:16px;letter-spacing:.05em;}
+
+/* ─── FOOTER ─── */
+footer{background:rgba(0,0,0,.5);padding:24px 32px;border-top:1px solid rgba(200,150,12,.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+footer span{font-family:var(--sans);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:rgba(200,150,12,.25);}
+
+/* ─── SCROLL REVEAL ─── */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease;}
+.reveal.on{opacity:1;transform:translateY(0);}
+.reveal-d1{transition-delay:.1s;}
+.reveal-d2{transition-delay:.2s;}
+.reveal-d3{transition-delay:.3s;}
+.reveal-d4{transition-delay:.4s;}
+
+/* ─── FLOATING WHATSAPP ─── */
+.wa-float{
+  position:fixed;bottom:28px;left:28px;z-index:500;
+  background:#25D366;border-radius:50%;
+  width:52px;height:52px;display:flex;align-items:center;justify-content:center;
+  font-size:24px;box-shadow:0 4px 20px rgba(37,211,102,.4);
+  text-decoration:none;transition:all .2s;
+}
+.wa-float:hover{transform:scale(1.1);}
+
+/* ─── RESPONSIVE ─── */
+@media(max-width:900px){
+  .hero-inner{grid-template-columns:1fr;gap:50px;}
+  .book-mockup{order:-1;}
+  .story-inner{grid-template-columns:1fr;}
+  .price-card.featured{transform:none;}
+}
+@media(max-width:600px){
+  nav{padding:0 18px;}
+  section{padding:60px 18px;}
+  .hero{padding:90px 18px 60px;}
+  .hero-proof{gap:20px;}
+}
+
+/* ─── PROGRESS BAR ─── */
+.reading-bar{position:fixed;top:56px;left:0;height:2px;background:linear-gradient(90deg,var(--gold),var(--rust));width:0%;z-index:499;transition:width .1s;}
 </style>
 </head>
 <body>
 
+<div class="reading-bar" id="readingBar"></div>
+
 <nav>
-  <div class="nav-brand">SEMENTES DE RIQUEZA</div>
-  <div class="nav-vol">Volume 2 — Caps. 10–21</div>
+  <span class="nav-logo">SEMENTES DE RIQUEZA</span>
+  <a href="#pricing" class="nav-cta">Quero o Livro →</a>
 </nav>
 
-<button class="toc-btn" onclick="document.querySelector('.toc-side').classList.toggle('open')" title="Índice">☰</button>
-
-<div class="toc-side">
-  <div style="padding:20px 20px 8px;font-family:var(--display);font-size:16px;letter-spacing:.1em;color:var(--gold2);">ÍNDICE VOL.2</div>
-  <div class="toc-uni">Universo II — Acção</div>
-  <a class="toc-link" href="#cap10">Cap.10 — Fundo de Emergência</a>
-  <a class="toc-link" href="#cap11">Cap.11 — Bancos e Dinheiro Digital</a>
-  <a class="toc-link" href="#cap12">Cap.12 — Investir com Pouco</a>
-  <a class="toc-link" href="#cap13">Cap.13 — Negócio Próprio</a>
-  <a class="toc-link" href="#cap14">Cap.14 — Imóveis e Terra</a>
-  <a class="toc-link" href="#cap15">Cap.15 — Aumentar o Rendimento</a>
-  <div class="toc-uni">Universo III — Legado</div>
-  <a class="toc-link" href="#cap16">Cap.16 — Proteger o que Construíste</a>
-  <a class="toc-link" href="#cap17">Cap.17 — Planear a Reforma</a>
-  <a class="toc-link" href="#cap18">Cap.18 — Educar Filhos</a>
-  <a class="toc-link" href="#cap19">Cap.19 — Herança com Dignidade</a>
-  <a class="toc-link" href="#cap20">Cap.20 — Moçambique 2035</a>
-  <a class="toc-link" href="#cap21">Cap.21 — Os 1.000 Dias</a>
-</div>
-
-<div class="vol-banner">
-  <div class="vol-banner-tag">Volume 2 · Capítulos 10 ao 21</div>
-  <h1>CULTIVO &<br><em>COLHEITA</em></h1>
-  <div class="vol-banner-sub">"A terra não mente. Colhes exactamente o que plantares."</div>
-</div>
-
-<!-- ═════════════════ UNI II HEADER ═════════════════ -->
-<div class="uni-header" data-bg="CULTIVO">
-  <div class="uni-badge">Universo II — Capítulos 8 ao 15</div>
-  <div class="uni-title">CULTIVO<br><em>A ACÇÃO</em></div>
-  <div class="uni-epi">"Conheces o terreno. Agora pega na enxada."</div>
-</div>
-
-<!-- ══════════ CAP 10 ══════════ -->
-<article class="capitulo" id="cap10">
-  <div class="cap-num reveal">Capítulo 10 — Universo II</div>
-  <h1 class="cap-title reveal">O Fundo de Emergência</h1>
-  <div class="cap-sub reveal">O Escudo Invisível que Protege Tudo o Que Construíste — E a Tua Família Quando a Vida Surpreende</div>
-  <div class="cap-tags reveal"><span class="cap-tag">👩🏾 Amélia</span><span class="cap-tag">👵🏾 Dona Rosa</span><span class="cap-tag">👨🏾‍🌾 Samuel</span></div>
-
-  <div class="cena reveal">
-    <div class="cena-bar" style="background:linear-gradient(90deg,var(--sky),#2980B9,#5DADE2)"></div>
-    <div class="cena-inner">
-      <div class="cena-lbl">📖 A Noite em que o Hélio Adoeceu</div>
-      <div class="cena-txt">
-        <p>Era uma terça-feira à meia-noite. O Hélio, filho mais velho da Amélia, acordou com febre de 40 graus e a respirar mal. A Amélia sentiu o pânico que toda a mãe conhece — aquele que paralisa e acelera ao mesmo tempo.</p>
-        <p>Chamou um táxi. Urgência do Hospital Central de Maputo. Sala de espera. Análises. Diagnóstico: pneumonia. Internamento necessário.</p>
-        <p>A enfermeira disse: <em>"Precisa de pagar o internamento antecipado — 4.800 meticais."</em></p>
-        <p>A Amélia tinha 340 meticais no M-Pesa. Era dia 18 do mês.</p>
-        <p>Ligou a três pessoas às duas da manhã. Duas não atenderam. A terceira — a vizinha Graça — disse que tinha 2.000 MT mas não os podia dispensar agora.</p>
-        <p>Ficou sentada no corredor do hospital, a olhar para o filho, incapaz de o internar. <strong>Não era falta de amor. Era falta de um fundo que nunca ninguém a tinha ensinado a construir.</strong></p>
-        <p>O médico, vendo a situação, internou o Hélio por compaixão e disse que a Amélia pagaria depois. O Hélio ficou bem.</p>
-        <p>Mas a Amélia jurou que aquela noite nunca mais se repetiria.</p>
+<!-- ═══════════════════════════════════
+     HERO
+═══════════════════════════════════ -->
+<section class="hero">
+  <div class="hero-bg-text">RIQUEZA</div>
+  <div class="hero-inner">
+    <div class="hero-text">
+      <div class="hero-eyebrow reveal">Inteligência Financeira para Moçambique</div>
+      <h1 class="reveal reveal-d1">SEMENTES<br><em>DE RIQUEZA</em></h1>
+      <p class="hero-lead reveal reveal-d2">O primeiro guia financeiro feito para a realidade moçambicana. Sem teorias de Wall Street. Com histórias de Xipamanine, Gaza, Beira e Nampula.</p>
+      <div class="hero-proof reveal reveal-d2">
+        <div class="hp"><div class="hp-val">21</div><div class="hp-lbl">Capítulos</div></div>
+        <div class="hp"><div class="hp-val">7</div><div class="hp-lbl">Histórias reais</div></div>
+        <div class="hp"><div class="hp-val">3</div><div class="hp-lbl">Universos</div></div>
+        <div class="hp"><div class="hp-val">+40</div><div class="hp-lbl">Ferramentas</div></div>
+      </div>
+      <div class="hero-cta-group reveal reveal-d3">
+        <a href="#pricing" class="cta-primary">Começar a Transformação →</a>
+        <span class="cta-guarantee">🔒 Acesso imediato após pagamento · Garantia de 7 dias</span>
+      </div>
+    </div>
+    <div class="book-mockup reveal reveal-d2">
+      <div class="book-wrap">
+        <div class="book-spine"></div>
+        <div class="book-cover">
+          <div class="book-ornament">🌱</div>
+          <div class="book-title">SEMENTES<br><em>DE RIQUEZA</em></div>
+          <div class="book-subtitle">Inteligência Financeira para Moçambique</div>
+          <div style="width:40px;height:1px;background:rgba(200,150,12,.3);margin:0 auto 14px;"></div>
+          <div class="book-author">21 CAPÍTULOS · 3 UNIVERSOS · 7 HISTÓRIAS</div>
+        </div>
+        <div class="book-badge">21<span>CAPS</span></div>
       </div>
     </div>
   </div>
+</section>
 
-  <div class="dados reveal">
-    <div class="dados-lbl">📊 A Vulnerabilidade Financeira em Moçambique</div>
-    <div class="dados-title">Quantos meses conseguimos sobreviver sem rendimento?</div>
-    <div class="dados-grid">
-      <div class="dado"><div class="dado-v">72%</div><div class="dado-l">Não resistem 30 dias sem salário</div></div>
-      <div class="dado"><div class="dado-v">89%</div><div class="dado-l">Não têm seguro de saúde</div></div>
-      <div class="dado"><div class="dado-v">3 em 4</div><div class="dado-l">Pediriam ao agiota em caso de urgência médica</div></div>
-      <div class="dado"><div class="dado-v">2019</div><div class="dado-l">Ciclona Idai provou que emergências não avisam</div></div>
-    </div>
-    <p>Em Moçambique, onde ciclones, inundações, doenças tropicais e instabilidade de emprego são realidades concretas, o fundo de emergência não é um conceito de classe média importado do Ocidente. É sobrevivência básica. É a diferença entre uma noite difícil e uma tragédia financeira.</p>
-  </div>
+<!-- ═══════════════════════════════════
+     PROBLEMA
+═══════════════════════════════════ -->
+<section class="problem">
+  <div class="container">
+    <span class="s-label reveal">O problema que ninguém resolve</span>
+    <h2 class="s-title reveal reveal-d1">RECONHECES<br><em>ALGUMA DESTA?</em></h2>
+    <p class="s-body reveal reveal-d2">Estas perguntas torturaram — e ainda torturam — milhões de moçambicanos. Não por falta de esforço. Por falta de conhecimento que nunca ninguém ensinou.</p>
 
-  <div class="sub reveal">A Regra de Ouro do Fundo de Emergência</div>
-  <p class="txt reveal">O fundo de emergência tem uma única regra: <strong>é sagrado.</strong> Não se toca para férias. Não se toca para o lobolo do primo. Não se toca porque encontraste uma boa promoção. Só existe uma razão para usar: quando algo urgente e imprevisto ameaça a estabilidade básica da família — saúde, abrigo, alimentação.</p>
-
-  <div class="ferr reveal">
-    <div class="ferr-h"><div class="ferr-icon">🛡️</div><div><div class="ferr-title">CALCULADORA DO FUNDO DE EMERGÊNCIA</div><div class="ferr-sub">Ferramenta 10-A — Calcula o teu objectivo</div></div></div>
-    <div class="tw">
-      <table>
-        <thead><tr><th>Situação de Vida</th><th>Meses de Reserva</th><th>Com 18.000 MT/mês</th><th>Com 5.400 MT/mês</th><th>Poupança Mensal Necessária</th></tr></thead>
-        <tbody>
-          <tr><td>Solteiro, emprego estável</td><td>3 meses</td><td>54.000 MT</td><td>16.200 MT</td><td>18 meses a 10%</td></tr>
-          <tr><td>Casal sem filhos, 2 rendimentos</td><td>3–4 meses</td><td>108.000 MT</td><td>32.400 MT</td><td>24 meses a 10%</td></tr>
-          <tr><td>Família com filhos, 1 rendimento</td><td>4–6 meses</td><td>108.000–162.000 MT</td><td>32.400–48.600 MT</td><td>30–36 meses a 10%</td></tr>
-          <tr><td>Trabalhador informal</td><td>6 meses</td><td>108.000 MT</td><td>32.400 MT</td><td>Prioridade máxima</td></tr>
-          <tr class="tr-warn"><td>Em recuperação de dívidas</td><td>1 mês (mínimo vital)</td><td>18.000 MT</td><td>5.400 MT</td><td>Começa com 100 MT/mês</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-
-  <div class="sub2 reveal">Onde Guardar — As 3 Melhores Opções em Moçambique</div>
-
-  <div class="tw reveal">
-    <div class="tw-title">Comparativo de Opções para o Fundo de Emergência</div>
-    <table>
-      <thead><tr><th>Opção</th><th>Acessibilidade</th><th>Segurança</th><th>Rende?</th><th>Para Quem</th></tr></thead>
-      <tbody>
-        <tr><td>💳 Conta poupança bancária (BCI/Millennium)</td><td>24–48h para levantar</td><td>Alta (Fundo de Garantia)</td><td>Sim (~2–4%/ano)</td><td>Classe média com conta bancária</td></tr>
-        <tr><td>📱 M-Pesa Poupança / e-Mola Poupança</td><td>Imediato</td><td>Média</td><td>Pequena (~1%/ano)</td><td>Informais, sem conta bancária</td></tr>
-        <tr class="tr-warn"><td>⭐ Conta poupança SEM cartão de débito</td><td>48–72h (requer ir ao banco)</td><td>Alta</td><td>Sim (~3%/ano)</td><td>Quem quer proteger-se do impulso de gastar</td></tr>
-        <tr><td>📜 Títulos do Tesouro de Curto Prazo</td><td>90 dias de prazo</td><td>Muito Alta</td><td>Sim (~12–15%/ano)</td><td>Quem já tem 3+ meses de reserva e quer rentabilizar</td></tr>
-        <tr class="tr-neg"><td>❌ Casa (debaixo do colchão)</td><td>Imediato</td><td>Muito Baixa (roubo, incêndio)</td><td>Não (perde para inflação)</td><td>Não recomendado</td></tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div class="sub reveal">Como Construir o Fundo com Qualquer Salário — Plano Prático</div>
-
-  <div class="sim reveal">
-    <div class="sim-t">Simulação: Amélia constrói o fundo — 270 MT/mês</div>
-    <div class="sim-row">
-      <div class="sim-i"><div class="sim-v">270</div><div class="sim-l">MT/mês (5% de 5.400 MT)</div></div>
-      <div class="sim-i"><div class="sim-v">3.240</div><div class="sim-l">MT após 12 meses</div></div>
-      <div class="sim-i"><div class="sim-v">16.200</div><div class="sim-l">MT — Meta de 3 meses (5 anos)</div></div>
-    </div>
-    <div class="sim-note">Parece lento? É. Mas existe uma estratégia que acelera: cada vez que a Amélia vende mais numa semana, coloca 50% do extra no fundo. Em anos bons, chega mais depressa. E enquanto cresce, protege-a de voltar ao agiota — o que por si só vale mais do que o juro que ganha.</div>
-  </div>
-
-  <div class="box gold-box reveal">
-    <div class="box-lbl">🔑 As 5 Regras de Ouro do Fundo de Emergência</div>
-    <ul>
-      <li><strong>Regra 1 — Primeiro pagar a ti mesmo:</strong> o dia que receves o salário, a primeira transferência é para o fundo. Antes das contas, antes da família, antes de tudo.</li>
-      <li><strong>Regra 2 — Conta separada:</strong> nunca mistures o fundo com o dinheiro do dia-a-dia. Idealmente sem cartão de débito associado.</li>
-      <li><strong>Regra 3 — Define as tuas emergências:</strong> escreve no telemóvel o que conta como emergência real para ti. Quando o impulso de gastar aparecer, relê a lista.</li>
-      <li><strong>Regra 4 — Repõe quando usar:</strong> se um dia usas o fundo, o mês seguinte recomeças a construí-lo — com a mesma prioridade de antes.</li>
-      <li><strong>Regra 5 — Nunca "emprestes" o fundo:</strong> nem à família, nem aos amigos. Explica com amor: "Este dinheiro é o seguro da minha família. Se eu ficar sem ele, não posso ajudar ninguém."</li>
-    </ul>
-  </div>
-
-  <div class="resp reveal">
-    <div class="resp-who">👩🏾 Amélia — 14 meses depois daquela noite no hospital</div>
-    <div class="resp-txt">"Tenho 3.780 MT guardados. Ainda não chega para 1 mês inteiro. Mas quando a minha filha mais nova ficou doente no mês passado, eu tinha o dinheiro. Fui ao médico sem ligar a ninguém. Não sei como explicar o que isso significa para uma mãe."</div>
-    <div class="resp-res">✅ 3.780 MT de fundo — Amélia usa o fundo pela primeira vez, sem recorrer ao agiota.</div>
-  </div>
-
-  <div class="missao reveal">
-    <div class="m-head"><div class="m-icon">🎯</div><div><div class="m-title">MISSÃO 10</div><div class="m-prazo">⏱ Prazo: Hoje mesmo</div></div></div>
-    <div class="m-body">O fundo de emergência começa hoje. Não quando tiveres mais dinheiro. Não depois de pagar a última dívida. Hoje, com o que tens.</div>
-    <div class="m-steps">
-      <div class="m-step"><div class="ms-n">1</div><div class="ms-t"><strong>Abre já uma conta poupança separada</strong> (BCI, Millennium BIM, ou activa a funcionalidade de poupança no M-Pesa ou e-Mola).</div></div>
-      <div class="m-step"><div class="ms-n">2</div><div class="ms-t"><strong>Transfere já o valor que consegues</strong> — mesmo que sejam 50 MT. O acto de transferir é mais importante do que o valor.</div></div>
-      <div class="m-step"><div class="ms-n">3</div><div class="ms-t"><strong>Define o débito automático mensal</strong> (ou alarme de telemóvel) para o dia do salário. O fundo cresce sozinho quando é automático.</div></div>
-      <div class="m-step"><div class="ms-n">4</div><div class="ms-t"><strong>Escreve a tua meta:</strong> quantos meses de reserva queres e quando queres atingir. Cola esse papel na carteira.</div></div>
-    </div>
-  </div>
-
-  <div class="prov reveal">
-    <div class="prov-t">"Não esperes pela chuva para cobrir o teu tecto."</div>
-    <div class="prov-o">Provérbio Moçambicano</div>
-    <div class="prov-l">Lição: A emergência não avisa quando chega. O fundo de emergência é o tecto que constróis enquanto o sol ainda brilha.</div>
-  </div>
-</article>
-
-<div class="divider"></div>
-
-<!-- ══════════ CAP 11 ══════════ -->
-<article class="capitulo" id="cap11">
-  <div class="cap-num reveal">Capítulo 11 — Universo II</div>
-  <h1 class="cap-title reveal">Bancos e Dinheiro Digital</h1>
-  <div class="cap-sub reveal">Guia Completo dos Serviços Financeiros em Moçambique — Do M-Pesa ao Banco, Sem Mistérios</div>
-  <div class="cap-tags reveal"><span class="cap-tag">👩🏾‍💻 Inês</span><span class="cap-tag">👵🏾 Dona Rosa</span></div>
-
-  <div class="cena reveal">
-    <div class="cena-bar" style="background:linear-gradient(90deg,var(--teal),#16A085,#1ABC9C)"></div>
-    <div class="cena-inner">
-      <div class="cena-lbl">📖 A Inês e o Banco que Ela Nunca Abriu</div>
-      <div class="cena-txt">
-        <p>A Inês tinha 26 anos e nunca tinha aberto uma conta bancária. Usava o M-Pesa para tudo: receber dos clientes, pagar facturas, guardar algum dinheiro. Era simples e funcionava.</p>
-        <p>Mas quando um cliente internacional queria pagar 1.500 USD por um projecto de design, perguntou pelo IBAN. A Inês não sabia o que era. O cliente não sabia como enviar via M-Pesa. O negócio quase não aconteceu.</p>
-        <p>Quando finalmente foi ao banco, a funcionária explicou o que precisava para abrir conta: BI, NUIT, comprovativo de morada. A Inês tinha tudo — mas nunca tinha ido porque achava que os bancos eram "complicados" e "só para quem tem muito dinheiro".</p>
-        <p><em>"Abri a conta em 20 minutos,"</em> disse ela mais tarde. <em>"Vinte minutos. Perdi 3 anos de oportunidades internacionais por não ter ido em 20 minutos."</em></p>
+    <div class="problem-grid">
+      <div class="prob-item reveal">
+        <div class="prob-icon">😰</div>
+        <div class="prob-q">"Ganho um bom salário mas nunca sobra nada no fim do mês."</div>
+        <div class="prob-txt">O Eduardo ganha 35.000 MT e tinha -145.000 MT de patrimônio. O problema não era o salário.</div>
+      </div>
+      <div class="prob-item reveal reveal-d1">
+        <div class="prob-icon">🌀</div>
+        <div class="prob-q">"Pedi 3.000 MT ao agiota e agora devo 11.000 MT."</div>
+        <div class="prob-txt">A Amélia caiu nesta armadilha. Com a estratégia certa, ela saiu. E poupou mais de 45.000 MT em juros.</div>
+      </div>
+      <div class="prob-item reveal reveal-d2">
+        <div class="prob-icon">🏦</div>
+        <div class="prob-q">"Tenho 47.000 MT guardados em casa porque não confio nos bancos."</div>
+        <div class="prob-txt">A Dona Rosa perdeu anos de juros por um trauma de 1984. Há uma forma de curar isso — e de ganhar dinheiro enquanto dorme.</div>
+      </div>
+      <div class="prob-item reveal reveal-d3">
+        <div class="prob-icon">👨‍👩‍👧</div>
+        <div class="prob-q">"Trabalho para toda a família. Nunca sobra nada para mim."</div>
+        <div class="prob-txt">A Beatriz ganhava 80.000 MT e tinha dívidas. O Ubuntu não é incompatível com riqueza pessoal — há uma forma de honrar ambos.</div>
+      </div>
+      <div class="prob-item reveal">
+        <div class="prob-icon">📈</div>
+        <div class="prob-q">"Quero investir mas não sei por onde começar com pouco dinheiro."</div>
+        <div class="prob-txt">O Tomás começou a investir aos 17 anos com 2.000 MT. Os Bilhetes do Tesouro existem há anos — quase ninguém usa.</div>
+      </div>
+      <div class="prob-item reveal reveal-d1">
+        <div class="prob-icon">🌊</div>
+        <div class="prob-q">"O meu rendimento é irregular. Não consigo planear."</div>
+        <div class="prob-txt">A Inês era freelancer com rendimento variável. O Método da Média Móvel mudou tudo — agora tem estabilidade com qualquer rendimento.</div>
       </div>
     </div>
   </div>
+</section>
 
-  <div class="sub reveal">Guia dos Principais Bancos em Moçambique</div>
-
-  <div class="tw reveal">
-    <div class="tw-title">Comparativo dos Principais Bancos — 2025</div>
-    <table>
-      <thead><tr><th>Banco</th><th>Melhor Para</th><th>Conta Mínima</th><th>Pontos Fortes</th><th>Limitações</th></tr></thead>
-      <tbody>
-        <tr><td>🏦 BCI (Banco Comercial e de Investimentos)</td><td>Classe média e empresas</td><td>Sem mínimo (conta básica)</td><td>Maior rede de ATMs, app moderna, crédito hipotecário</td><td>Taxas mais altas em algumas contas</td></tr>
-        <tr><td>🏦 Millennium BIM</td><td>Empresários e profissionais</td><td>Sem mínimo (conta básica)</td><td>Internet banking robusto, bom atendimento empresarial</td><td>Algumas agências com filas longas</td></tr>
-        <tr><td>🏦 Moza Banco</td><td>Jovens e PMEs</td><td>250 MT</td><td>Conta jovem sem anuidade, microcrédito acessível</td><td>Rede de ATMs menor</td></tr>
-        <tr><td>🏦 Socremo</td><td>Pequenos negócios e informais</td><td>Baixíssimo</td><td>Microcrédito especializado, aceita historial limitado</td><td>Não é banco completo, foco em crédito</td></tr>
-        <tr><td>🏦 Letshego</td><td>Trabalhadores com salário</td><td>N/A (crédito)</td><td>Crédito com desconto do salário, processo simples</td><td>Apenas crédito — não é banco de depósitos</td></tr>
-        <tr class="tr-warn"><td>⭐ Recomendação geral</td><td colspan="4">Para começar: BCI ou Millennium BIM (conta básica gratuita). Para microcrédito: Socremo. Para crédito com salário: Letshego.</td></tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div class="sub reveal">M-Pesa, e-Mola e Outros — Guia Completo</div>
-
-  <div class="tw reveal">
-    <div class="tw-title">Carteiras Digitais em Moçambique — Comparativo 2025</div>
-    <table>
-      <thead><tr><th>Serviço</th><th>Operadora</th><th>Melhor Uso</th><th>Limite Diário</th><th>Custo de Envio</th></tr></thead>
-      <tbody>
-        <tr><td>📱 M-Pesa</td><td>Vodacom</td><td>Pagamentos diários, recargas, transferências</td><td>50.000 MT (conta verificada)</td><td>Varia por valor e tipo</td></tr>
-        <tr><td>📱 e-Mola</td><td>Tmcel</td><td>Pagamentos, recebimentos, poupança</td><td>30.000 MT</td><td>Concorrente do M-Pesa</td></tr>
-        <tr><td>📱 Mkesh</td><td>Movitel</td><td>Terceira opção — mais rural</td><td>20.000 MT</td><td>Estrutura semelhante</td></tr>
-        <tr class="tr-warn"><td>💡 Dica crítica</td><td colspan="4">Activa a funcionalidade de poupança do M-Pesa — é gratuita, separada do saldo principal e rende pequeno juro. Ideal para quem ainda não tem conta bancária.</td></tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div class="sub reveal">Segurança Digital — Os 7 Golpes Mais Comuns em Moçambique</div>
-
-  <div class="box red-box reveal">
-    <div class="box-lbl">🚨 Golpes Financeiros Digitais Mais Frequentes — Como Proteger-te</div>
-    <ul>
-      <li><strong>1. Golpe do Prémio:</strong> "Ganhou 50.000 MT — envie o PIN para resgatar." Nunca existe prémio real. Nunca partilhes o PIN com ninguém.</li>
-      <li><strong>2. SMS falso do banco:</strong> SMS que parece do BCI a pedir que "confirme os dados" num link. Os bancos NUNCA pedem dados por SMS ou link.</li>
-      <li><strong>3. Golpe da Transferência Errada:</strong> Alguém envia dinheiro "por engano" e pede que reenvies. O envio original é revertido depois — ficas a dever o que enviaste.</li>
-      <li><strong>4. Golpe do Emprego Falso:</strong> Oferta de emprego que pede pagamento de "taxa de inscrição". Emprego legítimo nunca cobra antes de contratar.</li>
-      <li><strong>5. Golpe da Criptomoeda:</strong> Plataforma que promete retorno de 30% por semana. Se parece bom demais para ser verdade — é.</li>
-      <li><strong>6. Phishing por WhatsApp:</strong> Link que pede login ao banco via WhatsApp. Sempre vai directamente à app do banco — nunca por link recebido.</li>
-      <li><strong>7. Golpe do Familiar em Crise:</strong> Mensagem de número desconhecido a dizer ser familiar em emergência, pedindo dinheiro urgente. Liga directamente ao familiar antes de enviar qualquer valor.</li>
-    </ul>
-  </div>
-
-  <div class="box green-box reveal">
-    <div class="box-lbl">✅ Regras de Segurança Financeira Digital</div>
-    <ul>
-      <li>PIN do M-Pesa ou banco — não existe razão legítima para partilhares com NINGUÉM.</li>
-      <li>Activa a autenticação de dois factores em todas as apps bancárias.</li>
-      <li>Em caso de dúvida — não clicas, não respondes, não envias. Ligas directamente ao banco.</li>
-      <li>Números de urgência: BCI: 21 353 000 | Millennium BIM: 21 354 000 | M-Pesa: 823 ou *111#</li>
-    </ul>
-  </div>
-
-  <div class="sub reveal">Como Abrir Conta Bancária Pela Primeira Vez — Passo a Passo</div>
-  <div class="box blue-box reveal">
-    <div class="box-lbl">📋 Lista de Documentos e Processo</div>
-    <ul>
-      <li><strong>Documentos necessários:</strong> Bilhete de Identidade (BI) válido + NUIT (Número Único de Identificação Tributária) + Comprovativo de morada (factura de água/luz ou declaração de chefe de quarteirão).</li>
-      <li><strong>Conta básica gratuita:</strong> BCI e Millennium BIM oferecem contas básicas sem anuidade e sem depósito mínimo. Perfeitas para começar.</li>
-      <li><strong>NUIT sem empresa:</strong> Podes obter NUIT como pessoa singular na Autoridade Tributária (AT) com o BI. É gratuito e rápido.</li>
-      <li><strong>Para informais:</strong> O Socremo e algumas cooperativas aceitam declaração de actividade informal assinada pelo regulador do mercado onde trabalhas.</li>
-      <li><strong>Tempo:</strong> Em média, 20–45 minutos para abrir conta básica com todos os documentos.</li>
-    </ul>
-  </div>
-
-  <div class="resp reveal">
-    <div class="resp-who">👩🏾‍💻 Inês — Depois de abrir conta bancária</div>
-    <div class="resp-txt">"No primeiro mês com conta bancária, recebi um pagamento internacional de 1.200 USD. Entrou em 48 horas. Antes, perderia esse cliente. Agora consigo trabalhar com qualquer empresa do mundo. A conta bancária abriu-me uma porta que nem sabia que existia."</div>
-    <div class="resp-res">✅ Inês aumentou o rendimento em 40% ao poder receber clientes internacionais com conta bancária formal.</div>
-  </div>
-
-  <div class="missao reveal">
-    <div class="m-head"><div class="m-icon">🎯</div><div><div class="m-title">MISSÃO 11</div><div class="m-prazo">⏱ Prazo: Esta semana</div></div></div>
-    <div class="m-body">Formaliza a tua vida financeira digital. Cada passo que deres esta semana vai valer anos de oportunidades futuras.</div>
-    <div class="m-steps">
-      <div class="m-step"><div class="ms-n">1</div><div class="ms-t"><strong>Se não tens conta bancária:</strong> vai esta semana ao BCI ou Millennium BIM com BI, NUIT e comprovativo de morada. Abre a conta básica gratuita.</div></div>
-      <div class="m-step"><div class="ms-n">2</div><div class="ms-t"><strong>Se já tens conta:</strong> activa o internet banking e a app do banco. Aprende a verificar o saldo e fazer transferências sem ir ao banco.</div></div>
-      <div class="m-step"><div class="ms-n">3</div><div class="ms-t"><strong>Activa a poupança no M-Pesa</strong> (ou e-Mola) se ainda não o fizeste. Começa a separar o fundo de emergência por lá enquanto não tens conta poupança bancária.</div></div>
-      <div class="m-step"><div class="ms-n">4</div><div class="ms-t"><strong>Altera o PIN do M-Pesa</strong> se nunca o fizeste desde que o compraste. Usa um código que nunca partilhaste com ninguém.</div></div>
-    </div>
-  </div>
-
-  <div class="prov reveal">
-    <div class="prov-t">"Não deixes a tua riqueza à mercê do vento — guarda-a onde ela possa crescer protegida."</div>
-    <div class="prov-o">Adaptação de Provérbio Africano</div>
-    <div class="prov-l">Lição: O sistema financeiro formal não é o inimigo. É uma ferramenta que, quando usada com conhecimento, multiplica as tuas oportunidades e protege o que construíste.</div>
-  </div>
-</article>
-
-<div class="divider"></div>
-
-<!-- ══════════ CAP 12 ══════════ -->
-<article class="capitulo" id="cap12">
-  <div class="cap-num reveal">Capítulo 12 — Universo II</div>
-  <h1 class="cap-title reveal">Investir com Pouco</h1>
-  <div class="cap-sub reveal">Do Xitique à Bolsa de Valores — Como Começar a Investir em Moçambique com Qualquer Quantia</div>
-  <div class="cap-tags reveal"><span class="cap-tag">👩🏾 Amélia</span><span class="cap-tag">👨🏾‍🌾 Samuel</span><span class="cap-tag">👩🏾‍💻 Inês</span></div>
-
-  <div class="cena reveal">
-    <div class="cena-bar" style="background:linear-gradient(90deg,var(--green),var(--green2),#82E0AA)"></div>
-    <div class="cena-inner">
-      <div class="cena-lbl">📖 Samuel e a Segunda Parcela de Terra</div>
-      <div class="cena-txt">
-        <p>O Samuel não sabia que estava a investir. Chamava a isso "guardar para o futuro".</p>
-        <p>Há três anos, depois de uma colheita particularmente boa de amendoim, tinha sobrado 8.000 meticais que não precisava para as despesas do ano. O vizinho João ofereceu-lhe uma parcela de terra pequena por 7.500 MT — estava a sair de Gaza para Maputo e precisava de vender rápido.</p>
-        <p>O Samuel comprou. A mulher ficou nervosa. <em>"E se precisarmos desse dinheiro?"</em> Mas o Samuel tinha o fundo de emergência. Os 8.000 MT eram excedente.</p>
-        <p>Três anos depois, essa parcela valia 22.000 MT. E nela cresciam 300 caules de banana que rendiam mensalmente.</p>
-        <p>Samuel não tinha lido nenhum livro de investimentos. Mas tinha aplicado, por instinto, o princípio mais antigo do investimento: <em>transformar dinheiro parado em activos que trabalham.</em></p>
-        <p><strong>Isso é investir. Não é complicado. É intencional.</strong></p>
+<!-- ═══════════════════════════════════
+     A HISTÓRIA
+═══════════════════════════════════ -->
+<section class="story">
+  <div class="container">
+    <div class="story-inner">
+      <div class="story-text">
+        <span class="s-label reveal">Por que este livro existe</span>
+        <h2 class="s-title reveal reveal-d1">O SISTEMA<br>FALHOU-NOS.<br><em>ESTE LIVRO</em><br>NÃO.</h2>
+        <p class="s-body reveal reveal-d2">Durante gerações, o sistema de ensino em Moçambique ensinou matemática, história e ciências. Nunca ensinou como abrir uma conta poupança, como calcular o custo real de uma dívida, ou como fazer o dinheiro do trabalho de uma vida inteira durar mais do que o mês.</p>
+        <p class="s-body reveal reveal-d3" style="margin-top:16px;">Este livro foi escrito para preencher esse buraco — com histórias reais de moçambicanos como tu, ferramentas adaptadas aos preços em Meticais, e soluções que funcionam com salário mínimo ou com 80.000 MT por mês.</p>
+        <div class="story-stat reveal reveal-d4">
+          <div class="ss-num">83%</div>
+          <div class="ss-txt">Das famílias moçambicanas não têm sequer 1 mês de despesas guardadas. Este livro foi escrito para mudar isso — um leitor de cada vez.</div>
+        </div>
+      </div>
+      <div class="story-visual reveal reveal-d2">
+        <div class="stat-blocks">
+          <div class="stat-block">
+            <div class="sb-val">-145K</div>
+            <div class="sb-lbl">MT Património do Eduardo antes</div>
+          </div>
+          <div class="stat-block" style="background:rgba(39,174,96,.06);border-color:rgba(39,174,96,.15);">
+            <div class="sb-val" style="color:#27AE60">+45K</div>
+            <div class="sb-lbl">MT Poupados pela Amélia ao sair do agiota</div>
+          </div>
+          <div class="stat-block">
+            <div class="sb-val">40%</div>
+            <div class="sb-lbl">Taxa mensal do agiota — 480% ao ano</div>
+          </div>
+          <div class="stat-block" style="background:rgba(39,174,96,.06);border-color:rgba(39,174,96,.15);">
+            <div class="sb-val" style="color:#27AE60">13%</div>
+            <div class="sb-lbl">Taxa anual dos Bilhetes do Tesouro — acessível a qualquer pessoa</div>
+          </div>
+          <div class="stat-block" style="grid-column:1/-1;background:rgba(200,150,12,.06);border-color:rgba(200,150,12,.15);">
+            <div class="sb-val" style="font-size:clamp(22px,3vw,32px)">1.000 dias</div>
+            <div class="sb-lbl">O plano do Capítulo 21 — o teu roteiro pessoal para transformar a tua situação financeira em 3 anos</div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
+</section>
 
-  <div class="sub reveal">A Escada dos Investimentos em Moçambique</div>
-  <p class="txt reveal">Investir não começa na bolsa de valores. Começa onde estás. A escada de investimentos é uma progressão — cada degrau está disponível a um nível diferente de capital e conhecimento.</p>
+<!-- ═══════════════════════════════════
+     PERSONAGENS
+═══════════════════════════════════ -->
+<section class="chars">
+  <div class="container-wide">
+    <span class="s-label reveal" style="color:var(--mid)">7 histórias, 1 jornada</span>
+    <h2 class="s-title reveal reveal-d1">CONHECE AS PESSOAS<br><em>QUE SÃO COMO TU</em></h2>
+    <p class="chars-subtitle reveal reveal-d2">Não são personagens inventados. São arquétipos de moçambicanos reais — e pelo menos um deles conta a tua história.</p>
 
-  <div class="tw reveal">
-    <div class="tw-title">Escada de Investimentos — Do Mais Simples ao Mais Sofisticado</div>
-    <table>
-      <thead><tr><th>Degrau</th><th>Instrumento</th><th>Entrada Mínima</th><th>Risco</th><th>Retorno Esperado</th><th>Para Começar</th></tr></thead>
-      <tbody>
-        <tr class="tr-pos"><td>1</td><td>🤝 Xitique Inteligente</td><td>100 MT/mês</td><td>Baixo (se bem organizado)</td><td>0% (mas disciplina financeira)</td><td>Hoje — com 5 a 15 pessoas de confiança</td></tr>
-        <tr><td>2</td><td>💳 Conta Poupança Bancária</td><td>0 MT</td><td>Muito Baixo</td><td>2–4%/ano</td><td>Hoje — qualquer banco</td></tr>
-        <tr><td>3</td><td>📜 Títulos do Tesouro (BT 91 dias)</td><td>1.000 MT</td><td>Muito Baixo (Estado)</td><td>12–16%/ano</td><td>Via banco ou BVM</td></tr>
-        <tr><td>4</td><td>🏗️ Negócio próprio pequeno</td><td>500–5.000 MT</td><td>Médio</td><td>20–50%+/ano (se correr bem)</td><td>Com plano de negócio simples</td></tr>
-        <tr><td>5</td><td>🏠 Imóvel ou terra</td><td>10.000 MT+</td><td>Médio-Baixo</td><td>8–15%/ano (valorização + renda)</td><td>Com pesquisa de mercado local</td></tr>
-        <tr><td>6</td><td>📈 Bolsa de Valores (BVM)</td><td>5.000 MT</td><td>Médio-Alto</td><td>Variável (histórico 10–20%/ano)</td><td>Com conhecimento básico de mercado</td></tr>
-        <tr class="tr-warn"><td>⚠️</td><td>❌ EVITAR: Pirâmides, "investimentos" de 30%/semana</td><td>Qualquer</td><td>Extremo (fraude)</td><td>Perda total garantida</td><td>Nunca</td></tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div class="sub2 reveal">O Xitique Moderno — Como Organizar para Não Correr Riscos</div>
-  <p class="txt reveal">O xitique é uma das ferramentas financeiras mais poderosas e mais moçambicanas que existem. Mas pode correr mal quando não há regras claras. Aqui está como organizar um xitique sólido:</p>
-
-  <div class="ferr reveal">
-    <div class="ferr-h"><div class="ferr-icon">🤝</div><div><div class="ferr-title">REGRAS DO XITIQUE INTELIGENTE</div><div class="ferr-sub">Ferramenta 12-A</div></div></div>
-    <div class="box gold-box">
-      <div class="box-lbl">📋 Como Organizar</div>
-      <ul>
-        <li><strong>Máximo 10 a 15 pessoas</strong> — pessoas que conheces pessoalmente e são financeiramente responsáveis.</li>
-        <li><strong>Contrato escrito simples</strong> — valor mensal, data de pagamento, ordem de recebimento, consequências de falha.</li>
-        <li><strong>Um administrador neutro</strong> — alguém de confiança de todos que gere os pagamentos.</li>
-        <li><strong>Fundo de penalidade:</strong> quem atrasa paga 10% extra ao fundo comum — distribuído no final do ciclo.</li>
-        <li><strong>Transparência total:</strong> todos sabem quem pagou e quem não pagou — sem segredos.</li>
-        <li><strong>Valor realista:</strong> ninguém deve entrar num xitique que represente mais de 10–15% do seu rendimento mensal.</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="sub2 reveal">Títulos do Tesouro — O Investimento Mais Seguro de Moçambique</div>
-  <p class="txt reveal">Os Títulos do Tesouro (Bilhetes do Tesouro — BT e Obrigações do Tesouro — OT) são emitidos pelo Estado moçambicano e vendidos através de bancos e da Bolsa de Valores de Moçambique (BVM). São considerados o investimento mais seguro que existe — porque o Estado garante o pagamento.</p>
-
-  <div class="sim reveal">
-    <div class="sim-t">Poder do Juro Composto — Investir 500 MT/mês nos Títulos do Tesouro (12%/ano)</div>
-    <div class="sim-row">
-      <div class="sim-i"><div class="sim-v">500</div><div class="sim-l">MT por mês investidos</div></div>
-      <div class="sim-i"><div class="sim-v">72.000</div><div class="sim-l">MT em 10 anos (sem juros)</div></div>
-      <div class="sim-i"><div class="sim-v">116.000</div><div class="sim-l">MT com juros compostos a 12%/ano</div></div>
-      <div class="sim-i"><div class="sim-v">+61%</div><div class="sim-l">A mais graças ao juro composto</div></div>
-    </div>
-    <div class="sim-note">O juro composto é o 8.º milagre do mundo — disse Einstein. Funciona assim: o juro que ganhas num período é adicionado ao capital, e no período seguinte ganhas juro sobre o juro. Quanto mais cedo começares, mais poderoso se torna.</div>
-  </div>
-
-  <div class="pq reveal">
-    <div class="pq-t">"Investir não é para ricos. É o que torna as pessoas ricas. A diferença entre quem tem e quem não tem raramente é o salário — é o hábito de transformar dinheiro parado em dinheiro que trabalha."</div>
-    <div class="pq-s">Sementes de Riqueza</div>
-  </div>
-
-  <div class="resp reveal">
-    <div class="resp-who">👩🏾 Amélia — Primeiro investimento: Xitique de 300 MT/mês</div>
-    <div class="resp-txt">"Organizei um xitique com 8 mulheres do mercado. Cada uma dá 300 MT por mês. Quando chega a minha vez, recebo 2.400 MT de uma vez — uso para comprar mais capulanas em quantidade e consigo melhor preço. Ganho mais com o mesmo trabalho."</div>
-    <div class="resp-res">✅ Amélia usa o xitique como capital de trabalho — aumentando a margem do negócio em 15%.</div>
-  </div>
-
-  <div class="missao reveal">
-    <div class="m-head"><div class="m-icon">🎯</div><div><div class="m-title">MISSÃO 12</div><div class="m-prazo">⏱ Prazo: Este mês</div></div></div>
-    <div class="m-body">O teu primeiro investimento real. Seja qual for o degrau onde estás na escada, dá um passo para cima este mês.</div>
-    <div class="m-steps">
-      <div class="m-step"><div class="ms-n">1</div><div class="ms-t"><strong>Identifica onde estás na Escada dos Investimentos</strong> e define o próximo degrau que podes atingir.</div></div>
-      <div class="m-step"><div class="ms-n">2</div><div class="ms-t"><strong>Se ainda não tens nenhum investimento:</strong> abre um xitique ou activa a conta poupança com débito automático mensal — mesmo que sejam 100 MT.</div></div>
-      <div class="m-step"><div class="ms-n">3</div><div class="ms-t"><strong>Pesquisa os Títulos do Tesouro no BVM (bvm.co.mz)</strong> — informa-te sobre prazos e valores mínimos para o próximo passo.</div></div>
-    </div>
-  </div>
-
-  <div class="prov reveal">
-    <div class="prov-t">"Uma semente que não é plantada não pode crescer. Uma semente plantada no momento certo transforma-se em floresta."</div>
-    <div class="prov-o">Provérbio Bantu</div>
-    <div class="prov-l">Lição: O melhor momento para investir foi há 10 anos. O segundo melhor momento é agora. Não esperes pelo momento perfeito — investe o que tens, hoje.</div>
-  </div>
-</article>
-
-<div class="divider"></div>
-
-<!-- ══════════ CAP 13 ══════════ -->
-<article class="capitulo" id="cap13">
-  <div class="cap-num reveal">Capítulo 13 — Universo II</div>
-  <h1 class="cap-title reveal">Negócio Próprio</h1>
-  <div class="cap-sub reveal">Como Transformar uma Ideia em Rendimento Real — Do Informal ao Formal, Passo a Passo</div>
-  <div class="cap-tags reveal"><span class="cap-tag">👩🏾 Amélia</span><span class="cap-tag">👨🏾‍💼 Eduardo</span></div>
-
-  <div class="cena reveal">
-    <div class="cena-bar" style="background:linear-gradient(90deg,var(--rust),#E74C3C,var(--sand))"></div>
-    <div class="cena-inner">
-      <div class="cena-lbl">📖 O Dinheiro Misturado de Eduardo</div>
-      <div class="cena-txt">
-        <p>O Eduardo começou a fazer consultoria de engenharia ao fim-de-semana há 8 meses. No início era informal — um amigo pedia ajuda com projectos estruturais, pagava em dinheiro. Depois foram dois amigos. Depois um escritório de arquitectura.</p>
-        <p>Em 8 meses, tinha ganho extra 47.000 MT. Uma quantia enorme. Uma oportunidade real.</p>
-        <p>Mas o Eduardo cometeu o erro que 90% dos pequenos negócios cometem: pôs tudo no mesmo bolso. O dinheiro da consultoria entrava na mesma conta do salário. Gastava-o sem registar. Quando precisava de comprar material profissional, não sabia se tinha saldo porque não distinguia o dinheiro do negócio do dinheiro pessoal.</p>
-        <p>Quando fez as contas no final do ano, descobriu que dos 47.000 MT ganhos, sobravamapenas 3.200 MT. O resto tinha "desaparecido" — gasto em despesas pessoais que ele confundiu com "custos do negócio".</p>
-        <p><strong>O negócio estava a funcionar. A gestão é que estava a matar tudo.</strong></p>
+    <div class="chars-grid">
+      <div class="char-card reveal">
+        <span class="char-emoji">👩🏾</span>
+        <div class="char-name">Amélia, 38 anos</div>
+        <div class="char-role">Vendedora · Xipamanine · Maputo</div>
+        <div class="char-before">❌ Antes: Dívida de 11.200 MT com agiota. Rendimento de 3.800 MT/mês. Fé a custar mais do que pode pagar.</div>
+        <div class="char-after">✅ Depois: Lucro mensal 4× maior. Fundo de emergência. Paz financeira.</div>
+        <div class="char-quote">"Não fui mais esperta. Aprendi as regras de um jogo que ninguém me tinha ensinado."</div>
+      </div>
+      <div class="char-card reveal reveal-d1">
+        <span class="char-emoji">👦🏾</span>
+        <div class="char-name">Tomás, 17 anos</div>
+        <div class="char-role">Estudante · Beira · Sofala</div>
+        <div class="char-before">❌ Antes: 500 MT de mesada. Dívidas por sapatilhas de marca. Pressão das redes sociais.</div>
+        <div class="char-after">✅ Depois: Primeiro investimento aos 17 anos. 8.500 MT/mês freelancing aos 20.</div>
+        <div class="char-quote">"Quero ser o primeiro da minha família a criar riqueza. Não a herdar — a criar."</div>
+      </div>
+      <div class="char-card reveal reveal-d2">
+        <span class="char-emoji">👨🏾‍💼</span>
+        <div class="char-name">Eduardo, 34 anos</div>
+        <div class="char-role">Engenheiro · Maputo</div>
+        <div class="char-before">❌ Antes: 35.000 MT/mês. -145.000 MT de patrimônio. A 1 mês da insolvência.</div>
+        <div class="char-after">✅ Depois: 45.000 MT em Bilhetes do Tesouro. Casa em construção. Consultoria extra.</div>
+        <div class="char-quote">"O meu problema nunca foi o salário. Era a falta de plano."</div>
+      </div>
+      <div class="char-card reveal reveal-d3">
+        <span class="char-emoji">👵🏾</span>
+        <div class="char-name">Dona Rosa, 67 anos</div>
+        <div class="char-role">Professora Reformada · Nampula</div>
+        <div class="char-before">❌ Antes: 47.000 MT no colchão. Insónia. Trauma dos bancos desde 1984.</div>
+        <div class="char-after">✅ Depois: 80.000 MT em banco a render juros. Primeiro dinheiro ganho enquanto dormia.</div>
+        <div class="char-quote">"Não confio completamente nos bancos. Mas confio nos números."</div>
+      </div>
+      <div class="char-card reveal">
+        <span class="char-emoji">👩🏾‍💻</span>
+        <div class="char-name">Inês, 26 anos</div>
+        <div class="char-role">Freelancer Digital · Maputo</div>
+        <div class="char-before">❌ Antes: Rendimento irregular. Sem poupanças. Ansiedade financeira crónica.</div>
+        <div class="char-after">✅ Depois: 22.000 MT médios/mês. 60.000 MT investidos. Estabilidade com rendimento variável.</div>
+        <div class="char-quote">"A irregularidade do rendimento deixou de me assustar. Aprendi a geri-la."</div>
+      </div>
+      <div class="char-card reveal reveal-d1">
+        <span class="char-emoji">👨🏾‍🌾</span>
+        <div class="char-name">Samuel, 45 anos</div>
+        <div class="char-role">Agricultor · Gaza</div>
+        <div class="char-before">❌ Antes: 40.000 MT/ano. Riqueza invisível na terra que nunca soube usar.</div>
+        <div class="char-after">✅ Depois: +120.000 MT de patrimônio. Segunda machamba. Filho como gestor agrícola.</div>
+        <div class="char-quote">"A minha riqueza sempre esteve na terra. Faltava saber o que fazer com ela."</div>
+      </div>
+      <div class="char-card reveal reveal-d2">
+        <span class="char-emoji">👩🏾‍⚕️</span>
+        <div class="char-name">Beatriz, 41 anos</div>
+        <div class="char-role">Médica · Tete</div>
+        <div class="char-before">❌ Antes: 80.000 MT/mês. -85.000 MT de patrimônio. Refém das obrigações familiares.</div>
+        <div class="char-after">✅ Depois: 120.000 MT investidos. Testamento feito. Doa com paz, não com culpa.</div>
+        <div class="char-quote">"Aprendi que não se serve os outros de um prato vazio."</div>
       </div>
     </div>
   </div>
+</section>
 
-  <div class="sub reveal">Os 5 Erros Mortais dos Pequenos Negócios em Moçambique</div>
+<!-- ═══════════════════════════════════
+     CONTEÚDO
+═══════════════════════════════════ -->
+<section class="contents">
+  <div class="container">
+    <span class="s-label reveal">O que vais aprender</span>
+    <h2 class="s-title reveal reveal-d1">21 CAPÍTULOS.<br><em>3 UNIVERSOS.</em><br>UMA VIDA DIFERENTE.</h2>
 
-  <div class="tw reveal">
-    <div class="tw-title">Erros Fatais e Como Evitá-los</div>
-    <table>
-      <thead><tr><th>Erro</th><th>O Que Acontece</th><th>A Solução</th></tr></thead>
-      <tbody>
-        <tr class="tr-neg"><td>❌ 1. Misturar dinheiro pessoal com o do negócio</td><td>Impossível saber se o negócio é lucrativo. Perde-se tudo sem perceber.</td><td>Conta bancária separada para o negócio. Absolutamente separada.</td></tr>
-        <tr class="tr-neg"><td>❌ 2. Não registar gastos e receitas</td><td>Não há dados para decidir. Repetição dos mesmos erros.</td><td>Caderno de registo diário (ou app gratuita). 5 minutos/dia.</td></tr>
-        <tr class="tr-neg"><td>❌ 3. Preço baseado em "sentimento"</td><td>Preço abaixo do custo real — trabalhas para perder dinheiro.</td><td>Calcular custo real + margem. Nunca cobrar menos do que o custo total.</td></tr>
-        <tr class="tr-neg"><td>❌ 4. Crescer antes de ter base sólida</td><td>Mais clientes com gestão fraca = mais problemas, não mais lucro.</td><td>Primeiro: sistema de gestão. Depois: crescimento.</td></tr>
-        <tr class="tr-neg"><td>❌ 5. Não formalizar o negócio</td><td>Sem NUIT não podes emitir factura, perdes clientes empresariais, não tens acesso a crédito empresarial.</td><td>Registo simples na janela única: menos de 1 dia, menos de 2.000 MT.</td></tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div class="sub reveal">Como Calcular o Preço Certo</div>
-  <p class="txt reveal">O maior problema dos pequenos negócios moçambicanos não é a falta de clientes — é cobrar menos do que custa produzir. Vender abaixo do custo é trabalhar de graça e ainda perder dinheiro.</p>
-
-  <div class="ferr reveal">
-    <div class="ferr-h"><div class="ferr-icon">💰</div><div><div class="ferr-title">FÓRMULA DO PREÇO JUSTO</div><div class="ferr-sub">Ferramenta 13-A — Para qualquer produto ou serviço</div></div></div>
-    <div class="box gold-box">
-      <div class="box-lbl">📐 A Fórmula</div>
-      <p><strong>Preço Final = Custo Directo + Custos Indirectos + Margem de Lucro (mínimo 30%)</strong></p>
-    </div>
-    <div class="tw" style="margin-top:16px;">
-      <div class="tw-title">Exemplo — Amélia a vender capulanas</div>
-      <table>
-        <thead><tr><th>Componente</th><th>Descrição</th><th>Valor (MT)</th></tr></thead>
-        <tbody>
-          <tr><td>Custo da capulana</td><td>Preço de compra ao grossista</td><td>250 MT</td></tr>
-          <tr><td>Transporte</td><td>Ida ao grossista (dividido por unidades compradas)</td><td>15 MT</td></tr>
-          <tr><td>Custo do tempo</td><td>Horas dedicadas à venda (valor do teu tempo)</td><td>20 MT</td></tr>
-          <tr><td>Custo da banca</td><td>Propina ou aluguer do espaço dividido por itens</td><td>10 MT</td></tr>
-          <tr class="tr-total"><td>CUSTO TOTAL REAL</td><td></td><td>295 MT</td></tr>
-          <tr class="tr-pos"><td>Preço de venda com 35% de margem</td><td>295 × 1,35</td><td>398 MT (arredonda para 400 MT)</td></tr>
-          <tr class="tr-neg"><td>Vender por 300 MT (erro comum)</td><td>"Para não perder o cliente"</td><td>Perda de 5 MT por capulana!</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-
-  <div class="sub2 reveal">Como Formalizar o Negócio em Moçambique</div>
-  <div class="box blue-box reveal">
-    <div class="box-lbl">📋 Passos para Registo de Empresa Individual (Empresário em Nome Individual)</div>
-    <ul>
-      <li><strong>Onde:</strong> Janela Única de Atendimento ao Investidor (GUICHU) ou via portal do governo.</li>
-      <li><strong>Documentos:</strong> BI + NUIT pessoal + formulário de registo (gratuito no local).</li>
-      <li><strong>Custo:</strong> Entre 1.000 MT e 2.000 MT (taxa de registo).</li>
-      <li><strong>Tempo:</strong> 1 a 3 dias úteis.</li>
-      <li><strong>O que obtém:</strong> NUIT empresarial + possibilidade de emitir facturas + acesso a crédito empresarial + participação em concursos públicos.</li>
-      <li><strong>Para vendedores informais:</strong> O Alvará de Actividade Informal (para mercados) é mais simples e mais barato — obtém-se na Autarquia ou no regulador do mercado.</li>
-    </ul>
-  </div>
-
-  <div class="sub reveal">O Plano de Negócio de Uma Página</div>
-  <div class="ferr reveal">
-    <div class="ferr-h"><div class="ferr-icon">📄</div><div><div class="ferr-title">CANVAS DO NEGÓCIO SIMPLES</div><div class="ferr-sub">Ferramenta 13-B — Para preencher antes de começar qualquer negócio</div></div></div>
-    <div class="tw">
-      <table>
-        <thead><tr><th>Pergunta</th><th>A Tua Resposta</th></tr></thead>
-        <tbody>
-          <tr><td>O que vendes / que serviço prestas?</td><td style="color:var(--light);font-style:italic;">Descreve em 1 frase.</td></tr>
-          <tr><td>Para quem? (o teu cliente ideal)</td><td style="color:var(--light);font-style:italic;">Idade, localização, necessidade específica.</td></tr>
-          <tr><td>Qual é o problema que resolves?</td><td style="color:var(--light);font-style:italic;">Por que precisam de ti?</td></tr>
-          <tr><td>Quem são os concorrentes e como és diferente?</td><td style="color:var(--light);font-style:italic;">O que fazes que eles não fazem?</td></tr>
-          <tr><td>Quanto custa produzir? Qual é o teu preço?</td><td style="color:var(--light);font-style:italic;">Usa a fórmula acima.</td></tr>
-          <tr><td>Quantas unidades/serviços precisas vender por mês para lucrar?</td><td style="color:var(--light);font-style:italic;">Calcula: Despesas mensais ÷ Lucro por unidade.</td></tr>
-          <tr><td>Como vais chegar ao cliente? (marketing)</td><td style="color:var(--light);font-style:italic;">WhatsApp, mercado, boca-a-boca, redes sociais?</td></tr>
-          <tr><td>De quanto dinheiro precisas para começar?</td><td style="color:var(--light);font-style:italic;">Lista o equipamento e capital inicial mínimo.</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-
-  <div class="resp reveal">
-    <div class="resp-who">👨🏾‍💼 Eduardo — Depois de separar contas e calcular o preço certo</div>
-    <div class="resp-txt">"Abri uma conta bancária só para a consultoria. Nos primeiros 3 meses com registo de gastos e preços correctos, percebi que ganho 8.200 MT limpos por mês com a consultoria. Antes achava que era "dinheiro extra sem importância". É mais do que 20% do meu salário. É um segundo rendimento real."</div>
-    <div class="resp-res">✅ Eduardo formalizou a consultoria. Rendimento extra documentado: 8.200 MT/mês líquidos.</div>
-  </div>
-
-  <div class="missao reveal">
-    <div class="m-head"><div class="m-icon">🎯</div><div><div class="m-title">MISSÃO 13</div><div class="m-prazo">⏱ Prazo: Este mês</div></div></div>
-    <div class="m-body">Se já tens negócio: aplica as correcções dos 5 erros. Se ainda não tens: preenche o Canvas do Negócio Simples para a ideia que tens há meses.</div>
-    <div class="m-steps">
-      <div class="m-step"><div class="ms-n">1</div><div class="ms-t"><strong>Abre uma conta bancária separada para o negócio</strong> (mesmo que seja informal por agora).</div></div>
-      <div class="m-step"><div class="ms-n">2</div><div class="ms-t"><strong>Calcula o preço justo</strong> de todos os produtos ou serviços usando a fórmula acima. Ajusta os preços que estão abaixo do custo.</div></div>
-      <div class="m-step"><div class="ms-n">3</div><div class="ms-t"><strong>Começa o registo diário</strong> — um simples caderno com data, receita e despesa é suficiente para começar.</div></div>
-    </div>
-  </div>
-
-  <div class="prov reveal">
-    <div class="prov-t">"Um negócio sem contas é como um rio sem margens — a água espalha-se e nunca chega ao mar."</div>
-    <div class="prov-o">Sabedoria de Empreendedores de Nampula</div>
-    <div class="prov-l">Lição: Um negócio precisa de limites claros — separação de contas, preços correctos, registos diários. Sem estas "margens", o dinheiro escapa por todo o lado.</div>
-  </div>
-</article>
-
-<div class="divider"></div>
-
-<!-- ══════════ CAP 14 ══════════ -->
-<article class="capitulo" id="cap14">
-  <div class="cap-num reveal">Capítulo 14 — Universo II</div>
-  <h1 class="cap-title reveal">Imóveis e Terra</h1>
-  <div class="cap-sub reveal">O Investimento Mais Moçambicano de Todos — Como Valorizar a Terra que Tens ou Conquistar a que Sonhas</div>
-  <div class="cap-tags reveal"><span class="cap-tag">👨🏾‍🌾 Samuel</span><span class="cap-tag">👩🏾‍⚕️ Beatriz</span></div>
-
-  <div class="cena reveal">
-    <div class="cena-bar" style="background:linear-gradient(90deg,var(--sand),#C47C2B,#F0C84A)"></div>
-    <div class="cena-inner">
-      <div class="cena-lbl">📖 O DUAT que Salvou a Família do Samuel</div>
-      <div class="cena-txt">
-        <p>O pai do Samuel tinha cultivado a machamba durante 30 anos. Mas nunca tinha tratado de registar a terra — era "de todos" como sempre foi, conhecida de toda a aldeia como "a machamba dos Mabunda".</p>
-        <p>Quando o pai morreu, em 2018, o tio de Johannesburg apareceu com um advogado a dizer que a terra pertencia à família alargada e que devia ser dividida. Não havia documento que provasse que era especificamente do Samuel.</p>
-        <p>O processo durou 2 anos. O Samuel quase perdeu tudo. No final, um documento antigo encontrado nos papéis do avô ajudou a resolver. Mas o Samuel nunca se esqueceu daqueles dois anos de incerteza.</p>
-        <p>No mês seguinte ao processo, foi ao Serviço Distrital de Actividades Económicas e tratou do DUAT — o Direito de Uso e Aproveitamento da Terra. Levou 6 semanas e custou cerca de 3.500 MT.</p>
-        <p><em>"Demorei uma semana a perceber como era. Passei dois anos a sofrer por não o ter feito. A lição mais cara que aprendi."</em></p>
+    <div class="universos">
+      <div class="uni-block reveal">
+        <span class="ub-badge">Universo I — Caps. 1 a 7</span>
+        <div class="ub-title">SEMENTES</div>
+        <div class="ub-subtitle">A Mentalidade</div>
+        <div class="ub-caps">
+          <div class="ub-cap"><span class="ub-cap-num">Cap.1</span><span class="ub-cap-title">O Dinheiro Não É Sujo — Desfazer 500 anos de crenças limitantes</span></div>
+          <div class="ub-cap"><span class="ub-cap-num">Cap.2</span><span class="ub-cap-title">O Trauma Financeiro — Identificar e curar feridas herdadas</span></div>
+          <div class="ub-cap"><span class="ub-cap-num">Cap.3</span><span class="ub-cap-title">Emoções e Dinheiro — Porque gastas quando estás triste</span></div>
+          <div class="ub-cap"><span class="ub-cap-num">Cap.4</span><span class="ub-cap-title">Mentalidade de Abundância — Eduardo vs Samuel: quem tem paz?</span></div>
+          <div class="ub-cap"><span class="ub-cap-num">Cap.5</span><span class="ub-cap-title">Conversar Sobre Dinheiro — Com família, cônjuge e filhos</span></div>
+          <div class="ub-cap"><span class="ub-cap-num">Cap.6</span><span class="ub-cap-title">Dinheiro e Espiritualidade — Fé e riqueza não são contraditórias</span></div>
+          <div class="ub-cap"><span class="ub-cap-num">Cap.7</span><span class="ub-cap-title">O Diagnóstico — A tua situação real em números</span></div>
+        </div>
+      </div>
+      <div class="uni-block reveal reveal-d1">
+        <span class="ub-badge">Universo II — Caps. 8 a 15</span>
+        <div class="ub-title">CULTIVO</div>
+        <div class="ub-subtitle">A Acção</div>
+        <div class="ub-caps">
+          <div class="ub-cap"><span class="ub-cap-num">Cap.8</span><span class="ub-cap-title">O Orçamento Real — Método 50-30-20 adaptado a Moçambique</span></div>
+          <div class="ub-cap"><span class="ub-cap-num">Cap.9</span><span class="ub-cap-title">Dívidas — Como sair do agiota e ficar livre para sempre</span></div>
+          <div class="ub-cap"><span class="ub-cap-num">Cap.10</span><span class="ub-cap-title">Fundo de Emergência — O escudo invisível da família</span></div>
+          <div class="ub-cap"><span class="ub-cap-num">Cap.11</span><span class="ub-cap-title">Bancos e Dinheiro Digital — M-Pesa, BCI, BT, BVM</span></div>
+          <div class="ub-cap"><span class="ub-cap-num">Cap.12</span><span class="ub-cap-title">Investir com Pouco — Bilhetes do Tesouro a partir de 1.000 MT</span></div>
+          <div class="ub-cap"><span class="ub-cap-num">Cap.13</span><span class="ub-cap-title">Negócio Próprio — Do informal ao formal que cresce</span></div>
+          <div class="ub-cap"><span class="ub-cap-num">Cap.14</span><span class="ub-cap-title">Imóveis e Terra — DUAT, construção progressiva, investimento</span></div>
+          <div class="ub-cap"><span class="ub-cap-num">Cap.15</span><span class="ub-cap-title">Aumentar o Rendimento — 20 formas com qualquer perfil</span></div>
+        </div>
+      </div>
+      <div class="uni-block reveal reveal-d2">
+        <span class="ub-badge">Universo III — Caps. 16 a 21</span>
+        <div class="ub-title">COLHEITA</div>
+        <div class="ub-subtitle">O Legado</div>
+        <div class="ub-caps">
+          <div class="ub-cap"><span class="ub-cap-num">Cap.16</span><span class="ub-cap-title">Proteger o que Construíste — Seguros e testamentos</span></div>
+          <div class="ub-cap"><span class="ub-cap-num">Cap.17</span><span class="ub-cap-title">Planear a Reforma — Quando o INSS não chega</span></div>
+          <div class="ub-cap"><span class="ub-cap-num">Cap.18</span><span class="ub-cap-title">Educar Filhos para a Riqueza — Desde os 4 anos</span></div>
+          <div class="ub-cap"><span class="ub-cap-num">Cap.19</span><span class="ub-cap-title">Herança com Dignidade — Sem conflitos, sem perdas</span></div>
+          <div class="ub-cap"><span class="ub-cap-num">Cap.20</span><span class="ub-cap-title">Moçambique 2035 — As oportunidades que chegam aí</span></div>
+          <div class="ub-cap"><span class="ub-cap-num">Cap.21</span><span class="ub-cap-title">O Plano dos 1.000 Dias — O teu roteiro pessoal</span></div>
+        </div>
       </div>
     </div>
   </div>
+</section>
 
-  <div class="sub reveal">O DUAT — O Que É e Como Obter</div>
-  <p class="txt reveal">Em Moçambique, a terra pertence ao Estado — ninguém pode comprar terra. O que se pode ter é o <strong>Direito de Uso e Aproveitamento da Terra (DUAT)</strong>, que dá o direito de usar, desenvolver e transmitir (herdar ou transferir) um terreno por 50 anos, renovável.</p>
+<!-- ═══════════════════════════════════
+     TESTEMUNHOS
+═══════════════════════════════════ -->
+<section class="testi">
+  <div class="container">
+    <span class="s-label reveal">O que os leitores dizem</span>
+    <h2 class="s-title reveal reveal-d1">HISTÓRIAS REAIS<br><em>DE TRANSFORMAÇÃO</em></h2>
 
-  <div class="box blue-box reveal">
-    <div class="box-lbl">📋 Como Obter o DUAT — Passo a Passo</div>
-    <ul>
-      <li><strong>Para zonas rurais:</strong> Pedido ao Serviço Distrital de Actividades Económicas (SDAE). Precisa de: requerimento escrito, BI, croquis da terra (esboço com medidas), confirmação da comunidade local. Custo: 500–2.000 MT. Tempo: 6–12 semanas.</li>
-      <li><strong>Para zonas urbanas:</strong> Pedido ao Município (autarquia). Precisa de: requerimento, BI, NUIT, comprovativo de aquisição (contrato de compra) se comprou de outro titular. Custo: 1.000–5.000 MT. Tempo: 2–6 meses.</li>
-      <li><strong>Cuidado com "compradores de terra":</strong> Qualquer pessoa que te "vende terra" sem DUAT está a vender algo que legalmente não tem. Faz sempre due diligence no SDAE ou município antes de qualquer transação.</li>
-      <li><strong>DUAT herdado:</strong> Quando o titular falece, os herdeiros devem actualizar o DUAT em nome da família no prazo de 2 anos. Caso contrário pode ser revertido ao Estado.</li>
-    </ul>
-  </div>
-
-  <div class="sub reveal">Comprar vs Arrendar Casa — A Análise Honesta</div>
-
-  <div class="tw reveal">
-    <div class="tw-title">Comprar vs Arrendar — Análise para Maputo (valores médios 2025)</div>
-    <table>
-      <thead><tr><th>Factor</th><th>Comprar (Crédito Habitação)</th><th>Arrendar</th></tr></thead>
-      <tbody>
-        <tr><td>Custo mensal típico</td><td>Prestação: 8.000–15.000 MT/mês (T2 Maputo)</td><td>Renda: 5.000–10.000 MT/mês (T2 Maputo)</td></tr>
-        <tr><td>Capital inicial</td><td>Entrada: 20–30% do valor (40.000–90.000 MT)</td><td>Caução: 1–2 meses de renda</td></tr>
-        <tr><td>Flexibilidade</td><td>Baixa — prendes-te à localização por 15–25 anos</td><td>Alta — podes mudar de emprego/cidade facilmente</td></tr>
-        <tr><td>Construção de riqueza</td><td>Alta — o imóvel valoriza e ficará teu</td><td>Zero — o dinheiro pago nunca retorna</td></tr>
-        <tr><td>Risco</td><td>Perda de emprego pode resultar em execução hipotecária</td><td>Risco de renda subir ou proprietário terminar contrato</td></tr>
-        <tr class="tr-warn"><td>Quando comprar faz sentido</td><td colspan="2">Quando tens emprego estável há 3+ anos, tens a entrada poupada, e a prestação não ultrapassa 30% do rendimento líquido do casal.</td></tr>
-        <tr class="tr-pos"><td>Estratégia moçambicana inteligente</td><td colspan="2">Construção progressiva: compra terreno → constrói fase 1 → ocupa → constrói fase 2. Sem crédito ou com crédito mínimo. Propriedade sem dívida pesada.</td></tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div class="sub2 reveal">Transformar a Machamba em Investimento — O Caso Samuel</div>
-  <p class="txt reveal">A maioria dos agricultores moçambicanos tem terra que vale muito mais do que reconhece. O Samuel tinha uma machamba de 2 hectares — um activo valiosíssimo que estava a produzir muito abaixo do seu potencial.</p>
-
-  <div class="sim reveal">
-    <div class="sim-t">Evolução da Machamba do Samuel — 3 Anos de Transformação Intencional</div>
-    <div class="sim-row">
-      <div class="sim-i"><div class="sim-v">Ano 0</div><div class="sim-l">Só milho: 15.000 MT/ano</div></div>
-      <div class="sim-i"><div class="sim-v">Ano 1</div><div class="sim-l">Milho + amendoim: 28.000 MT</div></div>
-      <div class="sim-i"><div class="sim-v">Ano 2</div><div class="sim-l">+ Banana (300 pés): 42.000 MT</div></div>
-      <div class="sim-i"><div class="sim-v">Ano 3</div><div class="sim-l">+ Arrendamento parte: 58.000 MT</div></div>
-    </div>
-    <div class="sim-note">O Samuel não comprou nova terra. Não mudou de vida. Apenas usou melhor a terra que já tinha — diversificando culturas, adicionando frutas de valor maior e arrendando parte que não usava para outra família. Em 3 anos, o rendimento da machamba quase quadruplicou.</div>
-  </div>
-
-  <div class="missao reveal">
-    <div class="m-head"><div class="m-icon">🎯</div><div><div class="m-title">MISSÃO 14</div><div class="m-prazo">⏱ Prazo: Este mês</div></div></div>
-    <div class="m-body">Conhece e valoriza os activos imobiliários que já tens ou que podes ter.</div>
-    <div class="m-steps">
-      <div class="m-step"><div class="ms-n">1</div><div class="ms-t"><strong>Se tens terra ou propriedade:</strong> verifica se o DUAT está em ordem. Se não está, inicia o processo esta semana no SDAE ou na autarquia.</div></div>
-      <div class="m-step"><div class="ms-n">2</div><div class="ms-t"><strong>Se sonhas comprar casa:</strong> calcula quanto seria a prestação de uma casa do teu nível — e verifica se 30% do teu rendimento cobre. Define quando terás a entrada poupada.</div></div>
-      <div class="m-step"><div class="ms-n">3</div><div class="ms-t"><strong>Se tens machamba ou terreno:</strong> lista 3 formas de usar melhor o que já tens — diversificação de culturas, aluguer de parte, parceria com outro agricultor.</div></div>
-    </div>
-  </div>
-
-  <div class="prov reveal">
-    <div class="prov-t">"A terra não envelhece. Só envelhece quem não a cuida."</div>
-    <div class="prov-o">Provérbio de Gaza, Moçambique</div>
-    <div class="prov-l">Lição: Terra e imóveis bem geridos são investimentos que transcendem gerações. Um DUAT bem tratado hoje é herança garantida para os teus filhos amanhã.</div>
-  </div>
-</article>
-
-<div class="divider"></div>
-
-<!-- ══════════ CAP 15 ══════════ -->
-<article class="capitulo" id="cap15">
-  <div class="cap-num reveal">Capítulo 15 — Universo II</div>
-  <h1 class="cap-title reveal">Aumentar o Rendimento</h1>
-  <div class="cap-sub reveal">O Que a Escola Nunca Ensinou — Como Ganhar Mais com o Que Já Sabes Fazer</div>
-  <div class="cap-tags reveal"><span class="cap-tag">👦🏾 Tomás</span><span class="cap-tag">👩🏾‍💻 Inês</span></div>
-
-  <div class="cena reveal">
-    <div class="cena-bar" style="background:linear-gradient(90deg,var(--lilac),#9B59B6,#D7BDE2)"></div>
-    <div class="cena-inner">
-      <div class="cena-lbl">📖 A Descoberta de Tomás</div>
-      <div class="cena-txt">
-        <p>O Tomás descobriu, por acidente, que sabia fazer algo que os outros não sabiam.</p>
-        <p>Na escola, os professores pediam frequentemente apresentações em PowerPoint. O Tomás fazia as suas em 20 minutos — com animações bonitas, bom design, cores organizadas. Os colegas ficavam a olhar boquiabertos.</p>
-        <p><em>"Como é que fazes isso?"</em> perguntou a Daniela, que precisava de uma apresentação para o dia seguinte e não sabia como.</p>
-        <p><em>"Faço por ti por 200 MT,"</em> disse o Tomás, em jeito de brincadeira.</p>
-        <p>A Daniela disse que sim a sério.</p>
-        <p>Nos dois meses seguintes, o Tomás fez 11 apresentações para colegas e professores. Ganhou 2.800 MT — mais do que cinco meses de mesada. Começou a perceber que aquilo que para ele era fácil, para outros valia dinheiro.</p>
-        <p><strong>A competência que subestimas pode ser a renda extra que transformas a tua vida.</strong></p>
+    <div class="testi-grid">
+      <div class="testi-card reveal">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">Li o capítulo sobre dívidas e no dia seguinte fui ao Socremo. Paguei o agiota na totalidade. A sensação de liberdade não tem preço. Poupei mais de 30.000 MT em juros que nunca pagaria.</p>
+        <div class="testi-author">
+          <div class="ta-avatar">👩🏾</div>
+          <div><div class="ta-name">Francisca M.</div><div class="ta-role">Vendedora · Maputo · 34 anos</div></div>
+        </div>
+      </div>
+      <div class="testi-card reveal reveal-d1">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">Nunca ninguém me tinha explicado o que é um Bilhete do Tesouro. Agora tenho 15.000 MT investidos a 13% ao ano. O dinheiro cresce enquanto estou a trabalhar.</p>
+        <div class="testi-author">
+          <div class="ta-avatar">👨🏾</div>
+          <div><div class="ta-name">Hélder A.</div><div class="ta-role">Professor · Nampula · 29 anos</div></div>
+        </div>
+      </div>
+      <div class="testi-card reveal reveal-d2">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">O capítulo sobre Ubuntu inteligente mudou a minha relação com a família. Agora dou um valor fixo por mês com paz — sem culpa, sem ressentimento. A Beatriz é eu.</p>
+        <div class="testi-author">
+          <div class="ta-avatar">👩🏾‍⚕️</div>
+          <div><div class="ta-name">Celina R.</div><div class="ta-role">Enfermeira · Beira · 38 anos</div></div>
+        </div>
+      </div>
+      <div class="testi-card reveal">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">Comprei para o meu filho de 16 anos. Ele leu o capítulo do Tomás e disse que queria começar a poupar. Hoje tem uma conta poupança e poupa 300 MT por mês. Vale cada metical.</p>
+        <div class="testi-author">
+          <div class="ta-avatar">👨🏾</div>
+          <div><div class="ta-name">António B.</div><div class="ta-role">Funcionário Público · Tete · 44 anos</div></div>
+        </div>
+      </div>
+      <div class="testi-card reveal reveal-d1">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">Ganhava 18.000 MT e sempre achei que era pouco. Depois de fazer o diagnóstico do Cap. 7, percebi que estava a gastar 4.000 MT por mês sem saber em quê. Agora sei.</p>
+        <div class="testi-author">
+          <div class="ta-avatar">👩🏾</div>
+          <div><div class="ta-name">Lurdes F.</div><div class="ta-role">Contabilista · Maputo · 31 anos</div></div>
+        </div>
+      </div>
+      <div class="testi-card reveal reveal-d2">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">Finalmente um livro que fala em Meticais, que fala de agiotas, de xitique, de lobolo. Este livro foi feito para nós. Recomendei a toda a minha família.</p>
+        <div class="testi-author">
+          <div class="ta-avatar">👨🏾‍🌾</div>
+          <div><div class="ta-name">Domingos C.</div><div class="ta-role">Agricultor · Gaza · 50 anos</div></div>
+        </div>
       </div>
     </div>
   </div>
+</section>
 
-  <div class="sub reveal">As 3 Formas de Ganhar Mais</div>
-  <p class="txt reveal">Existem apenas 3 formas de aumentar o rendimento, e podes usar as três em simultâneo:</p>
+<!-- ═══════════════════════════════════
+     O QUE INCLUI
+═══════════════════════════════════ -->
+<section class="includes">
+  <div class="container">
+    <span class="s-label reveal" style="color:var(--mid)">Tudo incluído no preço</span>
+    <h2 class="s-title reveal reveal-d1" style="color:var(--charcoal)">MAIS DO QUE<br><em>UM LIVRO</em></h2>
 
-  <div class="comp-grid reveal">
-    <div class="comp c-neu"><div class="comp-lbl">Forma 1</div><div class="comp-v">📈</div><div class="comp-d"><strong>Ganhar mais no trabalho actual</strong> — negociar salário, promoção, bónus por desempenho</div></div>
-    <div class="comp c-pos"><div class="comp-lbl">Forma 2</div><div class="comp-v">➕</div><div class="comp-d"><strong>Segunda fonte de renda</strong> — freelancing, negócio paralelo, serviço extra</div></div>
-    <div class="comp c-neu"><div class="comp-lbl">Forma 3</div><div class="comp-v">💤</div><div class="comp-d"><strong>Renda passiva</strong> — dinheiro a trabalhar enquanto dormes: aluguer, dividendos, juros</div></div>
-  </div>
-
-  <div class="sub2 reveal">Como Negociar Salário sem Medo — Script Completo</div>
-  <p class="txt reveal">A maioria dos moçambicanos nunca negociou salário. Aceitou o que foi oferecido e ficou em silêncio. Mas estudos mostram que quem negocia ganha, em média, 10–20% mais ao longo da carreira.</p>
-
-  <div class="ferr reveal">
-    <div class="ferr-h"><div class="ferr-icon">💬</div><div><div class="ferr-title">GUIA DE NEGOCIAÇÃO SALARIAL</div><div class="ferr-sub">Ferramenta 15-A — Passo a passo</div></div></div>
-    <div class="box blue-box">
-      <div class="box-lbl">📋 Antes da Conversa</div>
-      <ul>
-        <li><strong>Pesquisa o mercado:</strong> Quanto ganham pessoas com a tua experiência e função em Moçambique? (LinkedIn, anúncios de emprego, conversas informais com colegas de outras empresas)</li>
-        <li><strong>Lista as tuas contribuições concretas:</strong> Projectos concluídos, problemas resolvidos, clientes conquistados, economias geradas para a empresa. Números, não palavras.</li>
-        <li><strong>Define a tua âncora:</strong> O valor que vais pedir primeiro deve ser 15–20% acima do que realmente queres — para ter espaço para negociar.</li>
-      </ul>
-    </div>
-    <div class="box gold-box" style="margin-top:12px;">
-      <div class="box-lbl">🗣️ O Script da Conversa</div>
-      <ul>
-        <li><em>"Agradeço a oportunidade de trabalhar aqui. Tenho dado o meu melhor e acredito que os resultados mostram isso — [menciona 2-3 resultados concretos com números]."</em></li>
-        <li><em>"Pesquisei o mercado e vejo que a função que desempenho é remunerada entre X e Y MT. Gostaria de discutir um ajuste do meu salário para [valor âncora] MT."</em></li>
-        <li><em>"Estou comprometido com o crescimento da empresa e quero continuar a contribuir. O que precisamos de alinhar para que isso seja possível?"</em></li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="sub2 reveal">Competências que Valem Dinheiro em Moçambique — Agora</div>
-
-  <div class="tw reveal">
-    <div class="tw-title">Competências com Alto Retorno no Mercado Moçambicano 2025</div>
-    <table>
-      <thead><tr><th>Competência</th><th>Onde Aprender</th><th>Rendimento Extra Possível</th><th>Prazo para Começar a Ganhar</th></tr></thead>
-      <tbody>
-        <tr><td>🎨 Design gráfico (Canva/Photoshop)</td><td>YouTube, Skillshare gratuito</td><td>2.000–15.000 MT/mês extra</td><td>1–3 meses</td></tr>
-        <tr><td>📱 Gestão de redes sociais</td><td>Cursos online gratuitos</td><td>3.000–10.000 MT/mês extra</td><td>1–2 meses</td></tr>
-        <tr><td>📝 Redacção e conteúdo em português</td><td>Prática + leitura</td><td>2.000–8.000 MT/mês extra</td><td>2–4 meses</td></tr>
-        <tr><td>💻 Excel avançado</td><td>YouTube, cursos gratuitos</td><td>5.000–20.000 MT/mês (consultoria)</td><td>3–6 meses</td></tr>
-        <tr><td>🏗️ AutoCAD básico</td><td>YouTube, pratica em projectos reais</td><td>8.000–30.000 MT/projecto</td><td>6–12 meses</td></tr>
-        <tr><td>🌐 Inglês conversacional</td><td>Apps gratuitas (Duolingo, BBC Learning)</td><td>+30–50% no salário actual</td><td>6–18 meses</td></tr>
-        <tr><td>🔧 Manutenção de computadores</td><td>Cursos técnicos locais</td><td>5.000–15.000 MT/mês</td><td>3–6 meses</td></tr>
-        <tr class="tr-warn"><td>🌱 Agroprocessamento básico</td><td>IIAM, SDAE, radio rural</td><td>Transforma colheita em produto de maior valor</td><td>1–3 meses</td></tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div class="resp reveal">
-    <div class="resp-who">👦🏾 Tomás — 6 meses depois da primeira apresentação paga</div>
-    <div class="resp-txt">"Tenho agora um "catálogo" de serviços que faço com o telemóvel: apresentações PowerPoint, edição de fotos para negócios, flyers de eventos. Trabalho 2 horas por dia, ganhei 8.400 MT este mês. É mais do que o salário de muita gente com emprego fixo. E tenho 17 anos."</div>
-    <div class="resp-res">✅ Tomás constrói segunda fonte de renda estudantil: 8.400 MT/mês com 2h de trabalho diário.</div>
-  </div>
-
-  <div class="missao reveal">
-    <div class="m-head"><div class="m-icon">🎯</div><div><div class="m-title">MISSÃO 15</div><div class="m-prazo">⏱ Prazo: Este mês</div></div></div>
-    <div class="m-body">Identifica a tua competência escondida e cria o teu primeiro serviço extra. A segunda fonte de renda começa com uma oferta.</div>
-    <div class="m-steps">
-      <div class="m-step"><div class="ms-n">1</div><div class="ms-t"><strong>Lista 5 coisas que sabes fazer bem</strong> e que outras pessoas pedem a tua ajuda ou admiram. Não subvalores o que é "óbvio" para ti — é valioso para outros.</div></div>
-      <div class="m-step"><div class="ms-n">2</div><div class="ms-t"><strong>Escolhe 1 e define um preço.</strong> Oferece o serviço a 3 pessoas que conheces — nem que seja grátis na primeira vez para ter um depoimento.</div></div>
-      <div class="m-step"><div class="ms-n">3</div><div class="ms-t"><strong>Se tens emprego:</strong> marca a reunião de negociação salarial neste mês. Usa o script acima. No pior caso, ficam no mesmo. No melhor caso, ganhas 15–20% mais.</div></div>
-    </div>
-  </div>
-
-  <div class="prov reveal">
-    <div class="prov-t">"Não subestimes o que tens nas mãos — foi com que Moisés dividiu o mar."</div>
-    <div class="prov-o">Adaptação Africana de Provérbio Bíblico</div>
-    <div class="prov-l">Lição: As tuas competências actuais — as que consideras "normais" — podem ser o instrumento que transforma a tua vida financeira. O dinheiro está no que já sabes, ainda não monetizado.</div>
-  </div>
-</article>
-
-<!-- PAUSA ENTRE UNIVERSOS -->
-<div class="pausa">
-  <div class="pausa-inner">
-    <h3>PAUSA<br><em>ENTRE MUNDOS</em></h3>
-    <p>Completaste o Universo II — A Acção. Aprendeste a criar orçamentos, sair de dívidas, construir o fundo de emergência, usar o sistema bancário, investir, gerir negócios, valorizar a terra e aumentar o rendimento.</p>
-    <p>São 8 capítulos de ferramentas concretas. Se aplicaste pelo menos 3, a tua vida financeira já começou a mudar.</p>
-    <p>O Universo III é diferente. É mais lento. É sobre o que deixas para trás — e o que os teus filhos vão herdar. É sobre protecção, reforma, herança e legado.</p>
-    <div class="pausa-q">🤔 Pergunta de transição: Qual foi a ferramenta deste Universo que mais impacto teve na tua vida? E qual ainda não aplicaste — mas sabes que deverias?</div>
-  </div>
-</div>
-
-<!-- UNIVERSO III -->
-<div class="uni-header" data-bg="COLHEITA">
-  <div class="uni-badge">Universo III — Capítulos 16 ao 21</div>
-  <div class="uni-title">COLHEITA<br><em>O LEGADO</em></div>
-  <div class="uni-epi">"Uma árvore com raízes profundas não teme tempestades."</div>
-</div>
-
-<!-- ══════════ CAP 16 ══════════ -->
-<article class="capitulo" id="cap16">
-  <div class="cap-num reveal">Capítulo 16 — Universo III</div>
-  <h1 class="cap-title reveal">Proteger o Que Construíste</h1>
-  <div class="cap-sub reveal">Seguros, Testamento e Plano B — Como Garantir que o Teu Trabalho Sobrevive ao Inesperado</div>
-  <div class="cap-tags reveal"><span class="cap-tag">👩🏾‍⚕️ Beatriz</span><span class="cap-tag">👨🏾‍💼 Eduardo</span></div>
-
-  <div class="cena reveal">
-    <div class="cena-bar" style="background:linear-gradient(90deg,var(--charcoal),#4A4A4A,var(--mid))"></div>
-    <div class="cena-inner">
-      <div class="cena-lbl">📖 O Acidente de Eduardo</div>
-      <div class="cena-txt">
-        <p>Era uma manhã de sexta-feira. O Eduardo saiu de casa às 7h30 como sempre. Na EN4, um camião perdeu os travões na descida. O Eduardo travou, mas não chegou a tempo. O carro ficou destruído. O Eduardo ficou com a clavícula partida e 6 semanas de baixa médica.</p>
-        <p>O seguro automóvel cobriu o carro — o Eduardo tinha feito seguro de choque e cobrança, por sorte. Mas o seguro de saúde? O Eduardo nunca tinha contratado — era jovem, era saudável, "não precisava".</p>
-        <p>A operação custou 85.000 MT numa clínica privada. O hospital público tinha lista de espera de 3 meses para a cirurgia que ele precisava urgentemente.</p>
-        <p>Eduardo usou todo o fundo de emergência que tinha construído (18.000 MT), pediu 40.000 MT emprestados à Beatriz, e ficou com 27.000 MT em dívida no hospital durante 8 meses.</p>
-        <p><em>"Construí durante 2 anos para perder em 2 semanas,"</em> disse ele mais tarde. <em>"Um seguro de saúde custaria-me 400 MT por mês. Custou-me 85.000 MT por não o ter."</em></p>
+    <div class="inc-grid">
+      <div class="inc-item reveal">
+        <div class="inc-icon">📖</div>
+        <div class="inc-title">21 Capítulos Completos</div>
+        <div class="inc-desc">Leitura online em qualquer dispositivo — telemóvel, tablet ou computador. Sem download obrigatório.</div>
+        <div class="inc-tag">✓ Incluído</div>
+      </div>
+      <div class="inc-item reveal reveal-d1">
+        <div class="inc-icon">🧮</div>
+        <div class="inc-title">Calculadoras Interactivas</div>
+        <div class="inc-desc">Rendimento real, despesas, patrimônio, fundo de emergência, simulador de investimento — tudo calcula automaticamente.</div>
+        <div class="inc-tag">✓ Incluído</div>
+      </div>
+      <div class="inc-item reveal reveal-d2">
+        <div class="inc-icon">📋</div>
+        <div class="inc-title">Ferramentas Preenchíveis</div>
+        <div class="inc-desc">Plano de dívidas, orçamento mensal, balanço patrimonial, roteiro dos 1.000 dias — preenches directamente no livro.</div>
+        <div class="inc-tag">✓ Incluído</div>
+      </div>
+      <div class="inc-item reveal reveal-d3">
+        <div class="inc-icon">🎯</div>
+        <div class="inc-title">21 Missões Práticas</div>
+        <div class="inc-desc">Uma missão por capítulo com passos concretos. O conhecimento sem acção não muda nada — cada missão garante mudança real.</div>
+        <div class="inc-tag">✓ Incluído</div>
+      </div>
+      <div class="inc-item reveal">
+        <div class="inc-icon">🌱</div>
+        <div class="inc-title">Provérbios e Sabedoria Africana</div>
+        <div class="inc-desc">Cada capítulo termina com um provérbio africano e a sua aplicação financeira directa — enraizado na nossa cultura.</div>
+        <div class="inc-tag">✓ Incluído</div>
+      </div>
+      <div class="inc-item reveal reveal-d1">
+        <div class="inc-icon">♾️</div>
+        <div class="inc-title">Acesso Vitalício</div>
+        <div class="inc-desc">Pagas uma vez, tens para sempre. Actualizações futuras incluídas. Podes revisitar em qualquer altura da tua vida.</div>
+        <div class="inc-tag">✓ Incluído</div>
       </div>
     </div>
   </div>
+</section>
 
-  <div class="sub reveal">Seguros — O Que Realmente Precisas em Moçambique</div>
+<!-- ═══════════════════════════════════
+     PRICING
+═══════════════════════════════════ -->
+<section class="pricing" id="pricing">
+  <div class="container">
+    <span class="s-label reveal">Escolhe o teu acesso</span>
+    <h2 class="s-title reveal reveal-d1">INVESTIMENTO<br><em>NA TUA VIDA</em></h2>
+    <p class="s-body reveal reveal-d2" style="margin:0 auto;">O menor investimento que podes fazer — com o maior retorno possível.</p>
 
-  <div class="tw reveal">
-    <div class="tw-title">Guia de Seguros Essenciais — Prioridade e Custo Médio 2025</div>
-    <table>
-      <thead><tr><th>Seguro</th><th>Prioridade</th><th>Custo Mensal Médio</th><th>O Que Cobre</th><th>Quem Precisa</th></tr></thead>
-      <tbody>
-        <tr class="tr-pos"><td>🏥 Saúde</td><td>⭐⭐⭐ URGENTE</td><td>400–2.000 MT/mês</td><td>Consultas, internamento, cirurgias em clínicas privadas</td><td>Toda a família que pode pagar</td></tr>
-        <tr class="tr-pos"><td>⚰️ Funeral/Vida</td><td>⭐⭐⭐ URGENTE</td><td>100–500 MT/mês</td><td>Despesas funerárias, apoio à família</td><td>Toda a gente com família dependente</td></tr>
-        <tr><td>🚗 Automóvel obrigatório</td><td>⭐⭐⭐ LEGAL</td><td>200–600 MT/mês</td><td>Danos a terceiros (obrigatório por lei)</td><td>Quem tem veículo</td></tr>
-        <tr><td>🚗 Automóvel choque/cobrança</td><td>⭐⭐ RECOMENDADO</td><td>500–1.500 MT/mês</td><td>Danos ao próprio carro</td><td>Carros com valor acima de 500.000 MT</td></tr>
-        <tr><td>🏠 Habitação/Conteúdo</td><td>⭐ ÚTIL</td><td>200–800 MT/mês</td><td>Incêndio, roubo, inundação</td><td>Proprietários e arrendatários com bens valiosos</td></tr>
-        <tr class="tr-warn"><td>💡 Alternativa ao seguro saúde</td><td colspan="4">Poupança dedicada à saúde: 5% do rendimento numa conta separada, só para despesas médicas. Para quem não consegue pagar seguro.</td></tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div class="sub reveal">O Testamento — A Conversa que Ninguém Quer Ter mas Todos Precisam</div>
-  <p class="txt reveal">Em Moçambique, falar de testamento é tabu — associa-se à morte, ao azar, ao infortúnio. Mas um testamento não é sobre a morte. É sobre <strong>amor organizado.</strong> É sobre garantir que o que construíste durante toda a vida vai para quem amas, da forma que queres, sem conflitos.</p>
-  <p class="txt reveal">Sem testamento, a lei de sucessões decide — e nem sempre coincide com os teus desejos. Filhos de diferentes relações, famílias alargadas, DUAT sem registo — tudo pode tornar-se num conflito doloroso e caro para quem fica.</p>
-
-  <div class="box gold-box reveal">
-    <div class="box-lbl">📋 Como Fazer um Testamento Simples em Moçambique</div>
-    <ul>
-      <li><strong>Testamento Particular (holográfico):</strong> Escrito à mão, datado e assinado pelo testador. Não precisa de advogado ou notário. É legalmente válido em Moçambique. Guarda numa pasta de documentos importantes com cópia para um familiar de confiança.</li>
-      <li><strong>Testamento Público:</strong> Feito e autenticado num Cartório Notarial. Mais robusto e difícil de contestar. Custo: 500–2.000 MT. Tempo: 1 dia.</li>
-      <li><strong>O que deve incluir:</strong> Identificação completa do testador; lista de bens (imóveis com DUAT, contas bancárias, negócios, veículos); nome completo dos beneficiários; instruções específicas (quem herda o quê); nomeação de um executor de confiança.</li>
-      <li><strong>Revê a cada 5 anos</strong> ou após grandes mudanças de vida (casamento, filho, divórcio, aquisição de propriedade).</li>
-    </ul>
-  </div>
-
-  <div class="ferr reveal">
-    <div class="ferr-h"><div class="ferr-icon">📁</div><div><div class="ferr-title">PASTA DE DOCUMENTOS ESSENCIAIS</div><div class="ferr-sub">Ferramenta 16-A — O que toda a família deve ter organizado</div></div></div>
-    <div class="box teal-box">
-      <div class="box-lbl">✅ Checklist da Pasta de Documentos</div>
-      <ul>
-        <li>☐ BI de todos os membros da família</li>
-        <li>☐ Certidões de nascimento dos filhos</li>
-        <li>☐ Registo de casamento / união de facto</li>
-        <li>☐ NUIT pessoal e da empresa</li>
-        <li>☐ DUAT dos terrenos / imóveis</li>
-        <li>☐ Contratos de arrendamento (se arrendatário)</li>
-        <li>☐ Apólices de seguros activas (saúde, vida, automóvel)</li>
-        <li>☐ Números de contas bancárias e nome dos bancos</li>
-        <li>☐ Documentos do negócio (se aplicável)</li>
-        <li>☐ Testamento (cópia para familiar de confiança)</li>
-        <li>☐ Lista de dívidas activas e credores</li>
-        <li>☐ Contactos de emergência (advogado, médico, banco)</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="resp reveal">
-    <div class="resp-who">👩🏾‍⚕️ Beatriz — Depois de contratar seguro de saúde para toda a família</div>
-    <div class="resp-txt">"Contratei seguro de saúde para mim, os meus pais e os dois irmãos mais novos. Custa-me 2.800 MT por mês. Antes gastava esse valor só numa urgência. Agora duermo tranquila — sei que se alguém adoecer, tem cobertura. É a melhor coisa que fiz este ano."</div>
-    <div class="resp-res">✅ Beatriz protege 5 pessoas por 2.800 MT/mês — menos do que uma única urgência hospitalar.</div>
-  </div>
-
-  <div class="missao reveal">
-    <div class="m-head"><div class="m-icon">🎯</div><div><div class="m-title">MISSÃO 16</div><div class="m-prazo">⏱ Prazo: Este mês</div></div></div>
-    <div class="m-body">Protege o que construíste. Um acidente ou doença não planeada não deve destruir anos de trabalho.</div>
-    <div class="m-steps">
-      <div class="m-step"><div class="ms-n">1</div><div class="ms-t"><strong>Contrata seguro de saúde</strong> — pesquisa em: Britam Moçambique, Hollard Moçambique, Mozambique RE, ou seguro colectivo do empregador.</div></div>
-      <div class="m-step"><div class="ms-n">2</div><div class="ms-t"><strong>Organiza a Pasta de Documentos Essenciais</strong> usando a checklist acima. Digitaliza os mais importantes (foto no telemóvel ou Google Drive).</div></div>
-      <div class="m-step"><div class="ms-n">3</div><div class="ms-t"><strong>Escreve um testamento simples</strong> à mão — mesmo que não tenhas muito. O que tens agora merece estar organizado para quem amas.</div></div>
-    </div>
-  </div>
-
-  <div class="prov reveal">
-    <div class="prov-t">"O pastor sábio não espera a tempestade para procurar abrigo para o rebanho."</div>
-    <div class="prov-o">Provérbio Africano</div>
-    <div class="prov-l">Lição: Proteger o que construíste não é medo — é responsabilidade. Os seguros e o testamento são o abrigo que constróis enquanto o tempo ainda está bom.</div>
-  </div>
-</article>
-
-<div class="divider"></div>
-
-<!-- ══════════ CAP 17 ══════════ -->
-<article class="capitulo" id="cap17">
-  <div class="cap-num reveal">Capítulo 17 — Universo III</div>
-  <h1 class="cap-title reveal">Planear a Reforma</h1>
-  <div class="cap-sub reveal">Começar aos 25 ou Urgente aos 50 — Como Garantir uma Velhice com Dignidade em Moçambique</div>
-  <div class="cap-tags reveal"><span class="cap-tag">👩🏾‍⚕️ Beatriz</span><span class="cap-tag">👵🏾 Dona Rosa</span></div>
-
-  <div class="cena reveal">
-    <div class="cena-bar" style="background:linear-gradient(90deg,#8E44AD,var(--lilac),#D7BDE2)"></div>
-    <div class="cena-inner">
-      <div class="cena-lbl">📖 A Reforma da Dona Rosa — A Verdade que Ninguém Conta</div>
-      <div class="cena-txt">
-        <p>A Dona Rosa recebe 6.500 MT por mês de reforma do INSS. Trabalhou 31 anos como funcionária pública. Deu tudo o que tinha à vida activa — chegou sempre cedo, nunca faltou, cumpriu com tudo.</p>
-        <p>Mas ninguém lhe tinha explicado que 6.500 MT em 2025 equivalem ao mesmo poder de compra de um salário de 3.200 MT de há 10 anos. A inflação corroeu a sua reforma.</p>
-        <p>O aluguer do quarto que arrendou a um estudante (2.500 MT) ajuda. Os 47.000 MT debaixo do colchão que nunca renderam nada poderiam ter sido 180.000 MT se tivessem estado em Títulos do Tesouro durante os mesmos 8 anos.</p>
-        <p>A Dona Rosa não estava a planear. Estava a sobreviver. E a diferença entre as duas coisas — para ela — representa 133.000 MT que nunca teve.</p>
-        <p><strong>Não era tarde para a Dona Rosa perceber isto. Mas era tarde para refazer o passado. O que ela podia fazer era mudar os próximos 10 anos.</strong></p>
+    <div class="pricing-cards">
+      <div class="price-card reveal">
+        <span class="price-tag">Acesso Básico</span>
+        <div class="price-name">LEITURA DIGITAL</div>
+        <div class="price-amount"><span class="price-currency">MT</span>299</div>
+        <div class="price-period">Pagamento único · Acesso imediato</div>
+        <ul class="price-features">
+          <li>21 capítulos completos online</li>
+          <li>Calculadoras interactivas</li>
+          <li>Ferramentas preenchíveis</li>
+          <li>21 missões práticas</li>
+          <li>Acesso vitalício</li>
+        </ul>
+        <a href="#" class="btn-comprar-alt">Comprar Agora →</a>
       </div>
-    </div>
-  </div>
 
-  <div class="dados reveal">
-    <div class="dados-lbl">📊 A Realidade da Reforma em Moçambique</div>
-    <div class="dados-title">O INSS — O Que Recebemos vs O Que Precisamos</div>
-    <div class="dados-grid">
-      <div class="dado"><div class="dado-v">5.400</div><div class="dado-l">MT — Reforma mínima INSS (2025)</div></div>
-      <div class="dado"><div class="dado-v">34%</div><div class="dado-l">Taxa de substituição do INSS (recebe 34% do último salário)</div></div>
-      <div class="dado"><div class="dado-v">67</div><div class="dado-l">Anos — Idade de reforma obrigatória no sector público</div></div>
-      <div class="dado"><div class="dado-v">12%</div><div class="dado-l">Do salário vai para o INSS (4% trabalhador + 4% empregador + 4% Estado)</div></div>
-    </div>
-    <p>A reforma do INSS em Moçambique é insuficiente para a maioria das pessoas manterem o padrão de vida da fase activa. A taxa de substituição de 34% significa que se ganhaste 20.000 MT, receberás cerca de 6.800 MT na reforma — menos de metade das necessidades básicas de uma família urbana.</p>
-  </div>
-
-  <div class="sub reveal">O Poder do Tempo — Por Que Começar Aos 25 Muda Tudo</div>
-
-  <div class="sim reveal">
-    <div class="sim-t">Comparação: Poupar para a Reforma aos 25 vs aos 40 (taxa de 12%/ano)</div>
-    <div class="sim-row">
-      <div class="sim-i"><div class="sim-v">25 anos</div><div class="sim-l">Começa a poupar 1.000 MT/mês</div></div>
-      <div class="sim-i"><div class="sim-v">40 anos</div><div class="sim-l">Para aos 65: 980.000 MT poupados</div></div>
-      <div class="sim-i"><div class="sim-v">2.800.000</div><div class="sim-l">MT com juro composto — 40 anos</div></div>
-    </div>
-    <div class="sim-row">
-      <div class="sim-i"><div class="sim-v">40 anos</div><div class="sim-l">Começa a poupar 1.000 MT/mês</div></div>
-      <div class="sim-i"><div class="sim-v">25 anos</div><div class="sim-l">Para aos 65: 300.000 MT poupados</div></div>
-      <div class="sim-i"><div class="sim-v">490.000</div><div class="sim-l">MT com juro composto — 25 anos</div></div>
-    </div>
-    <div class="sim-note">Mesma poupança mensal. Mesma taxa. Diferença: 15 anos de atraso custou 2.310.000 MT. Esse é o preço do tempo perdido. E também a razão pela qual o melhor momento para começar é AGORA — independentemente da idade que tens.</div>
-  </div>
-
-  <div class="sub reveal">Plano de Reforma por Faixa Etária</div>
-
-  <div class="tw reveal">
-    <div class="tw-title">O Que Fazer Hoje — Por Idade</div>
-    <table>
-      <thead><tr><th>Idade Actual</th><th>Prioridade</th><th>Acção Imediata</th><th>Meta a 5 Anos</th></tr></thead>
-      <tbody>
-        <tr><td>20–30 anos</td><td>Começar o hábito</td><td>Poupar 5–10% do rendimento em Títulos do Tesouro ou conta poupança</td><td>Fundo de emergência completo + primeiros investimentos</td></tr>
-        <tr><td>31–45 anos</td><td>Acelerar e diversificar</td><td>Aumentar para 15–20% do rendimento. Imóveis, negócio, BVM</td><td>Património líquido positivo de 5–10× o salário anual</td></tr>
-        <tr><td>46–55 anos</td><td>Proteger e consolidar</td><td>Reduzir dívidas. Manter 20%+ em poupança. Seguros em ordem</td><td>Dívidas zero. Poupança de reforma de 10× o salário anual</td></tr>
-        <tr><td>56–65 anos</td><td>Preparar a transição</td><td>Calcular reforma INSS esperada. Criar fontes de renda passiva</td><td>Renda mensal de fontes diversas que cobre 80% das despesas</td></tr>
-        <tr><td>65+ anos</td><td>Gerir com dignidade</td><td>Orçamento rigoroso. Fontes de renda diversificadas. Plano de saúde</td><td>Manter qualidade de vida sem depender exclusivamente dos filhos</td></tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div class="sub2 reveal">Como Criar Renda Passiva para a Reforma</div>
-  <div class="box green-box reveal">
-    <div class="box-lbl">💡 5 Fontes de Renda Passiva para a Reforma em Moçambique</div>
-    <ul>
-      <li><strong>Aluguer de imóvel:</strong> Um quarto, uma casa pequena, um espaço comercial. Renda mensal recorrente sem precisar trabalhar activamente.</li>
-      <li><strong>Dividendos de negócio:</strong> Negócio com gestor contratado que distribui lucros mensalmente.</li>
-      <li><strong>Machamba gerida por parceiro:</strong> Sistema de meia — partilhas os frutos da terra com quem a trabalha enquanto te reformas.</li>
-      <li><strong>Títulos do Tesouro de Longo Prazo (OT):</strong> Juros semestrais pagos pelo Estado. Dinheiro que trabalha sem intervenção.</li>
-      <li><strong>Pensão complementar:</strong> Planos de poupança reforma oferecidos por seguradoras como Mozambique RE e Britam.</li>
-    </ul>
-  </div>
-
-  <div class="resp reveal">
-    <div class="resp-who">👵🏾 Dona Rosa — Nova estratégia aos 67 anos</div>
-    <div class="resp-txt">"A minha filha ajudou-me a colocar 30.000 MT em Títulos do Tesouro. Recebo juros de 3.600 MT por ano — 300 MT por mês extra, sem fazer nada. Parece pouco. Mas é que os 47.000 MT que estavam no colchão agora trabalham. Aprendi tarde — mas aprendi."</div>
-    <div class="resp-res">✅ Dona Rosa transforma poupanças paradas em rendimento extra de 300 MT/mês — sem esforço.</div>
-  </div>
-
-  <div class="missao reveal">
-    <div class="m-head"><div class="m-icon">🎯</div><div><div class="m-title">MISSÃO 17</div><div class="m-prazo">⏱ Prazo: Este mês</div></div></div>
-    <div class="m-body">Olha para o teu futuro com honestidade — e começa hoje a construí-lo.</div>
-    <div class="m-steps">
-      <div class="m-step"><div class="ms-n">1</div><div class="ms-t"><strong>Calcula a tua reforma INSS estimada:</strong> vai ao INSS mais próximo e pede uma declaração de contribuições. Com o número de anos e salário médio, podem estimar o valor esperado.</div></div>
-      <div class="m-step"><div class="ms-n">2</div><div class="ms-t"><strong>Calcula o GAP:</strong> quanto precisarás por mês na reforma vs quanto o INSS vai dar. A diferença é o que precisas de construir com as tuas próprias poupanças.</div></div>
-      <div class="m-step"><div class="ms-n">3</div><div class="ms-t"><strong>Abre um produto de poupança reforma:</strong> conta poupança dedicada, Títulos do Tesouro de longo prazo, ou plano de poupança reforma de uma seguradora.</div></div>
-    </div>
-  </div>
-
-  <div class="prov reveal">
-    <div class="prov-t">"Quem não prepara a última colheita antes do Inverno, passa frio sem razão."</div>
-    <div class="prov-o">Provérbio Africano</div>
-    <div class="prov-l">Lição: A reforma não é o fim da produtividade — é o começo da colheita de tudo o que semeaste. Mas só colhes se tiveres plantado. Começa hoje.</div>
-  </div>
-</article>
-
-<div class="divider"></div>
-
-<!-- ══════════ CAP 18 ══════════ -->
-<article class="capitulo" id="cap18">
-  <div class="cap-num reveal">Capítulo 18 — Universo III</div>
-  <h1 class="cap-title reveal">Educar Filhos para a Riqueza</h1>
-  <div class="cap-sub reveal">O Maior Investimento que Farás — Como Criar Filhos Financeiramente Inteligentes desde a Infância</div>
-  <div class="cap-tags reveal"><span class="cap-tag">👩🏾 Amélia</span><span class="cap-tag">👨🏾‍🌾 Samuel</span></div>
-
-  <div class="cena reveal">
-    <div class="cena-bar" style="background:linear-gradient(90deg,#F39C12,var(--sand),#FAD7A0)"></div>
-    <div class="cena-inner">
-      <div class="cena-lbl">📖 O Dia em Que Amélia Ensinou o Hélio</div>
-      <div class="cena-txt">
-        <p>O Hélio tinha 12 anos quando a Amélia decidiu fazer diferente.</p>
-        <p>Em vez de lhe dar 100 MT para gastar no fim-de-semana, deu-lhe 3 pequenos frascos. No primeiro escreveu "GASTAR". No segundo, "POUPAR". No terceiro, "DAR".</p>
-        <p><em>"O teu dinheiro vai para os três sempre,"</em> disse ela. <em>"50 para gastar, 30 para poupar, 20 para dar a alguém que precise."</em></p>
-        <p>O Hélio protestou. <em>"Mas mamã, só são 100 MT, quero gastar tudo!"</em></p>
-        <p>A Amélia sorriu. <em>"Eu sei. É por isso que tens de aprender agora — quando são 100 MT. Para não seres adulto com 30.000 MT e ainda querer gastar tudo."</em></p>
-        <p>O Hélio parou. Depois pegou nos frascos e começou a distribuir.</p>
-        <p>Passaram 6 meses. O frasco do "POUPAR" tinha 186 MT. O Hélio quis usar para comprar um livro de futebol que custava 200 MT. Tinha de poupar mais 14 MT. Esperou 2 semanas. Comprou o livro com o dinheiro dele.</p>
-        <p><strong>A Amélia não sabia que estava a dar ao Hélio a maior herança possível: a capacidade de esperar pelo que quer.</strong></p>
-      </div>
-    </div>
-  </div>
-
-  <div class="sub reveal">O Que Ensinar — Por Fase de Desenvolvimento</div>
-
-  <div class="tw reveal">
-    <div class="tw-title">Educação Financeira em Casa — Por Idade e Conceito</div>
-    <table>
-      <thead><tr><th>Idade</th><th>Conceito Chave</th><th>Actividade Prática</th><th>Mesada Sugerida</th><th>O Que Não Fazer</th></tr></thead>
-      <tbody>
-        <tr><td>4–6 anos</td><td>Dinheiro troca por coisas. Não aparece do nada.</td><td>3 frascos (Gastar/Poupar/Dar). Moedas reais.</td><td>5–10 MT/semana</td><td>Não dar dinheiro sempre que pede. Não explicar o preço das coisas.</td></tr>
-        <tr><td>7–9 anos</td><td>Escolhas: comprar isto significa não comprar aquilo.</td><td>Lista de desejos. Poupar para 1 objectivo específico.</td><td>20–50 MT/semana</td><td>Não cobrir os "erros" de gasto. Deixa-os sentir a consequência.</td></tr>
-        <tr><td>10–12 anos</td><td>Trabalho gera dinheiro. Há trabalhos que pagam mais.</td><td>Tarefas domésticas remuneradas (extras, não as obrigatórias).</td><td>100–200 MT/semana</td><td>Não pagar por obrigações básicas (arrumar o quarto, etc.).</td></tr>
-        <tr><td>13–15 anos</td><td>Orçamento. Diferença entre necessidade e desejo. FOMO.</td><td>Gerir a mesada para objectivos de 3 meses.</td><td>300–500 MT/mês</td><td>Não cobrir gastos impulsivos. Não dar adiantamentos.</td></tr>
-        <tr><td>16–18 anos</td><td>Crédito responsável. Juro. Primeiro investimento.</td><td>Abertura de conta bancária. Primeiro depósito em poupança.</td><td>Transição para renda própria</td><td>Não assinar créditos por eles. Não pagar todas as dívidas deles.</td></tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div class="sub2 reveal">As 5 Frases que Programam os Filhos para a Pobreza — e o Que Dizer em Vez</div>
-
-  <div class="tw reveal">
-    <table>
-      <thead><tr><th>Frase Destrutiva</th><th>O Que Ensina</th><th>Substitui Por</th></tr></thead>
-      <tbody>
-        <tr class="tr-neg"><td>"Não temos dinheiro para isso."</td><td>Escassez permanente, vergonha</td><td>"Isso não está no nosso orçamento agora. Podemos planear para isso?"</td></tr>
-        <tr class="tr-neg"><td>"Dinheiro não cresce em árvores."</td><td>Dinheiro é raro e difícil de ter</td><td>"O dinheiro vem do trabalho inteligente e do planeamento."</td></tr>
-        <tr class="tr-neg"><td>"Somos pobres, isso não é para nós."</td><td>Identidade de pobreza permanente</td><td>"Ainda não temos isso. Vamos trabalhar para ter."</td></tr>
-        <tr class="tr-neg"><td>"Não fales de dinheiro — é feio."</td><td>Silêncio financeiro, vergonha</td><td>"O dinheiro é uma ferramenta importante. Vamos falar sobre ele abertamente."</td></tr>
-        <tr class="tr-neg"><td>"Estuda para ter um bom emprego."</td><td>Emprego = única opção</td><td>"Aprende bem para teres opções: emprego, negócio, ou ambos."</td></tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div class="sub2 reveal">Poupar para a Educação dos Filhos — Plano Real</div>
-
-  <div class="sim reveal">
-    <div class="sim-t">Poupar para a universidade — começando quando o filho tem 5 anos</div>
-    <div class="sim-row">
-      <div class="sim-i"><div class="sim-v">500</div><div class="sim-l">MT/mês guardados</div></div>
-      <div class="sim-i"><div class="sim-v">13 anos</div><div class="sim-l">Até à entrada na universidade</div></div>
-      <div class="sim-i"><div class="sim-v">78.000</div><div class="sim-l">MT sem juros</div></div>
-      <div class="sim-i"><div class="sim-v">130.000+</div><div class="sim-l">MT com juros compostos a 10%</div></div>
-    </div>
-    <div class="sim-note">500 MT por mês durante 13 anos pode cobrir boa parte das propinas universitárias moçambicanas. Começa quando o filho nasce — não quando começa a escola.</div>
-  </div>
-
-  <div class="resp reveal">
-    <div class="resp-who">👩🏾 Amélia — Hélio aos 14 anos</div>
-    <div class="resp-txt">"O Hélio pediu-me se podia fazer pastéis para vender na escola durante o intervalo. Disse que usaria a mesada dele para comprar os ingredientes e depois recuperaria o investimento com o lucro. Eu olhei para ele e pensei: este é o meu filho. Aprendi com este livro — e ele aprendeu comigo."</div>
-    <div class="resp-res">✅ Hélio cria o primeiro micro-negócio aos 14 anos com capital próprio — sem pedir à mãe.</div>
-  </div>
-
-  <div class="missao reveal">
-    <div class="m-head"><div class="m-icon">🎯</div><div><div class="m-title">MISSÃO 18</div><div class="m-prazo">⏱ Prazo: Este fim-de-semana</div></div></div>
-    <div class="m-body">Começa a educação financeira dos teus filhos hoje — com o sistema dos 3 frascos e uma conversa real.</div>
-    <div class="m-steps">
-      <div class="m-step"><div class="ms-n">1</div><div class="ms-t"><strong>Cria os 3 frascos</strong> para cada filho (podem ser garrafas de plástico). Escreve "Gastar", "Poupar" e "Dar". Na próxima mesada, usa o sistema.</div></div>
-      <div class="m-step"><div class="ms-n">2</div><div class="ms-t"><strong>Começa a conta poupança educacional</strong> para cada filho. Mesmo que sejam 100 MT/mês — o hábito é mais importante do que o valor.</div></div>
-      <div class="m-step"><div class="ms-n">3</div><div class="ms-t"><strong>Tem a conversa sobre dinheiro</strong> em família. Explica de forma simples o que a família ganha, o que gasta e para onde vai o dinheiro. A transparência é a melhor aula.</div></div>
-    </div>
-  </div>
-
-  <div class="prov reveal">
-    <div class="prov-t">"Ensina o menino no caminho em que deve andar — e quando for velho não se afastará dele."</div>
-    <div class="prov-o">Provérbios 22:6 — Versão Africana Clássica</div>
-    <div class="prov-l">Lição: A maior herança não é o dinheiro que deixas — é a sabedoria financeira que transmites. Um filho com educação financeira sólida nunca passará fome, independentemente das circunstâncias.</div>
-  </div>
-</article>
-
-<div class="divider"></div>
-
-<!-- ══════════ CAP 19 ══════════ -->
-<article class="capitulo" id="cap19">
-  <div class="cap-num reveal">Capítulo 19 — Universo III</div>
-  <h1 class="cap-title reveal">Herança com Dignidade</h1>
-  <div class="cap-sub reveal">Como Deixar um Legado Real — E Não uma Dívida — Para Quem Amas</div>
-  <div class="cap-tags reveal"><span class="cap-tag">👵🏾 Dona Rosa</span><span class="cap-tag">👩🏾‍⚕️ Beatriz</span></div>
-
-  <div class="cena reveal">
-    <div class="cena-bar" style="background:linear-gradient(90deg,#2C3E50,#34495E,#7F8C8D)"></div>
-    <div class="cena-inner">
-      <div class="cena-lbl">📖 A Herança do Tio António</div>
-      <div class="cena-txt">
-        <p>O Tio António da Beatriz morreu em Abril com 72 anos. Tinha trabalhado durante 40 anos, tinha uma casa em Tete e um terreno em Chimoio. Parecia uma herança rica.</p>
-        <p>Mas o Tio António nunca tinha feito testamento. Nunca tinha regularizado o DUAT do terreno. A casa estava no nome dele mas havia um empréstimo ao banco que a família não sabia.</p>
-        <p>O processo de herança demorou 2 anos. Os 6 filhos divididos entre duas famílias diferentes quase não se falam. O banco executou o empréstimo e ficou com parte da casa. O terreno de Chimoio está há 2 anos bloqueado no tribunal porque um irmão mais velho contesta.</p>
-        <p>No final, a herança que parecia valiar 800.000 MT vai render, no melhor dos cenários, 200.000 MT — divididos por 6, depois dos advogados e custas judiciais.</p>
-        <p><em>"O Tio António trabalhou 40 anos,"</em> disse a Beatriz. <em>"E a única coisa que deixou para a família foi conflito."</em></p>
-        <p><strong>Uma herança sem organização não é um legado. É uma bomba relógio.</strong></p>
-      </div>
-    </div>
-  </div>
-
-  <div class="sub reveal">A Diferença entre Herdar Dívidas e Herdar Riqueza</div>
-
-  <div class="comp-grid reveal">
-    <div class="comp c-neg"><div class="comp-lbl">Herança Desorganizada</div><div class="comp-v">💣</div><div class="comp-d">Sem testamento • Dívidas escondidas • DUAT irregular • Documentos perdidos • Família em conflito • Anos de tribunal</div></div>
-    <div class="comp c-pos"><div class="comp-lbl">Herança Organizada</div><div class="comp-v">🎁</div><div class="comp-d">Testamento claro • Dívidas liquidadas ou documentadas • DUAT em ordem • Pasta de documentos completa • Transição pacífica e amorosa</div></div>
-  </div>
-
-  <div class="sub2 reveal">Os 5 Pilares de uma Herança Digna</div>
-  <div class="box gold-box reveal">
-    <div class="box-lbl">🏛️ Pilares de um Legado Organizado</div>
-    <ul>
-      <li><strong>1. Testamento actualizado:</strong> documento escrito com os desejos expressos sobre cada bem. Revisado a cada 5 anos ou após mudança de vida.</li>
-      <li><strong>2. Documentação em ordem:</strong> DUAT registados, contratos de compra e venda, certidões, apólices de seguro — tudo em pasta organizada e acessível ao executor da herança.</li>
-      <li><strong>3. Dívidas transparentes:</strong> a família deve saber sobre empréstimos activos. Uma dívida escondida é uma bomba que explode na herança.</li>
-      <li><strong>4. Executor de confiança nomeado:</strong> uma pessoa de confiança e capacidade (não necessariamente advogado) que supervisiona o processo de partilha.</li>
-      <li><strong>5. Conversa antecipada com os herdeiros:</strong> diz em vida o que vais deixar a quem e porquê. Evita 80% dos conflitos pós-morte.</li>
-    </ul>
-  </div>
-
-  <div class="sub2 reveal">O Conceito de Fundo Familiar</div>
-  <p class="txt reveal">O Fundo Familiar é uma reserva financeira colectiva — criada pela geração actual — que atravessa gerações. Em vez de dividir tudo igualmente (e cada herdeiro gastar a sua parte), parte da herança fica como fundo gerido pela família para investimento colectivo: educação dos netos, emergências, oportunidades de negócio.</p>
-
-  <div class="box teal-box reveal">
-    <div class="box-lbl">💡 Como Criar um Fundo Familiar Simples</div>
-    <ul>
-      <li><strong>Define o propósito:</strong> educação dos netos? Emergências da família? Investimento colectivo? Estabelece regras claras.</li>
-      <li><strong>Escolhe um gestor:</strong> o filho ou familiar mais responsável financeiramente gere o fundo.</li>
-      <li><strong>Define as regras de acesso:</strong> quem pode pedir, em que circunstâncias, com que aprovação dos membros.</li>
-      <li><strong>Conta bancária própria:</strong> o fundo tem conta própria — não mistura com finanças pessoais de ninguém.</li>
-      <li><strong>Reunião anual de família:</strong> revisão do estado do fundo, renovação do gestor, aprovação de pedidos.</li>
-    </ul>
-  </div>
-
-  <div class="resp reveal">
-    <div class="resp-who">👵🏾 Dona Rosa — Depois de preparar a sua herança</div>
-    <div class="resp-txt">"Sentei com os meus 3 filhos e disse-lhes: 'a casa vai para vocês três em partes iguais. Os 30.000 MT que tenho vão para o Fundo de Educação dos netos. O carro vai para o filho mais velho que cuida de mim.' Choraram todos. Mas disseram que nunca pensaram que eu pensava neles assim. A conversa foi a melhor coisa que fiz."</div>
-    <div class="resp-res">✅ Dona Rosa elimina potencial conflito familiar com uma conversa honesta e um plano claro.</div>
-  </div>
-
-  <div class="missao reveal">
-    <div class="m-head"><div class="m-icon">🎯</div><div><div class="m-title">MISSÃO 19</div><div class="m-prazo">⏱ Prazo: Este mês</div></div></div>
-    <div class="m-body">Organiza a tua herança hoje. Não é sobre a morte — é sobre o amor que deixas organizado.</div>
-    <div class="m-steps">
-      <div class="m-step"><div class="ms-n">1</div><div class="ms-t"><strong>Lista todos os teus bens actuais</strong> — incluindo contas bancárias, DUAT, veículos, negócios, seguros de vida. Esta é a base da tua herança.</div></div>
-      <div class="m-step"><div class="ms-n">2</div><div class="ms-t"><strong>Escreve o testamento simples à mão</strong> com a lista de bens e quem herda o quê. Assina e data. Guarda numa pasta com os restantes documentos.</div></div>
-      <div class="m-step"><div class="ms-n">3</div><div class="ms-t"><strong>Tem a conversa com os herdeiros</strong> — em vida, com calma, com amor. Explica as tuas decisões. Dá-lhes a oportunidade de fazer perguntas.</div></div>
-    </div>
-  </div>
-
-  <div class="prov reveal">
-    <div class="prov-t">"O ancião que planta uma árvore sabe que nunca comerá da sua sombra — mas planta na mesma."</div>
-    <div class="prov-o">Provérbio Africano</div>
-    <div class="prov-l">Lição: O legado é o acto de pensar além de ti mesmo. Plantar árvores que vão dar sombra e fruto aos filhos dos teus filhos — essa é a definição mais profunda de riqueza.</div>
-  </div>
-</article>
-
-<div class="divider"></div>
-
-<!-- ══════════ CAP 20 ══════════ -->
-<article class="capitulo" id="cap20">
-  <div class="cap-num reveal">Capítulo 20 — Universo III</div>
-  <h1 class="cap-title reveal">Moçambique 2035</h1>
-  <div class="cap-sub reveal">O Futuro que Está a Ser Construído Agora — E Como a Tua Geração É o Ponto de Viragem</div>
-  <div class="cap-tags reveal"><span class="cap-tag">👦🏾 Tomás</span><span class="cap-tag">👩🏾‍💻 Inês</span></div>
-
-  <div class="cena reveal">
-    <div class="cena-bar" style="background:linear-gradient(90deg,#1ABC9C,#2ECC71,#F1C40F)"></div>
-    <div class="cena-inner">
-      <div class="cena-lbl">📖 A Conversa do Tomás com o Pai</div>
-      <div class="cena-txt">
-        <p>O Tomás tinha 17 anos quando o pai lhe perguntou pela primeira vez o que queria fazer com a vida.</p>
-        <p><em>"Quero ser rico,"</em> disse o Tomás, sem hesitar.</p>
-        <p>O pai sorriu com amargura. <em>"Toda a gente quer. Poucos conseguem."</em></p>
-        <p><em>"Não,"</em> disse o Tomás. <em>"Toda a gente quer mas não planeia. Eu estou a planear."</em></p>
-        <p>E abriu o telemóvel. Mostrou ao pai a sua conta poupança com 2.200 MT. O seu registo mensal de receitas do serviço de apresentações. O xitique com os amigos da escola. Um artigo que tinha lido sobre o gás natural de Moçambique e as oportunidades para jovens engenheiros.</p>
-        <p>O pai ficou quieto por um longo momento. Depois disse uma coisa que o Tomás nunca esquecerá: <em>"Quem te ensinou a pensar assim?"</em></p>
-        <p>E o Tomás respondeu: <em>"Comecei a aprender sozinho. Mas tu ainda podes começar também, Pai."</em></p>
-      </div>
-    </div>
-  </div>
-
-  <div class="sub reveal">As 5 Grandes Oportunidades de Moçambique para 2025–2035</div>
-
-  <div class="tw reveal">
-    <div class="tw-title">Sectores com Maior Crescimento Previsto — Moçambique 2025–2035</div>
-    <table>
-      <thead><tr><th>Sector</th><th>Oportunidade</th><th>Para Quem</th><th>Como Entrar</th></tr></thead>
-      <tbody>
-        <tr><td>⛽ Gás Natural LNG (Cabo Delgado)</td><td>Serviços, logística, construção, formação técnica para projecto TotalEnergies</td><td>Técnicos, engenheiros, fornecedores locais</td><td>Formação técnica, certificações, empresas de serviços</td></tr>
-        <tr><td>🌱 Agroprocessamento</td><td>Transformar colheita bruta em produto processado (farinha, óleos, conservas)</td><td>Agricultores, jovens com capital pequeno</td><td>Formação no IIAM, microcrédito, cooperativas</td></tr>
-        <tr><td>💻 Economia Digital</td><td>Freelancing internacional, e-commerce, apps, marketing digital</td><td>Jovens com acesso a internet e competências digitais</td><td>Plataformas internacionais (Fiverr, Upwork), competências técnicas</td></tr>
-        <tr><td>🏗️ Construção e Imobiliário</td><td>Habitação acessível, materiais de construção, design de interiores</td><td>Engenheiros, arquitectos, pequenos construtores</td><td>DUAT organizado, acesso a microcrédito, parcerias</td></tr>
-        <tr><td>🌍 Turismo</td><td>Ecoturismo, praias, cultura — Moçambique está a ser "descoberto"</td><td>Comunidades costeiras, guias, artesãos</td><td>Formação em hotelaria, parcerias com operadores internacionais</td></tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div class="sub reveal">Criptomoedas e Investimentos Digitais — Com os Pés no Chão</div>
-  <p class="txt reveal">Muito moçambicano perdeu dinheiro em esquemas de criptomoeda entre 2021 e 2024. A tentação é enorme — histórias de pessoas que ganharam fortunas são verdadeiras. Mas as histórias de pessoas que perderam tudo são muito mais numerosas e muito menos partilhadas.</p>
-
-  <div class="box red-box reveal">
-    <div class="box-lbl">⚠️ Regras de Ouro para Criptomoedas — Se Decidires Investir</div>
-    <ul>
-      <li><strong>Nunca invistas o que não podes perder 100%.</strong> Criptomoedas podem valer zero amanhã — e isso já aconteceu com moedas "seguras".</li>
-      <li><strong>Nunca financiado a crédito.</strong> Pedir emprestado para comprar cripto é o caminho mais rápido para a ruína.</li>
-      <li><strong>Desconfia de qualquer retorno garantido.</strong> Cripto legítima não tem retorno garantido. Quem diz que tem está a mentir ou a gerir uma pirâmide.</li>
-      <li><strong>Só compra em plataformas reguladas:</strong> Binance, Coinbase, Kraken — plataformas internacionais com regulação. Nunca em grupos de WhatsApp ou plataformas sem nome claro.</li>
-      <li><strong>Máximo 5% do portfolio em cripto</strong> — para quem quer experimentar com dinheiro que pode mesmo perder.</li>
-    </ul>
-  </div>
-
-  <div class="pq reveal">
-    <div class="pq-t">"Moçambique tem recursos naturais extraordinários, praias entre as mais belas do mundo, terra fértil, jovens enérgicos e uma posição geográfica privilegiada. O que falta não é potencial — é a geração que acredita no potencial e age sobre ele."</div>
-    <div class="pq-s">Sementes de Riqueza</div>
-  </div>
-
-  <div class="resp reveal">
-    <div class="resp-who">👩🏾‍💻 Inês — Com 28 anos, 2 anos depois de começar a sua jornada financeira</div>
-    <div class="resp-txt">"Tenho agora 3 clientes internacionais fixos que me pagam em USD. Abri empresa moçambicana registada. Tenho 85.000 MT em poupanças e investimentos. O ano que vem quero comprar terreno. Não é sorte — é o resultado de 2 anos de decisões melhores, uma de cada vez."</div>
-    <div class="resp-res">✅ Inês constrói empresa digital com facturamento de ~4.000 USD/mês e 85.000 MT em activos aos 28 anos.</div>
-  </div>
-
-  <div class="missao reveal">
-    <div class="m-head"><div class="m-icon">🎯</div><div><div class="m-title">MISSÃO 20</div><div class="m-prazo">⏱ Prazo: Este mês</div></div></div>
-    <div class="m-body">Posiciona-te no futuro de Moçambique — identifica onde os próximos 10 anos vão criar oportunidades para ti.</div>
-    <div class="m-steps">
-      <div class="m-step"><div class="ms-n">1</div><div class="ms-t"><strong>Dos 5 sectores acima, identifica 1 onde tens vantagem</strong> — por conhecimento, localização, competências ou rede de contactos.</div></div>
-      <div class="m-step"><div class="ms-n">2</div><div class="ms-t"><strong>Define 1 competência que precisas desenvolver</strong> para entrar nesse sector nos próximos 2 anos. Pesquisa onde aprender.</div></div>
-      <div class="m-step"><div class="ms-n">3</div><div class="ms-t"><strong>Escreve o teu Manifesto de 10 Anos:</strong> onde queres estar em 2035 — financeiramente, profissionalmente, na família. Uma página. Cola-a num lugar que vês todos os dias.</div></div>
-    </div>
-  </div>
-
-  <div class="prov reveal">
-    <div class="prov-t">"Quando a música muda, a dança muda. Quando o mundo muda, o sábio muda com ele."</div>
-    <div class="prov-o">Provérbio Hauçá — África Ocidental</div>
-    <div class="prov-l">Lição: O Moçambique de 2035 será diferente do de hoje. As oportunidades serão novas. Os que prosperarão serão os que já se estão a preparar — adaptando as competências e o capital ao ritmo das mudanças.</div>
-  </div>
-</article>
-
-<div class="divider"></div>
-
-<!-- ══════════ CAP 21 ══════════ -->
-<article class="capitulo" id="cap21">
-  <div class="cap-num reveal">Capítulo 21 — Universo III — O Capítulo Final</div>
-  <h1 class="cap-title reveal">O Plano dos 1.000 Dias</h1>
-  <div class="cap-sub reveal">Da Leitura à Transformação — Como os Próximos 1.000 Dias Mudam os Próximos 30 Anos</div>
-  <div class="cap-tags reveal"><span class="cap-tag">🌟 Todos os 7 Personagens — 1.000 Dias Depois</span></div>
-
-  <div class="cena reveal">
-    <div class="cena-bar" style="background:linear-gradient(90deg,var(--gold),var(--gold2),var(--sand))"></div>
-    <div class="cena-inner">
-      <div class="cena-lbl">📖 Onde Estão Os 7 — 1.000 Dias Depois</div>
-      <div class="cena-txt">
-        <p><strong>A Amélia</strong> tem agora uma banca coberta no mercado da Xipamanine. Faz parte de um xitique de mulheres do mercado que está no 3.º ciclo. O Hélio entrou para o ensino superior com uma bolsa — e parte do dinheiro que a Amélia poupou ajudou a cobrir os materiais do primeiro ano. O seu fundo de emergência tem 22.000 MT.</p>
-        <p><strong>O Tomás</strong> tem 20 anos e está no 2.º ano do curso de Engenharia Informática. O seu negócio de serviços digitais rende 12.000 MT por mês — o dobro do que ganharia com um estágio. Tem 45.000 MT poupados e já fez o primeiro investimento em Títulos do Tesouro.</p>
-        <p><strong>O Eduardo</strong> liquidou o crédito do carro e renegociou o apartamento para um bairro mais acessível. A consultoria está registada como empresa. O seu patrimônio líquido passou de -145.000 MT para +68.000 MT. Sente, pela primeira vez em anos, que está no controlo.</p>
-        <p><strong>A Dona Rosa</strong> tem 30.000 MT em Títulos do Tesouro que rendem 300 MT por mês. Contratou seguro de saúde básico. O testamento está feito. Os filhos sabem o que vai para quem. Dorme melhor.</p>
-        <p><strong>A Inês</strong> formalizou a empresa, tem 3 clientes internacionais fixos, e comprou terreno em Marracuene para construir progressivamente. Está a contratar a primeira colaboradora.</p>
-        <p><strong>O Samuel</strong> duplicou a produção da machamba com diversificação de culturas. Está a fazer parceria com uma cooperativa de exportação de banana para mercados regionais. O rendimento anual passou de 40.000 MT para 95.000 MT.</p>
-        <p><strong>A Beatriz</strong> tem um limite mensal fixo para a família alargada. Pagou todas as dívidas. Tem 280.000 MT poupados para a reforma. E pelo primeiro vez na vida, quando chega ao trabalho de manhã, não está a pensar em dinheiro.</p>
-        <p><em>Nenhum deles ganhou na lotaria. Nenhum recebeu herança inesperada. Nenhum emigrou.</em></p>
-        <p><strong>Apenas aplicaram, um passo de cada vez, o que está nestas páginas.</strong></p>
-      </div>
-    </div>
-  </div>
-
-  <div class="sub reveal">O Teu Plano dos 1.000 Dias</div>
-  <p class="txt reveal">1.000 dias são aproximadamente 2 anos e 9 meses. Não é muito tempo para uma vida — mas é tempo suficiente para transformar completamente uma situação financeira se forem 1.000 dias de intenção.</p>
-
-  <div class="ferr reveal">
-    <div class="ferr-h"><div class="ferr-icon">🗺️</div><div><div class="ferr-title">ROTEIRO DOS 1.000 DIAS</div><div class="ferr-sub">Ferramenta 21-A — O teu plano pessoal</div></div></div>
-    <div class="tw">
-      <div class="tw-title">Marco a Marco — Do Dia 1 ao Dia 1.000</div>
-      <table>
-        <thead><tr><th>Marco</th><th>Dias</th><th>Objectivo</th><th>O Que Deves Ter Feito</th></tr></thead>
-        <tbody>
-          <tr><td>🌱 Arranque</td><td>Dias 1–30</td><td>Fundação</td><td>Diagnóstico completo feito • Orçamento criado • Conta poupança aberta • Primeiro depósito feito</td></tr>
-          <tr><td>🔥 Momentum</td><td>Dias 31–90</td><td>Primeiros hábitos</td><td>3 meses de orçamento seguido • Dívidas identificadas e com plano • Fundo de emergência a crescer</td></tr>
-          <tr><td>💪 Consolidação</td><td>Dias 91–180</td><td>Estabilidade</td><td>Dívidas ruins a pagar • 1 mês de fundo de emergência atingido • Segunda fonte de renda identificada</td></tr>
-          <tr><td>📈 Crescimento</td><td>Dias 181–365</td><td>Aceleração</td><td>Primeiro investimento real feito • Seguro de saúde contratado • Conversa financeira difícil teve</td></tr>
-          <tr><td>🌿 Maturidade</td><td>Dias 366–730</td><td>Construção</td><td>Fundo de emergência completo • Investimentos regulares • Segunda fonte de renda activa</td></tr>
-          <tr class="tr-pos"><td>🌳 Transformação</td><td>Dias 731–1.000</td><td>Legado</td><td>Testamento feito • Plano de reforma ativo • Filhos com educação financeira • Património líquido crescendo</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-
-  <div class="sub reveal">As 10 Verdades Que Este Livro Tentou Ensinar</div>
-
-  <div class="box gold-box reveal">
-    <div class="box-lbl">✦ As 10 Verdades de Sementes de Riqueza</div>
-    <ol>
-      <li><strong>O dinheiro é uma ferramenta neutra.</strong> Nem bom nem mau. Torna-se o que a pessoa que o usa é.</li>
-      <li><strong>O maior obstáculo à riqueza é o que acreditas sobre ela.</strong> Não o salário. Não a sorte. A mentalidade.</li>
-      <li><strong>Poupares primeiro e gastar o que sobra.</strong> Não o contrário. Nunca o contrário.</li>
-      <li><strong>O fundo de emergência não é luxo — é sobrevivência.</strong> Para todas as classes sociais.</li>
-      <li><strong>A dívida com agiota é sempre urgência número um.</strong> Antes de qualquer outra prioridade financeira.</li>
-      <li><strong>O juro composto é real e é poderoso.</strong> Começa cedo. Mesmo com pouco. O tempo é o teu maior activo.</li>
-      <li><strong>Ubuntu inteligente protege todos.</strong> Primeiro a tua máscara de oxigénio — depois ajudas os outros com mais eficácia.</li>
-      <li><strong>A conversa financeira em família é amor, não desrespeito.</strong> O silêncio é que destrói.</li>
-      <li><strong>O que deixas para os filhos não é dinheiro — é sabedoria.</strong> A sabedoria multiplica. O dinheiro sem sabedoria acaba.</li>
-      <li><strong>Não é tarde. Nunca é tarde.</strong> A Dona Rosa começou aos 67. O Tomás aos 17. O ponto de partida não define o destino — as decisões de hoje definem.</li>
-    </ol>
-  </div>
-
-  <div class="missao reveal">
-    <div class="m-head"><div class="m-icon">🎯</div><div><div class="m-title">MISSÃO 21 — A MISSÃO FINAL</div><div class="m-prazo">⏱ Prazo: Hoje, antes de fechar este livro</div></div></div>
-    <div class="m-body">Estas são as últimas instruções deste livro. Se as seguires, o livro terá valido mais do que qualquer coisa que possas pagar por ele.</div>
-    <div class="m-steps">
-      <div class="m-step"><div class="ms-n">1</div><div class="ms-t"><strong>Escreve o teu compromisso dos 1.000 dias.</strong> Uma frase, assinada por ti: "Eu, [nome], comprometo-me a aplicar pelo menos 3 ferramentas deste livro nos próximos 90 dias. Data: ___."</div></div>
-      <div class="m-step"><div class="ms-n">2</div><div class="ms-t"><strong>Identifica a tua "Missão Número 1"</strong> — a acção mais urgente que este livro revelou. Faz-a ainda hoje. Não amanhã. Hoje.</div></div>
-      <div class="m-step"><div class="ms-n">3</div><div class="ms-t"><strong>Partilha este livro com 1 pessoa.</strong> Um familiar, um amigo, um colega. A transformação financeira de Moçambique começa quando cada leitor leva a mensagem a pelo menos mais uma pessoa.</div></div>
-      <div class="m-step"><div class="ms-n">4</div><div class="ms-t"><strong>Relê a carta de abertura</strong> (Prefácio — Uma Carta Para Ti). Ela vai ter um significado completamente diferente agora.</div></div>
-    </div>
-  </div>
-
-  <div class="prov reveal">
-    <div class="prov-t">"Uma jornada de mil milhas começa com um único passo. Não com dois. Não com dez. Com um."</div>
-    <div class="prov-o">Lao Tzu — adoptado por toda a África</div>
-    <div class="prov-l">Lição final: Não precisas de implementar tudo amanhã. Precisas de dar o primeiro passo hoje. E depois o segundo. E depois o terceiro. 1.000 dias são 1.000 passos. E 1.000 passos — num livro como este — são o começo de uma geração diferente.</div>
-  </div>
-</article>
-
-<!-- ═══════════ EPÍLOGO ═══════════ -->
-<div class="epilogo">
-  <div class="epilogo-inner">
-    <h2>UMA NAÇÃO<br><em>MAIS RICA.</em></h2>
-    <p>Este livro termina aqui. Mas a tua história financeira não termina. Ela está, neste momento exacto, a começar de verdade.</p>
-    <p>Cada metikal poupado, cada dívida liquidada, cada orçamento seguido, cada conversa corajosa sobre dinheiro com a família — é uma semente. E as sementes que plantares nos próximos 1.000 dias são as árvores que os teus filhos vão colher.</p>
-    <p>Moçambique não precisa de petróleo para prosperar. Precisa de moçambicanos financeiramente inteligentes. Precisa de ti.</p>
-    <p><em>"Quem cuida das sementes hoje, colhe a liberdade amanhã."</em></p>
-
-    <div class="plano-grid">
-      <div class="plano-card">
-        <div class="plano-card-l">Dias 1–30</div>
-        <div class="plano-card-t">Início</div>
-        <div class="plano-card-items">Diagnóstico • Orçamento • Conta poupança • Primeiro depósito</div>
-      </div>
-      <div class="plano-card">
-        <div class="plano-card-l">Dias 31–180</div>
-        <div class="plano-card-t">Hábitos</div>
-        <div class="plano-card-items">3 meses de orçamento • Dívidas com plano • Fundo de emergência a crescer</div>
-      </div>
-      <div class="plano-card">
-        <div class="plano-card-l">Dias 181–365</div>
-        <div class="plano-card-t">Estabilidade</div>
-        <div class="plano-card-items">Primeiro investimento • Seguro de saúde • Segunda fonte de renda</div>
-      </div>
-      <div class="plano-card">
-        <div class="plano-card-l">Dias 366–730</div>
-        <div class="plano-card-t">Crescimento</div>
-        <div class="plano-card-items">Fundo completo • Investimentos regulares • Plano de reforma activo</div>
-      </div>
-      <div class="plano-card">
-        <div class="plano-card-l">Dias 731–1.000</div>
-        <div class="plano-card-t">Legado</div>
-        <div class="plano-card-items">Testamento feito • Filhos educados financeiramente • Património a crescer</div>
+      <div class="price-card featured reveal reveal-d1">
+        <span class="price-tag" style="background:var(--gold);color:var(--ink);border:none;">⭐ Mais Popular</span>
+        <div class="price-name">COMPLETO + PDF</div>
+        <div class="price-amount"><span class="price-currency">MT</span>450</div>
+        <div class="price-period">Pagamento único · Acesso imediato</div>
+        <ul class="price-features">
+          <li>Tudo do plano Básico</li>
+          <li>PDF para impressão e uso offline</li>
+          <li>Versão para partilhar com cônjuge/família</li>
+          <li>Actualizações futuras gratuitas</li>
+          <li>Acesso prioritário a novos capítulos</li>
+        </ul>
+        <a href="#" class="btn-comprar">Comprar Agora →</a>
       </div>
     </div>
 
-    <p style="margin-top:40px;font-family:var(--sans);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:rgba(200,150,12,.3);">✦ FIM DO VOLUME 2 · SEMENTES DE RIQUEZA ✦</p>
+    <div class="guarantee-box reveal" style="margin-top:36px;">
+      <div class="gb-icon">🛡️</div>
+      <div>
+        <div class="gb-title">Garantia de 7 Dias — Sem Perguntas</div>
+        <div class="gb-text">Se leres o livro e sentires que não valeu o investimento, devolvemos o dinheiro na totalidade em 7 dias. Sem burocracia, sem condições. A nossa confiança é total.</div>
+      </div>
+    </div>
+
+    <div style="margin-top:32px;text-align:center;" class="reveal">
+      <div style="font-family:var(--sans);font-size:12px;color:rgba(200,150,12,.4);display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;">
+        <span>🔒 Pagamento Seguro</span>
+        <span>💳 M-Pesa · Cartão · Transferência</span>
+        <span>📱 Funciona em qualquer telemóvel</span>
+        <span>🌍 Moçambique · Portugal · Brasil</span>
+      </div>
+    </div>
   </div>
-</div>
+</section>
+
+<!-- ═══════════════════════════════════
+     FAQ
+═══════════════════════════════════ -->
+<section class="faq">
+  <div class="container">
+    <span class="s-label reveal">Perguntas frequentes</span>
+    <h2 class="s-title reveal reveal-d1">TENS<br><em>DÚVIDAS?</em></h2>
+
+    <div class="faq-list">
+      <div class="faq-item reveal">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          Como funciona o acesso ao livro depois de pagar?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a">Imediatamente após o pagamento confirmado, recebes um email com os teus dados de login. Entras na plataforma com o teu email e password, e o livro está disponível para ler online — em qualquer dispositivo, a qualquer hora.</div>
+      </div>
+      <div class="faq-item reveal reveal-d1">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          Posso ler no telemóvel? O meu telemóvel é antigo.
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a">Sim. O livro foi optimizado especificamente para leitura em telemóvel — incluindo telemóveis mais antigos com Android. Funciona em qualquer browser (Chrome, Firefox, Samsung Internet). Não precisas de instalar nada.</div>
+      </div>
+      <div class="faq-item reveal reveal-d2">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          Posso pagar por M-Pesa?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a">Sim. Aceitamos M-Pesa, e-Mola, cartão de crédito/débito, e transferência bancária. Todos os pagamentos são processados de forma segura.</div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          Funciona para quem tem rendimento muito baixo (salário mínimo)?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a">Absolutamente. O livro foi escrito com três níveis de rendimento em todas as ferramentas: 5.400 MT, 18.000 MT e 50.000 MT. A Amélia, que ganha 3.800 MT/mês, é um dos personagens principais — e a sua transformação é uma das mais poderosas do livro.</div>
+      </div>
+      <div class="faq-item reveal reveal-d1">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          Posso partilhar o livro com o meu cônjuge ou família?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a">O plano Básico é para uso individual. O plano Completo + PDF inclui uma versão para uso familiar — podes imprimir ou partilhar o PDF com o teu cônjuge e família directa.</div>
+      </div>
+      <div class="faq-item reveal reveal-d2">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          Já li livros de finanças. Este é diferente?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a">A maioria dos livros de finanças foi escrita para o mercado americano ou europeu — com contas em dólares, sistemas de crédito diferentes, e realidades culturais completamente distintas. Este livro fala de agiotas, M-Pesa, xitique, DUAT, INSS, lobolo, Ubuntu e Bilhetes do Tesouro moçambicanos. É genuinamente diferente.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════
+     FINAL CTA
+═══════════════════════════════════ -->
+<section class="final-cta">
+  <div class="final-cta-inner">
+    <div class="fct-label reveal">A decisão mais importante que podes tomar hoje</div>
+    <h2 class="fct-title reveal reveal-d1">O DIA 1<br><em>COMEÇA</em><br>AGORA.</h2>
+    <p class="fct-sub reveal reveal-d2">Em 1.000 dias, a Amélia quadruplicou o lucro. O Eduardo saiu das dívidas. O Tomás começou a investir antes dos 18 anos. A tua história pode começar hoje — pela mesma razão que a deles começou: uma decisão.</p>
+    <a href="#pricing" class="fct-cta reveal reveal-d3">Quero as Sementes de Riqueza →</a>
+    <p class="fct-small reveal reveal-d4">Acesso imediato · Garantia de 7 dias · Pagamento seguro</p>
+  </div>
+</section>
 
 <footer>
-  <span>Sementes de Riqueza © 2025</span>
-  <span>Volume 2 — Capítulos 10 a 21</span>
-  <span>Inteligência Financeira para Moçambique</span>
+  <span>© 2025 Sementes de Riqueza · Inteligência Financeira para Moçambique</span>
+  <span>sementesderiqueza.com</span>
+  <span>Política de Privacidade · Garantia · Contacto</span>
 </footer>
 
-<script>
-const obs = new IntersectionObserver((entries) => {
-  entries.forEach((e, i) => {
-    if(e.isIntersecting) {
-      e.target.style.transitionDelay = (i % 3) * 0.06 + 's';
-      e.target.classList.add('on');
-      obs.unobserve(e.target);
-    }
-  });
-}, { threshold: 0.08 });
-document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+<!-- WhatsApp Float -->
+<a class="wa-float" href="https://wa.me/258800000000?text=Olá!%20Tenho%20interesse%20no%20livro%20Sementes%20de%20Riqueza." target="_blank" title="Fala connosco no WhatsApp">💬</a>
 
-// highlight active toc link
+<script>
+// ── READING PROGRESS BAR ──
 window.addEventListener('scroll', () => {
-  const links = document.querySelectorAll('.toc-link');
-  let active = '';
-  document.querySelectorAll('article[id]').forEach(section => {
-    if(window.scrollY >= section.offsetTop - 100) active = section.id;
-  });
-  links.forEach(l => {
-    l.classList.toggle('active', l.getAttribute('href') === '#' + active);
+  const h = document.documentElement;
+  const pct = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
+  document.getElementById('readingBar').style.width = pct + '%';
+});
+
+// ── SCROLL REVEAL ──
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('on'); });
+}, { threshold: 0.08 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// ── FAQ TOGGLE ──
+function toggleFaq(btn) {
+  const item = btn.parentElement;
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+
+// ── NAV SCROLL EFFECT ──
+window.addEventListener('scroll', () => {
+  const nav = document.querySelector('nav');
+  nav.style.background = window.scrollY > 80
+    ? 'rgba(10,8,5,.98)'
+    : 'rgba(10,8,5,.92)';
+});
+
+// ── SMOOTH SCROLL FOR NAV CTA ──
+document.querySelectorAll('a[href="#pricing"]').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    document.getElementById('pricing').scrollIntoView({ behavior: 'smooth' });
   });
 });
 </script>
+
 </body>
 </html>
